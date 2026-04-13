@@ -540,6 +540,12 @@ INPUT /usr/local/texlive/2026basic/texmf-dist/fonts/vf/public/mathpazo/zplmr7t.v
 INPUT /usr/local/texlive/2026basic/texmf-dist/fonts/tfm/public/mathpazo/fplmr.tfm
 INPUT /usr/local/texlive/2026basic/texmf-dist/fonts/tfm/adobe/palatino/pplr8r.tfm
 INPUT /usr/local/texlive/2026basic/texmf-dist/fonts/tfm/public/cm/cmr10.tfm
+INPUT /usr/local/texlive/2026basic/texmf-dist/tex/latex/psnfss/ufplmbb.fd
+INPUT /usr/local/texlive/2026basic/texmf-dist/tex/latex/psnfss/ufplmbb.fd
+INPUT /usr/local/texlive/2026basic/texmf-dist/tex/latex/psnfss/ufplmbb.fd
+INPUT /usr/local/texlive/2026basic/texmf-dist/fonts/tfm/public/mathpazo/fplmbb.tfm
+INPUT /usr/local/texlive/2026basic/texmf-dist/fonts/tfm/public/mathpazo/fplmbb.tfm
+INPUT /usr/local/texlive/2026basic/texmf-dist/fonts/tfm/public/mathpazo/fplmbb.tfm
 OUTPUT slides.nav
 OUTPUT slides.toc
 OUTPUT slides.snm
@@ -548,9 +554,12 @@ INPUT ./slides.out
 INPUT ./slides.out
 INPUT /usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/libertinus-type1/LibertinusSans-Italic.pfb
 INPUT /usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/libertinus-type1/LibertinusSans-Regular.pfb
+INPUT /usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
 INPUT /usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb
 INPUT /usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb
 INPUT /usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb
 INPUT /usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb
 INPUT /usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb
+INPUT /usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb
 INPUT /usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb
+INPUT /usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/mathpazo/fplmbb.pfb

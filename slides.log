@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.3.20)  13 APR 2026 22:33
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.3.20)  13 APR 2026 23:20
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1193,13 +1193,21 @@ LaTeX Font Info:    Font shape `T1/LibertinusSans-TLF/sb/n' will be
 
 ] [8
 
-] [9
+]
+LaTeX Font Info:    Trying to load font information for U+fplmbb on input line 99.
+ (/usr/local/texlive/2026basic/texmf-dist/tex/latex/psnfss/ufplmbb.fd
+File: ufplmbb.fd 2003/10/30 Fontinst v1.914 font definitions for U/fplmbb.
+) [9
 
 ] [10
 
 ] [11
 
-] [12
+]
+Overfull \vbox (5.0967pt too high) detected at line 150
+ []
+
+[12
 
 ] [13
 
@@ -1231,6 +1239,16 @@ LaTeX Font Info:    Font shape `T1/LibertinusSans-TLF/sb/n' will be
 
 ] [27
 
+] [28
+
+] [29
+
+] [30
+
+] [31
+
+] [32
+
 ]
 \tf@nav=\write6
 \openout6 = `slides.nav'.
@@ -1247,21 +1265,21 @@ LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
  ***********
 Package rerunfilecheck Info: File `slides.out' has not changed.
-(rerunfilecheck)             Checksum: C2F29D6277EE7DF3BB00B6D31AF70D27;1591.
+(rerunfilecheck)             Checksum: 99B3E8E36C5D80E4C709AE85ECC09373;1672.
  ) 
 Here is how much of TeX's memory you used:
- 39250 strings out of 469006
- 845677 string characters out of 5454813
- 1289109 words of memory out of 5000000
- 67150 multiletter control sequences out of 15000+600000
- 683022 words of font info for 84 fonts, out of 8000000 for 9000
+ 39332 strings out of 469006
+ 847350 string characters out of 5454813
+ 1291109 words of memory out of 5000000
+ 67218 multiletter control sequences out of 15000+600000
+ 683373 words of font info for 87 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
  101i,16n,139p,579b,862s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/libertinus-type1/LibertinusSans-Italic.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/libertinus-type1/LibertinusSans-Regular.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on slides.pdf (27 pages, 263880 bytes).
+</usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/libertinus-type1/LibertinusSans-Italic.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/libertinus-type1/LibertinusSans-Regular.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/mathpazo/fplmbb.pfb>
+Output written on slides.pdf (32 pages, 300815 bytes).
 PDF statistics:
- 305 PDF objects out of 1000 (max. 8388607)
- 226 compressed objects within 3 object streams
- 64 named destinations out of 1000 (max. 500000)
+ 349 PDF objects out of 1000 (max. 8388607)
+ 259 compressed objects within 3 object streams
+ 74 named destinations out of 1000 (max. 500000)
  265 words of extra memory for PDF output out of 10000 (max. 10000000)
 

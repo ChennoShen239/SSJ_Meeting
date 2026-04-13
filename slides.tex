@@ -81,10 +81,86 @@
 
 
 
-\section{SSJ Methods}
+\section{SSJ in Krusell-Smith Model}
+\begin{frame}{Example: The Krusell-Smith Model}{Setup}
+    \begin{itemize}
+        \item The economy is populated by a mass 1 of heterogeneous households,
+        \item Each household maximizes its expected lifetime utility:
+              \[
+                  \mathbb{E}_0\left[\sum_{t=0}^{\infty} \beta^t u(c_t)\right],
+              \]
+        \item Standard CRRA utility,
+        \item There exist $n_e$ idiosyncratic states w/ transition matrix $P(e,e')$ and stationary distribution $\pi$,
+        \item Agents supply an exogenous number of hours $n$, and earn wage income $w_t e n$,
+        \item Agents can only trade in capital $k$, which pays a rental rate $r_t$ net of depreciation.
+    \end{itemize}
 
 
+\end{frame}
 
+\begin{frame}{Example: The Krusell-Smith Model}{Household Problem}
+    The value function of an agent entering period w/ state $(e,k_-)$ is given by:
+
+    \begin{align*}
+        V_t(e, k_-)               & = \max_{c,\,k}  u(c) + \beta \sum_{e'} V_{t+1}(e', k) \, P(e,e') \\
+        \text{s.t.} \qquad  c + k & = (1 + r_t)k_- + w_t e n                                         \\
+        k                         & \geq 0
+    \end{align*}
+
+    \begin{itemize}
+        \item Denote by $c^*_t(e, k_-)$ and $k^*_t(e, k_-)$ the policy functions that solve the Bellman equation.
+        \item Also denote by $D_t(e, K_-)$ the measure of households in state $e$ that own capital in a set $K_-$ at the start of date $t$.
+    \end{itemize}
+\end{frame}
+
+
+\begin{frame}{Example: The Krusell-Smith Model}{Household Problem}
+    The distribution $D_t$ has law of motion
+    \[
+        D_{t+1}(e', K) = D_t(e, k^{*-1}_t(e, K)) P(e,e').
+    \]
+    where $k^{*-1}_t(e, K)$ denotes the inverse of $k^*_t(e, K)$.
+
+    \begin{itemize}
+        \item We assume that prior to $t = 0$, the economy is in a steady state.
+        \item We suppose that agents start in this stationary distribution at date $0$, so that $D_0 = D_{ss}$.
+    \end{itemize}
+
+\end{frame}
+
+
+\begin{frame}{Example: The Krusell-Smith Model}{Aggregate Capital}
+    \begin{itemize}
+        \item For any $t$, the policy $k^*_t(e, k_-)$ is a function of the future path
+              $\{r_s, w_s\}_{s=t}^{\infty}$.
+        \item \alert{Given $D_0 = D_{ss}$, the distribution $D_t(e, K)$ at any $t$ is a function of the entire path $\{r_s, w_s\}_{s=0}^{\infty}$.}
+        \item The aggregate household capital holdings are characterized by a capital function $\mathcal{K}_t(\{r_s, w_s\}_{s=0}^{\infty})$.
+
+              \[
+                  \mathcal{K}_t\left(\{r_s, w_s\}_{s=0}^{\infty}\right) =
+                  \sum_{e} \int_{k_-}
+                  k^*_t(e, k_-) D_t(e, dk_-)
+              \]
+    \end{itemize}
+
+    \begin{alertblock}{Key Insight}
+        The ability to reduce interactions between heterogeneous agents to functions such as $\mathcal{K}_t$,
+        which map aggregate sequences into aggregate sequences, is key to the sequence-space Jacobian method.
+    \end{alertblock}
+\end{frame}
+
+
+\begin{frame}{Example: The Krusell-Smith Model}{Production}
+    \begin{itemize}
+        \item Firm adopts a Cobb-Douglas production function: \[Y_t = Z_t K_t^{\alpha} N_t^{1-\alpha}\]
+        \item The firm’s first-order conditions:
+              \begin{align*}
+                  r_t & = \alpha Z_t K_{t-1}^{\alpha-1} N_t^{1-\alpha} -\delta \\
+                  w_t & = (1 - \alpha) Z_t K_{t-1}^{\alpha} N_t^{-\alpha}
+              \end{align*}
+
+    \end{itemize}
+\end{frame}
 \section{SSJ development}
 
 \begin{frame}{SSJ in Continuous Time}
