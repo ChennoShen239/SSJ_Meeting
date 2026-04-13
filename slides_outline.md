@@ -38,7 +38,7 @@ Authors: Chen Gao, Weigao Wang
 
 #### optimal policy
 
-
+#### macro labor
 
 
 ## Global Solution
