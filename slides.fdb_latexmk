@@ -1,14 +1,14 @@
 # Fdb version 4
-["bibtex slides"] 1776101179.09118 "slides.aux" "slides.bbl" "slides" 1776101184.28015 0
+["bibtex slides"] 1776101179.09118 "slides.aux" "slides.bbl" "slides" 1776101533.25026 0
   "./reference.bib" 1776078643.51826 5380 20635d0d8665412c12606004edc7b330 ""
   "/usr/local/texlive/2026basic/texmf-dist/bibtex/bst/base/apalike.bst" 1292289607 24635 604dafcc79f521a11ea73e506e1fbd98 ""
-  "slides.aux" 1776101184.15427 13372 06843ee2ee27e5d26cdde31e2953921a "pdflatex"
+  "slides.aux" 1776101533.12578 13372 06843ee2ee27e5d26cdde31e2953921a "pdflatex"
   (generated)
   "slides.bbl"
   "slides.blg"
   (rewritten before read)
-["pdflatex"] 1776101182.53393 "/Volumes/T9/SSJ_Meeting/slides.tex" "slides.pdf" "slides" 1776101184.28026 0
-  "/Volumes/T9/SSJ_Meeting/slides.tex" 1776101182.31535 20717 866d0749807a7e8b46dc5e3abffef863 ""
+["pdflatex"] 1776101531.49898 "/Volumes/T9/SSJ_Meeting/slides.tex" "slides.pdf" "slides" 1776101533.25038 0
+  "/Volumes/T9/SSJ_Meeting/slides.tex" 1776101531.27636 20713 ed8e2532110d242f0ca74350a97bf8f2 ""
   "/usr/local/texlive/2026basic/texmf-dist/fonts/enc/dvips/libertinus-type1/lbn1_hvvyjb.enc" 1727126258 3042 e745bbb5ec46764a4020493270d457fb ""
   "/usr/local/texlive/2026basic/texmf-dist/fonts/enc/dvips/libertinus-type1/lbn1_mfadfl.enc" 1727126258 3038 32cc1beec45883b81d6b846e3fff8fa4 ""
   "/usr/local/texlive/2026basic/texmf-dist/fonts/tfm/adobe/palatino/pplr8r.tfm" 1136768653 2796 d37c29814a6717720ee1a7c9a0b2c3b8 ""
@@ -321,12 +321,12 @@
   "/usr/local/texlive/2026basic/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1776089978 656710 0d950d8bcc5dd236f09b9298f53d7b87 ""
   "/usr/local/texlive/2026basic/texmf-var/web2c/pdftex/pdflatex.fmt" 1773939892 2966190 664b07accec2b1a9464487cdfc8d8d8a ""
   "/usr/local/texlive/2026basic/texmf.cnf" 1772405582 628 bbc09d6d38872d53c11bb48dc9b14e88 ""
-  "slides.aux" 1776101184.15427 13372 06843ee2ee27e5d26cdde31e2953921a "pdflatex"
+  "slides.aux" 1776101533.12578 13372 06843ee2ee27e5d26cdde31e2953921a "pdflatex"
   "slides.bbl" 1776101179.11128 4881 14787b3e4efcf1cdfeba7c78fb1d2c66 "bibtex slides"
-  "slides.nav" 1776101184.15657 5371 2fd69b5c9ef2dfe5c24118fb7e4e2a39 "pdflatex"
-  "slides.out" 1776101184.15636 1524 2935d2a898426fb1d9f4f05d3b9046c2 "pdflatex"
-  "slides.tex" 1776101182.31535 20717 866d0749807a7e8b46dc5e3abffef863 ""
-  "slides.toc" 1776101184.15661 623 0193b01ea5c98ef7de2c928b392cba77 "pdflatex"
+  "slides.nav" 1776101533.12811 5371 2fd69b5c9ef2dfe5c24118fb7e4e2a39 "pdflatex"
+  "slides.out" 1776101533.12784 1524 2935d2a898426fb1d9f4f05d3b9046c2 "pdflatex"
+  "slides.tex" 1776101531.27636 20713 ed8e2532110d242f0ca74350a97bf8f2 ""
+  "slides.toc" 1776101533.12815 623 0193b01ea5c98ef7de2c928b392cba77 "pdflatex"
   (generated)
   "slides.aux"
   "slides.log"

@@ -332,6 +332,7 @@
 \begin{frame}{Fake News Algorithm}{Three-Step Structure of the HA Model}
     \centering
     \begin{tikzpicture}[x=1.9cm,y=1cm,>=Latex,thick]
+        \path[use as bounding box] (-0.3,-3.9) rectangle (5.4,1.9);
 
         % ---------- colors ----------
         \definecolor{mygreen}{RGB}{0,110,20}
@@ -363,30 +364,30 @@
         % t=0
         \draw<4->[rounded corners=0.15cm, boxgray, line width=0.9pt]
         (0.5-\boxw/2,-\boxh/2) rectangle (0.5+\boxw/2,\boxh/2);
-        \node<2->[text=mygreen] at (0.5,0.42) {\Large $\mathbf{v}_0$};
-        \node<3->[text=axisgray] at (0.5,-0.42) {\Large $\mathbf{D}_0$};
-        \node<4->[text=mygray] at (0.5,-1.18) {\Large $Y_0$};
+        \node<2->[text=mygreen] at (0.5,0.42) { $\mathbf{v}_0$};
+        \node<3->[text=axisgray] at (0.5,-0.42) { $\mathbf{D}_0$};
+        \node<4->[text=mygray] at (0.5,-1.18) { $Y_0$};
 
         % t=1
         \draw<4->[rounded corners=0.15cm, boxgray, line width=0.9pt]
         (1.5-\boxw/2,-\boxh/2) rectangle (1.5+\boxw/2,\boxh/2);
-        \node<2->[text=mygreen] at (1.5,0.42) {\Large $\mathbf{v}_1$};
-        \node<3->[text=myorange] at (1.5,-0.42) {\Large $\mathbf{D}_1$};
-        \node<4->[text=mygray] at (1.5,-1.18) {\Large $Y_1$};
+        \node<2->[text=mygreen] at (1.5,0.42) { $\mathbf{v}_1$};
+        \node<3->[text=myorange] at (1.5,-0.42) { $\mathbf{D}_1$};
+        \node<4->[text=mygray] at (1.5,-1.18) { $Y_1$};
 
         % t=2
         \draw<4->[rounded corners=0.15cm, boxgray, line width=0.9pt]
         (2.5-\boxw/2,-\boxh/2) rectangle (2.5+\boxw/2,\boxh/2);
-        \node<2->[text=mygreen] at (2.5,0.42) {\Large $\mathbf{v}_2$};
-        \node<3->[text=myorange] at (2.5,-0.42) {\Large $\mathbf{D}_2$};
-        \node<4->[text=mygray] at (2.5,-1.18) {\Large $Y_2$};
+        \node<2->[text=mygreen] at (2.5,0.42) { $\mathbf{v}_2$};
+        \node<3->[text=myorange] at (2.5,-0.42) { $\mathbf{D}_2$};
+        \node<4->[text=mygray] at (2.5,-1.18) { $Y_2$};
 
         % t=T-1
         \draw<4->[rounded corners=0.15cm, boxgray, line width=0.9pt]
         (4.7-\boxw/2,-\boxh/2) rectangle (4.7+\boxw/2,\boxh/2);
-        \node<2->[text=mygreen] at (4.7,0.42) {\Large $\mathbf{v}_{T-1}$};
-        \node<3->[text=myorange] at (4.7,-0.42) {\Large $\mathbf{D}_{T-1}$};
-        \node<4->[text=mygray] at (4.7,-1.18) {\Large $Y_{T-1}$};
+        \node<2->[text=mygreen] at (4.7,0.42) { $\mathbf{v}_{T-1}$};
+        \node<3->[text=myorange] at (4.7,-0.42) { $\mathbf{D}_{T-1}$};
+        \node<4->[text=mygray] at (4.7,-1.18) { $Y_{T-1}$};
 
         % =========================================================
         % Step 1: backward
