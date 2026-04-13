@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.3.20)  13 APR 2026 22:30
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.3.20)  13 APR 2026 22:33
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1180,9 +1180,9 @@ LaTeX Font Info:    Font shape `T1/LibertinusSans-TLF/sb/n' will be
 
 ]
 LaTeX Font Info:    Font shape `T1/LibertinusSans-TLF/m/it' will be
-(Font)              scaled to size 10.95pt on input line 39.
+(Font)              scaled to size 10.95pt on input line 37.
 LaTeX Font Info:    Font shape `T1/LibertinusSans-TLF/sb/n' will be
-(Font)              scaled to size 10.0pt on input line 39.
+(Font)              scaled to size 10.0pt on input line 37.
  [4
 
 {/usr/local/texlive/2026basic/texmf-dist/fonts/enc/dvips/libertinus-type1/lbn1_hvvyjb.enc}] [5
@@ -1247,7 +1247,7 @@ LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
  ***********
 Package rerunfilecheck Info: File `slides.out' has not changed.
-(rerunfilecheck)             Checksum: 70391A73CDF5AB6BBA689FDC87D69B77;1591.
+(rerunfilecheck)             Checksum: C2F29D6277EE7DF3BB00B6D31AF70D27;1591.
  ) 
 Here is how much of TeX's memory you used:
  39250 strings out of 469006
@@ -1258,7 +1258,7 @@ Here is how much of TeX's memory you used:
  319 hyphenation exceptions out of 8191
  101i,16n,139p,579b,862s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/libertinus-type1/LibertinusSans-Italic.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/libertinus-type1/LibertinusSans-Regular.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on slides.pdf (27 pages, 263761 bytes).
+Output written on slides.pdf (27 pages, 263880 bytes).
 PDF statistics:
  305 PDF objects out of 1000 (max. 8388607)
  226 compressed objects within 3 object streams

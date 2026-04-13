@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1776090618.92807 "/Volumes/T9/SSJ_Meeting/slides.tex" "slides.pdf" "slides" 1776090620.32947 0
-  "/Volumes/T9/SSJ_Meeting/slides.tex" 1776090617.26833 4218 8e245ab6b6931fcce9668a32a71ff1da ""
+["pdflatex"] 1776090822.8967 "/Volumes/T9/SSJ_Meeting/slides.tex" "slides.pdf" "slides" 1776090824.14944 0
+  "/Volumes/T9/SSJ_Meeting/slides.tex" 1776090822.71965 4385 9ddfa8dcdd73b019fdc036f27adc1085 ""
   "/usr/local/texlive/2026basic/texmf-dist/fonts/enc/dvips/libertinus-type1/lbn1_hvvyjb.enc" 1727126258 3042 e745bbb5ec46764a4020493270d457fb ""
   "/usr/local/texlive/2026basic/texmf-dist/fonts/enc/dvips/libertinus-type1/lbn1_mfadfl.enc" 1727126258 3038 32cc1beec45883b81d6b846e3fff8fa4 ""
   "/usr/local/texlive/2026basic/texmf-dist/fonts/tfm/adobe/palatino/pplr8r.tfm" 1136768653 2796 d37c29814a6717720ee1a7c9a0b2c3b8 ""
@@ -286,11 +286,11 @@
   "/usr/local/texlive/2026basic/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1776089978 656710 0d950d8bcc5dd236f09b9298f53d7b87 ""
   "/usr/local/texlive/2026basic/texmf-var/web2c/pdftex/pdflatex.fmt" 1773939892 2966190 664b07accec2b1a9464487cdfc8d8d8a ""
   "/usr/local/texlive/2026basic/texmf.cnf" 1772405582 628 bbc09d6d38872d53c11bb48dc9b14e88 ""
-  "slides.aux" 1776090620.23542 8502 3b365fe19be36dac192a1e29d2b05772 "pdflatex"
-  "slides.nav" 1776090620.23785 4272 c861c14fc13d3c30a4a50f43e4a7f413 "pdflatex"
-  "slides.out" 1776090620.23739 1591 70391a73cdf5ab6bba689fdc87d69b77 "pdflatex"
-  "slides.tex" 1776090617.26833 4218 8e245ab6b6931fcce9668a32a71ff1da ""
-  "slides.toc" 1776090620.23794 599 8557613c10d994b2ecd792acf25416b2 "pdflatex"
+  "slides.aux" 1776090824.06633 8505 33181faa0e5b255f8532d3412dc978fd "pdflatex"
+  "slides.nav" 1776090824.06851 4274 308861de1a887d64750edaf0aa11f9b9 "pdflatex"
+  "slides.out" 1776090824.06818 1591 c2f29d6277ee7df3bb00b6d31af70d27 "pdflatex"
+  "slides.tex" 1776090822.71965 4385 9ddfa8dcdd73b019fdc036f27adc1085 ""
+  "slides.toc" 1776090824.06856 600 2a7cedaf7e5ef05858ee166a6656d8c1 "pdflatex"
   (generated)
   "slides.aux"
   "slides.log"

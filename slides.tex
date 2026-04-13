@@ -24,50 +24,42 @@
     \tableofcontents
 \end{frame}
 
-\section{Sequence Space v.s State Space}
+\section{Sequence Space vs.\ State Space}
 
-\begin{frame}{Sequence Space v.s State Space}{Motivation}
+\begin{frame}{Sequence Space vs.\ State Space}{Motivation}
 
-    In heterogeneous-agent models, the main difficulty is that \alert{the economy’s state includes the whole cross-sectional distribution}.
-
-
-    Sequence-space methods \emph{avoid} carrying this object around explicitly when studying \alert{local dynamics around the steady state}.
-
-
-
+    \begin{itemize}
+        \item In heterogeneous-agent (HA) models, the economy’s state is the \alert{entire cross-sectional distribution} — an infinite-dimensional object.
+        \item Sequence-space methods \emph{sidestep} this challenge: they characterize \alert{local dynamics around the steady state} without ever carrying the distribution as a state variable.
+        \item The key insight: aggregate equilibrium responses to shocks can be encoded in \alert{Jacobian matrices} of aggregate outcomes with respect to aggregate inputs.
+    \end{itemize}
 
 \end{frame}
 
 
-\begin{frame}{Sequence Space v.s State Space}{State Space}
+\begin{frame}{Sequence Space vs.\ State Space}{State Space}
 
     \begin{definition}
         A \alert{state-space representation} describes the economy recursively.
-        At date $t$, a state variable $x_t$ summarizes all payoff-relevant information from the past, and the model evolves according to
+        At date $t$, a state variable $x_t$ summarizes all payoff-relevant history, and the model evolves as
         \[
             x_{t+1}=f(x_t,\varepsilon_{t+1}),
             \qquad
             y_t=g(x_t).
         \]
-        The key idea is: \emph{once $x_t$ is known, the future no longer depends on the past separately.}
+        \emph{Given $x_t$, the future is independent of the past.}
     \end{definition}
 \end{frame}
 
-\begin{frame}{Sequence Space v.s State Space}{Sequence Space}
+\begin{frame}{Sequence Space vs.\ State Space}{Sequence Space}
 
     \begin{definition}
-        A \alert{sequence-space representation} treats equilibrium as a mapping between entire time paths of endogenous and exogenous variables. We solve for sequences
-        \(
-        \{X_t\}_{t=0}^{\infty}
-        \)
-        such that the equilibrium conditions hold at all dates:
+        A \alert{sequence-space representation} characterizes equilibrium as a mapping between entire time paths. We seek sequences $\{X_t\}_{t=0}^{\infty}$ such that equilibrium conditions hold at every date:
         \[
-            F\left(\{X_t\}_{t=0}^{\infty},\{Z_t\}_{t=0}^{\infty}\right)=\mathbf{0},
+            F\!\left(\{X_t\}_{t=0}^{\infty},\{Z_t\}_{t=0}^{\infty}\right)=\mathbf{0},
         \]
-        where $X$ is the sequence of endogenous variables and $Z$ is the sequence of shocks or policy paths.
+        where $\{X_t\}$ collects endogenous variables and $\{Z_t\}$ collects exogenous shocks or policy paths.
     \end{definition}
-
-
 
 \end{frame}
 
@@ -76,13 +68,13 @@
 
     \begin{block}{Intuition}
         \begin{itemize}
-            \item State space asks: \emph{what is the economy's current state, and how does it transition?}
-            \item Sequence space asks: \emph{given a path of shocks, what equilibrium path of outcomes clears the economy?}
+            \item State space asks: \emph{what is the current state, and how does it transition?}
+            \item Sequence space asks: \emph{given a shock path, what equilibrium outcome path clears all markets?}
         \end{itemize}
     \end{block}
 
     \begin{block}{Takeaway}
-        When the distribution is the hard state variable, sequence space often turns a “huge state” problem into a “structured Jacobian” problem.
+        When the distribution is the intractable state variable, sequence space reframes a ``huge state'' problem as a \alert{structured Jacobian} problem — amenable to fast, scalable computation.
     \end{block}
 \end{frame}
 
