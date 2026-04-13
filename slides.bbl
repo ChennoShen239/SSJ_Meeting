@@ -1,0 +1,110 @@
+\begin{thebibliography}{}
+
+\bibitem[Angeletos et~al., 2025]{angeletos2025rank}
+Angeletos, G.-M., Guerreiro, J., and Zhang, D.~R. (2025).
+\newblock From rank to hank, without fire.
+\newblock Technical report, National Bureau of Economic Research.
+
+\bibitem[Auclert et~al., 2021]{auclert2021using}
+Auclert, A., Bard{\'o}czy, B., Rognlie, M., and Straub, L. (2021).
+\newblock Using the sequence-space jacobian to solve and estimate heterogeneous-agent models.
+\newblock {\em Econometrica}, 89(5):2375--2408.
+
+\bibitem[Auclert et~al., 2024a]{auclert2024optimal}
+Auclert, A., Cai, M., Rognlie, M., and Straub, L. (2024a).
+\newblock Optimal long-run fiscal policy with heterogeneous agents.
+\newblock {\em Unpublished Manuscript, Harvard University}.
+
+\bibitem[Auclert et~al., 2025a]{auclert2025determinacy}
+Auclert, A., Majic, E., Rognlie, M., and Straub, L. (2025a).
+\newblock Determinacy and large-scale solutions in the sequence space.
+\newblock {\em Journal of Political Economy: Macroeconomics}.
+
+\bibitem[Auclert et~al., 2025b]{auclert2025beyond}
+Auclert, A., Rigato, R., Rognlie, M., and Straub, L. (2025b).
+\newblock Beyond certainty equivalence: Second-order dynamics in the sequence space.
+\newblock Presentation slides.
+
+\bibitem[Auclert et~al., 2020]{auclert2020micro}
+Auclert, A., Rognlie, M., and Straub, L. (2020).
+\newblock Micro jumps, macro humps: Monetary policy and business cycles in an estimated hank model.
+\newblock Technical report, National Bureau of Economic Research.
+
+\bibitem[Auclert et~al., 2024b]{auclert2024intertemporal}
+Auclert, A., Rognlie, M., and Straub, L. (2024b).
+\newblock The intertemporal keynesian cross.
+\newblock {\em Journal of Political Economy}, 132(12):4068--4121.
+
+\bibitem[Auclert et~al., 2025c]{auclert2025fiscal}
+Auclert, A., Rognlie, M., and Straub, L. (2025c).
+\newblock Fiscal and monetary policy with heterogeneous agents.
+\newblock {\em Annual Review of Economics}, 17.
+
+\bibitem[Azinovic-Yang and {\v{Z}}emli{\v{c}}ka, 2025]{azinovic2025deep}
+Azinovic-Yang, M. and {\v{Z}}emli{\v{c}}ka, J. (2025).
+\newblock Deep learning in the sequence space.
+\newblock {\em arXiv preprint arXiv:2509.13623}.
+
+\bibitem[Bard{\'o}czy and Vel{\'a}squez-Giraldo, 2024]{bardoczy2024hank}
+Bard{\'o}czy, B. and Vel{\'a}squez-Giraldo, M. (2024).
+\newblock Hank comes of age: Monetary policy with heterogeneous overlapping generations.
+
+\bibitem[Bardoczy and Velasquez~Giraldo, 2025]{bardoczy2025sequence}
+Bardoczy, B. and Velasquez~Giraldo, M. (2025).
+\newblock Sequence-space jacobians of life cycle models.
+\newblock {\em Sequence-Space Jacobians of Life Cycle Models (May 29, 2025)}.
+
+\bibitem[Bellifemine et~al., 2022]{bellifemine2022hbank}
+Bellifemine, M., Jamilov, R., and Monacelli, T. (2022).
+\newblock Hbank: Monetary policy with heterogeneous banks.
+
+\bibitem[Bilal and Goyal, 2025]{bilal2025some}
+Bilal, A. and Goyal, S. (2025).
+\newblock Some pleasant sequence-space arithmetic in continuous time.
+\newblock Technical report, National Bureau of Economic Research.
+
+\bibitem[Donald et~al., 2025]{donald2025optimal}
+Donald, E., Fukui, M., and Miyauchi, Y. (2025).
+\newblock Optimal dynamic spatial policy.
+\newblock Technical report, National Bureau of Economic Research.
+
+\bibitem[Fan et~al., 2023]{fan2023learning}
+Fan, J., Hong, S., and Parro, F. (2023).
+\newblock Learning and expectations in dynamic spatial economies.
+\newblock Technical report, National Bureau of Economic Research.
+
+\bibitem[Guerreiro et~al., 2024]{guerreiro2024workers}
+Guerreiro, J., Hazell, J., Lian, C., and Patterson, C. (2024).
+\newblock Why do workers dislike inflation?: Wage erosion and conflict costs.
+
+\bibitem[Kekre, 2023]{kekre2023unemployment}
+Kekre, R. (2023).
+\newblock Unemployment insurance in macroeconomic stabilization.
+\newblock {\em Review of Economic Studies}, 90(5):2439--2480.
+
+\bibitem[Lee, 2025]{lee2025global}
+Lee, H. (2025).
+\newblock Global nonlinear solutions in sequence space and the generalized transition function.
+\newblock Technical report, Working paper.
+
+\bibitem[McKay and Wolf, 2022]{mckay2022optimal}
+McKay, A. and Wolf, C. (2022).
+\newblock Optimal policy rules in hank.
+\newblock {\em Manuscript, January}, pages 121--144.
+
+\bibitem[Schaab and Tan, 2023]{schaab2023monetary}
+Schaab, A. and Tan, S.~Y. (2023).
+\newblock Monetary and fiscal policy according to hank-io.
+\newblock {\em Unpublished Manuscript}.
+
+\bibitem[Winberry et~al., 2025]{winberry2025new}
+Winberry, T., Auclert, A., Rognlie, M., and Straub, L. (2025).
+\newblock New keynesian economics with household and firm heterogeneity.
+\newblock Technical report, National Bureau of Economic Research.
+
+\bibitem[Yang et~al., 2025]{yang2025structural}
+Yang, Y., Wang, C., Schaab, A., and Moll, B. (2025).
+\newblock Structural reinforcement learning for heterogeneous agent macroeconomics.
+\newblock {\em arXiv preprint arXiv:2512.18892}.
+
+\end{thebibliography}

@@ -1,0 +1,50 @@
+This is BibTeX, Version 0.99e (TeX Live 2026)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: slides.aux
+The style file: apalike.bst
+Database file #1: reference.bib
+Warning--empty journal in bardoczy2024hank
+Warning--empty journal in bellifemine2022hbank
+Warning--empty journal in guerreiro2024workers
+You've used 22 entries,
+            1935 wiz_defined-function locations,
+            572 strings with 7052 characters,
+and the built_in function-call counts, 7770 in all, are:
+= -- 748
+> -- 379
+< -- 9
++ -- 131
+- -- 126
+* -- 632
+:= -- 1447
+add.period$ -- 63
+call.type$ -- 22
+change.case$ -- 180
+chr.to.int$ -- 19
+cite$ -- 25
+duplicate$ -- 282
+empty$ -- 473
+format.name$ -- 160
+if$ -- 1456
+int.to.chr$ -- 4
+int.to.str$ -- 0
+missing$ -- 14
+newline$ -- 110
+num.names$ -- 66
+pop$ -- 154
+preamble$ -- 1
+purify$ -- 173
+quote$ -- 0
+skip$ -- 224
+stack$ -- 0
+substring$ -- 391
+swap$ -- 20
+text.length$ -- 1
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 132
+warning$ -- 3
+while$ -- 53
+width$ -- 0
+write$ -- 272
+(There were 3 warnings)

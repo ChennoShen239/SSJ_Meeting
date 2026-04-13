@@ -1,5 +1,9 @@
 \documentclass[aspectratio=169]{beamer}
 
+\usepackage{amsmath, amssymb, bm}
+
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc,positioning}
 
 \usetheme[
   style=minimal,
@@ -56,7 +60,7 @@
     \begin{definition}
         A \alert{sequence-space representation} characterizes equilibrium as a mapping between entire time paths. We seek sequences $\{X_t\}_{t=0}^{\infty}$ such that equilibrium conditions hold at every date:
         \[
-            F\!\left(\{X_t\}_{t=0}^{\infty},\{Z_t\}_{t=0}^{\infty}\right)=\mathbf{0},
+            F\!\left(\{X_t\}_{t=0}^{\infty},\{Z_t\}_{t=0}^{\infty}\right)=\bm{0},
         \]
         where $\{X_t\}$ collects endogenous variables and $\{Z_t\}$ collects exogenous shocks or policy paths.
     \end{definition}
@@ -170,38 +174,38 @@
 
 \begin{frame}{Example: The Krusell-Smith Model}{Capital Market-Clearing Condition}
     Combining together, we can express the capital market-clearing condition at each point in time as a function $H_t$:
-    \[H_t(\mathbf{K},\mathbf{Z})\equiv\mathcal{K}_t\left(\left\{ \underbrace{\alpha Z_s\left(\frac{K_{s-1}}{\sum\pi(e)en}\right)^{\alpha-1}-\delta}_{r_s}, \underbrace{(1-\alpha)Z_s\left(\frac{K_{s-1}}{\sum\pi(e)en}\right)^\alpha}_{w_s} \right\}_{s=0}^{\infty}\right)-K_t=0\]
-    where $\mathbf{K}$ is the vector of capital holdings $\{K_t\}_{t=0}^{\infty}$ and $\mathbf{Z}$ is the vector of exogenous shocks $\{Z_t\}_{t=0}^{\infty}$.
+    \[H_t(\bm{K},\bm{Z})\equiv\mathcal{K}_t\left(\left\{ \underbrace{\alpha Z_s\left(\frac{K_{s-1}}{\sum\pi(e)en}\right)^{\alpha-1}-\delta}_{r_s}, \underbrace{(1-\alpha)Z_s\left(\frac{K_{s-1}}{\sum\pi(e)en}\right)^\alpha}_{w_s} \right\}_{s=0}^{\infty}\right)-K_t=0\]
+    where $\bm{K}$ is the vector of capital holdings $\{K_t\}_{t=0}^{\infty}$ and $\bm{Z}$ is the vector of exogenous shocks $\{Z_t\}_{t=0}^{\infty}$.
 
     \begin{block}{Equilibrium Capital Path}
-        Given initial capital $K_{-1}$ and the exogenous path for productivity $\mathbf{Z}$ , we have equilibrium path of capital $\{K_t\}_{t=0}^{\infty}$ by \alert{solving the nonlinear equation $H_t(\mathbf{K},\mathbf{Z})=0$}.
+        Given initial capital $K_{-1}$ and the exogenous path for productivity $\bm{Z}$ , we have equilibrium path of capital $\{K_t\}_{t=0}^{\infty}$ by \alert{solving the nonlinear equation $H_t(\bm{K},\bm{Z})=0$}.
     \end{block}
 
 \end{frame}
 
 
 \begin{frame}{Example: The Krusell-Smith Model}{IRF}
-    By  \emph{implicit function theorem}, given an exo. shock $\mathrm{d} \mathbf{Z}= (\mathrm{d} Z_0,\mathrm{d} Z_1...)'$ at $t=0$, the linear impulse response of capital to this shock is given by:
+    By  \emph{implicit function theorem}, given an exo. shock $\mathrm{d} \bm{Z}= (\mathrm{d} Z_0,\mathrm{d} Z_1...)'$ at $t=0$, the linear impulse response of capital to this shock is given by:
     \[
-        d\mathbf{K} = - H_K^{-1} H_Z \, d\mathbf{Z}
+        d\bm{K} = - H_K^{-1} H_Z \, d\bm{Z}
     \]
 
-    where $H_K$ and $H_Z$ denote the Jacobians of $H$ with respect to $\mathbf{K}$ and $\mathbf{Z}$, evaluated at the steady state.
+    where $H_K$ and $H_Z$ denote the Jacobians of $H$ with respect to $\bm{K}$ and $\bm{Z}$, evaluated at the steady state.
     \begin{itemize}
-        \item Given $\mathrm{d}\mathbf{K}$, the impulse responses of other variables—for example, $\{Y_t, r_t, w_t\}_{t=0}^{\infty}$—follow immediately.
+        \item Given $\mathrm{d}\bm{K}$, the impulse responses of other variables—for example, $\{Y_t, r_t, w_t\}_{t=0}^{\infty}$—follow immediately.
 
-        \item In practice, $H_t(\mathbf{K},\mathbf{Z})=0$ is solved up to a sufficiently large horizon $T$ such that $\mathbf{K}$ and $\mathbf{Z}$ have approximately returned to their steady states by time $T$.
+        \item In practice, $H_t(\bm{K},\bm{Z})=0$ is solved up to a sufficiently large horizon $T$ such that $\bm{K}$ and $\bm{Z}$ have approximately returned to their steady states by time $T$.
     \end{itemize}
 \end{frame}
 
 \begin{frame}{Example: The Krusell-Smith Model}{Constructing the Jacobian}
     \begin{itemize}
         \item  We use the \emph{chain rule} to relate the Jacobians $H_K$ and $H_Z$ to the derivatives of the $\mathcal{K}$.
-        \item For example, differentiating $H_t(\mathbf{K},\mathbf{Z})=0$ with respect to $K_s$
+        \item For example, differentiating $H_t(\bm{K},\bm{Z})=0$ with respect to $K_s$
         \item     The $(t, s)$ entry of $H_K$ is:
               \[
                   [H_K]_{t,s} = \frac{\partial \mathcal{K}_t}{\partial r_{s+1}} \frac{\partial r_{s+1}}{\partial K_s}
-                  + \frac{\partial \mathcal{K}_t}{\partial w_{s+1}} \frac{\partial w_{s+1}}{\partial K_s} - \mathbf{1}_{\{s = t\}}
+                  + \frac{\partial \mathcal{K}_t}{\partial w_{s+1}} \frac{\partial w_{s+1}}{\partial K_s} - \bm{1}_{\{s = t\}}
               \]
 
         \item A similar expression applies to $H_Z$.
@@ -219,7 +223,7 @@
 \begin{frame}{Example: The Krusell-Smith Model}{Constructing the Jacobian}
     Recall that:
     \[
-        d\mathbf{K} = - H_K^{-1} H_Z \, d\mathbf{Z},
+        d\bm{K} = - H_K^{-1} H_Z \, d\bm{Z},
     \]
     To get $H_K^{-1} H_Z $, the only thing left is to solve the Jacobians of the $\mathcal{K}$ function with
     respect to its two inputs $r$ and $w$.
@@ -227,19 +231,236 @@
 
     \[
         [H_K]_{t,s} =\alert{ \frac{\partial \mathcal{K}_t}{\partial r_{s+1}} }\frac{\partial r_{s+1}}{\partial K_s}
-        + \alert{ \frac{\partial \mathcal{K}_t}{\partial w_{s+1}} } \frac{\partial w_{s+1}}{\partial K_s} - \mathbf{1}_{\{s = t\}}
+        + \alert{ \frac{\partial \mathcal{K}_t}{\partial w_{s+1}} } \frac{\partial w_{s+1}}{\partial K_s} - \bm{1}_{\{s = t\}}
     \]
+
+    Let \[\mathcal{J}_{t,s}^{\mathcal{K},r}=\frac{\partial\mathcal{K}_t}{\partial r_s},\quad\mathcal{J}_{t,s}^{\mathcal{K},w}=\frac{\partial\mathcal{K}_t}{\partial w_s}\] be the Jacobians up to some truncation horizon $T$.
+
+
+
+\end{frame}
+
+
+\begin{frame}{Example: The Krusell-Smith Model}{Constructing the Jacobian}
+    \begin{alertblock}{Sufficient statistics}
+        The Jacobians $\mathcal{J}^{\mathcal{K},r}$ and $\mathcal{J}^{\mathcal{K},w}$ are sufficient statistics for the household in sequence space equilibrium:
+        \begin{itemize}
+            \item Shocks propagate through the dynamics of the household capital distribution, but\emph{ we do not need those details if we have the Jacobians.}
+            \item Column $s$ of $\mathcal{J}^{\mathcal{K},r}$ is \alert{the impulse response of capital to a news shock $dr_s$}; the Jacobian gives these for all $s=0,\ldots,T-1$.
+            \item These are rich objects, but \emph{there is a fast new algorithm to compute them.}
+        \end{itemize}
+    \end{alertblock}
 \end{frame}
 
 
 \begin{frame}{Fake News Algorithm}{General Model Representation}
 
-\end{frame}
-\section{SSJ development}
+    We represent a heterogeneous-agent problem as a mapping from a time path of
+    aggregate inputs $\{\bm{X}_t\}$ to a time path of aggregate outputs $\{\bm{Y}_t\}$.
 
-\begin{frame}{SSJ in Continuous Time}
-    \textit{To be developed}
+    \vspace{0.5em}
+
+    Assume:
+    \begin{itemize}
+        \item $\bm{X}_t \in \mathbb{R}^{n_x}$: aggregate inputs,
+        \item $\bm{Y}_t \in \mathbb{R}^{n_y}$: aggregate outputs,
+        \item the distribution is discretized on $n_g$ grid points,
+        \item $\bm{D}_t \in \mathbb{R}^{n_g}$: cross-sectional distribution of agents at time $t$.
+    \end{itemize}
+
+    \vspace{0.5em}
+
+    Aggregate outputs are averages of individual outcomes against the distribution:
+    \[
+        \bm{Y}_t = \bm{y}_t' \bm{D}_t,
+    \]
+    where $\bm{y}_t$ is an $n_g \times n_y$ matrix of individual outcomes
+    (for example, consumption, savings, labor supply, or other individual-level objects).
 \end{frame}
+
+
+\begin{frame}{Fake News Algorithm}{Three Core Equations}
+
+    We assume there exist three functions $v$, $\Lambda$, and $y$ such that,
+    for a given initial distribution $\bm{D}_0$, the aggregate sequence solves
+    \[
+        \bm{v}_t = v(\bm{v}_{t+1}, \bm{X}_t),
+    \]
+    \[
+        \bm{D}_{t+1} = \Lambda(\bm{v}_{t+1}, \bm{X}_t)\,\bm{D}_t,
+    \]
+    \[
+        \bm{Y}_t = y(\bm{v}_{t+1}, \bm{X}_t)' \bm{D}_t.
+    \]
+
+    \vspace{0.7em}
+
+    Interpretation:
+    \begin{itemize}
+        \item $\bm{v}_t$: backward-looking object, typically the value function;
+        \item $\Lambda(\bm{v}_{t+1}, \bm{X}_t)$: transition matrix governing the law of motion of the distribution;
+        \item $y(\bm{v}_{t+1}, \bm{X}_t)$: individual outcomes used to aggregate into $\bm{Y}_t$.
+    \end{itemize}
+\end{frame}
+
+% ------------------------------------------------
+\begin{frame}{Fake News Algorithm}{Economic Meaning of the System}
+    \small
+    \begin{block}{Step 1: Backward}
+        Given the future object $\bm{v}_{t+1}$ and current aggregates $\bm{X}_t$,
+        solve for the current object $\bm{v}_t$.
+    \end{block}
+
+    \begin{block}{Step 2: Forward}
+        Use $\Lambda(\bm{v}_{t+1}, \bm{X}_t)$ to update the cross-sectional distribution:
+        \[
+            \bm{D}_{t+1} = \Lambda(\bm{v}_{t+1}, \bm{X}_t)\bm{D}_t.
+        \]
+    \end{block}
+
+    \begin{block}{Step 3: Aggregate}
+        Aggregate individual outcomes across agents:
+        \[
+            \bm{Y}_t = y(\bm{v}_{t+1}, \bm{X}_t)' \bm{D}_t.
+        \]
+    \end{block}
+
+
+\end{frame}
+
+% ------------------------------------------------
+\begin{frame}{Fake News Algorithm}{Steady State and Transition Paths}
+    \small
+    For a constant aggregate input $\bm{X}_{ss}$, the steady state is a fixed point
+    \[
+        (\bm{Y}_{ss}, \bm{v}_{ss}, \bm{D}_{ss})
+    \]
+    of the system.
+
+    \vspace{0.5em}
+
+    For convenience, define
+    \[
+        \Lambda_{ss} \equiv \Lambda(\bm{v}_{ss}, \bm{X}_{ss}),
+        \qquad
+        y_{ss} \equiv y(\bm{v}_{ss}, \bm{X}_{ss}).
+    \]
+
+    \vspace{0.5em}
+
+    We consider transition paths of length $T$ that end at the steady state:
+    \[
+        \bm{X}_{T-1} = \bm{X}_{ss},
+        \qquad
+        \bm{v}_T = \bm{v}_{ss}.
+    \]
+
+    The initial distribution $\bm{D}_0$ is given and often set equal to $\bm{D}_{ss}$.
+    \vspace{0.5em}
+    Hence, this framework is designed to study \alert{transitory shocks around a steady state}.
+\end{frame}
+
+
+
+\begin{frame}{Fake News Algorithm}{Three-Step Structure of the HA Model}
+    \centering
+    \begin{tikzpicture}[x=2.25cm,y=1cm,>=Latex,thick]
+
+        % ---------------- Colors ----------------
+        \definecolor{mygreen}{RGB}{0,110,20}
+        \definecolor{myorange}{RGB}{240,120,0}
+        \definecolor{mygray}{RGB}{120,120,120}
+        \definecolor{boxgray}{RGB}{150,150,150}
+        \definecolor{axisgray}{RGB}{40,60,65}
+
+        % ---------------- Timeline ----------------
+        \draw[axisgray, line width=1.1pt, -{Latex[length=3mm]}] (-0.2,0) -- (5.15,0);
+
+        \foreach \x/\lab in {0/0,1/1,2/2,4/{T-1},5/T}{
+                \draw[axisgray, line width=0.9pt] (\x,0.12) -- (\x,-0.12);
+                \node[below=6pt, text=axisgray] at (\x,0) {\Large $\lab$};
+            }
+
+        \node[text=axisgray] at (3,0) {\Large $\cdots$};
+
+        % ---------------- Helper: box size ----------------
+        \def\boxw{0.48}
+        \def\boxh{1.70}
+        \def\splity{0.85}
+
+        % ---------------- State boxes ----------------
+        % t=0
+        \draw[rounded corners=0.14cm, boxgray, line width=0.9pt]
+        (0.5-\boxw/2,-\boxh/2) rectangle (0.5+\boxw/2,\boxh/2);
+        \draw[boxgray, line width=0.8pt]
+        (0.5-\boxw/2,0) -- (0.5+\boxw/2,0);
+        \node[text=mygreen] at (0.5,0.43) {\Large $\mathbf{v}_0$};
+        \node[text=axisgray] at (0.5,-0.43) {\Large $\mathbf{D}_0$};
+        \node[text=mygray] at (0.5,-1.18) {\Large $Y_0$};
+
+        % t=1
+        \draw[rounded corners=0.14cm, boxgray, line width=0.9pt]
+        (1.5-\boxw/2,-\boxh/2) rectangle (1.5+\boxw/2,\boxh/2);
+        \draw[boxgray, line width=0.8pt]
+        (1.5-\boxw/2,0) -- (1.5+\boxw/2,0);
+        \node[text=mygreen] at (1.5,0.43) {\Large $\mathbf{v}_1$};
+        \node[text=myorange] at (1.5,-0.43) {\Large $\mathbf{D}_1$};
+        \node[text=mygray] at (1.5,-1.18) {\Large $Y_1$};
+
+        % t=2
+        \draw[rounded corners=0.14cm, boxgray, line width=0.9pt]
+        (2.5-\boxw/2,-\boxh/2) rectangle (2.5+\boxw/2,\boxh/2);
+        \draw[boxgray, line width=0.8pt]
+        (2.5-\boxw/2,0) -- (2.5+\boxw/2,0);
+        \node[text=mygreen] at (2.5,0.43) {\Large $\mathbf{v}_2$};
+        \node[text=myorange] at (2.5,-0.43) {\Large $\mathbf{D}_2$};
+        \node[text=mygray] at (2.5,-1.18) {\Large $Y_2$};
+
+        % t=T-1
+        \draw[rounded corners=0.14cm, boxgray, line width=0.9pt]
+        (4.5-\boxw/2,-\boxh/2) rectangle (4.5+\boxw/2,\boxh/2);
+        \draw[boxgray, line width=0.8pt]
+        (4.5-\boxw/2,0) -- (4.5+\boxw/2,0);
+        \node[text=mygreen] at (4.5,0.43) {\Large $\mathbf{v}_{T-1}$};
+        \node[text=myorange] at (4.5,-0.43) {\Large $\mathbf{D}_{T-1}$};
+        \node[text=mygray] at (4.5,-1.18) {\Large $Y_{T-1}$};
+
+        % ---------------- Step 1: backward arrows for v ----------------
+        \draw[mygreen, line width=1pt, ->]
+        (1,0.18) to[out=110,in=70] (0,0.18);
+        \draw[mygreen, line width=1pt, ->]
+        (2,0.18) to[out=110,in=70] (1,0.18);
+        \draw[mygreen, line width=1pt, ->]
+        (4,0.18) to[out=110,in=70] (2.95,0.18);
+        \draw[mygreen, line width=1pt, ->]
+        (5,0.18) to[out=110,in=70] (4,0.18);
+
+        \node[mygreen, font=\small\bfseries, align=center] at (2.5,1.18)
+        {Step 1: Backward solve\\[1mm] $\bm{v}_t = v(\bm{v}_{t+1},\bm{X}_t)$};
+
+        % ---------------- Step 2: forward arrows for D ----------------
+        \draw[myorange, line width=1pt, ->]
+        (1,-0.18) to[out=-70,in=-110] (2,-0.18);
+        \draw[myorange, line width=1pt, ->]
+        (2,-0.18) to[out=-70,in=-110] (3,-0.18);
+        \draw[myorange, line width=1pt, ->]
+        (3,-0.18) to[out=-70,in=-110] (4,-0.18);
+        \draw[myorange, line width=1pt, ->]
+        (4,-0.18) to[out=-70,in=-110] (5,-0.18);
+
+        \node[myorange, font=\small\bfseries, align=center] at (2.55,-1.95)
+        {Step 2: Forward update\\[1mm] $\bm{D}_{t+1}=\Lambda(\bm{v}_{t+1},\bm{X}_t)\bm{D}_t$};
+
+        % ---------------- Step 3: aggregate labels ----------------
+        \node[text=mygray, font=\small\bfseries, align=center] at (2.55,-2.75)
+        {Step 3: Aggregate outcomes\\[1mm] $\bm{Y}_t = y(\bm{v}_{t+1},\bm{X}_t)^\prime \bm{D}_t$};
+
+    \end{tikzpicture}
+\end{frame}
+
+
+
+\subsection{Theoretical progress after SSJ}
 
 \begin{frame}{Determinacy and Large-Scale Solutions in the Sequence Space}
     \textit{To be developed}
@@ -249,49 +470,33 @@
     \textit{To be developed}
 \end{frame}
 
+\begin{frame}{SSJ in Continuous Time}
+    \textit{To be developed}
+\end{frame}
+
+
 \subsection{Application}
 
-\begin{frame}{fiscal and monetary policy}
-    \textit{To be developed}
+\begin{frame}{Applications of the extended version of SSJ}
+    \begin{itemize}
+        \item Fiscal and monetary policy \cite{auclert2025fiscal,auclert2024intertemporal}
+        \item Het households + het firms \cite{winberry2025new}
+        \item Behavioural macro \cite{auclert2020micro,angeletos2025rank}
+        \item Life-cycle model \cite{bardoczy2024hank,bardoczy2025sequence}
+        \item Dynamic spatial model \cite{donald2025optimal,fan2023learning}
+        \item Production network \cite{schaab2023monetary}
+        \item Het banks \cite{bellifemine2022hbank}
+        \item Optimal policy \cite{auclert2024optimal,mckay2022optimal}
+        \item Macro labor \cite{guerreiro2024workers,kekre2023unemployment}
+    \end{itemize}
 \end{frame}
 
-\begin{frame}{behavioural macro}
-    \textit{To be developed}
-\end{frame}
-
-\begin{frame}{life-cycle model}
-    \textit{To be developed}
-\end{frame}
-
-\begin{frame}{dynamic spatial model}
-    \textit{To be developed}
-\end{frame}
-
-\begin{frame}{production network}
-    \textit{To be developed}
-\end{frame}
-
-\begin{frame}{het households + het firms}
-    \textit{To be developed}
-\end{frame}
-
-\begin{frame}{het banks}
-    \textit{To be developed}
-\end{frame}
-
-\begin{frame}{optimal policy}
-    \textit{To be developed}
-\end{frame}
-
-\begin{frame}{macro labor}
-    \textit{To be developed}
-\end{frame}
 
 \section{Global Solution}
 
-\subsection{Global Nonlinear Solutions in Sequence Space and the Generalized Transition Function}
+\subsection{Repeated transition method}
 
-\begin{frame}{Global Nonlinear Solutions in Sequence Space and the Generalized Transition Function}
+\begin{frame}{Repeated transition method}
     \textit{To be developed}
 \end{frame}
 
@@ -309,8 +514,16 @@
 
 \section{Reference}
 
-\begin{frame}{Reference}
-    \textit{To be developed}
+\begin{frame}[allowframebreaks]{Reference}
+    \nocite{*}
+    \scriptsize
+    \setbeamertemplate{bibliography entry title}{\space}
+    \setbeamertemplate{bibliography entry location}{\space}
+    \setbeamertemplate{bibliography entry note}{\space}
+    \bibliographystyle{apalike}
+
+    \bibliography{reference}
 \end{frame}
+
 
 \end{document}
