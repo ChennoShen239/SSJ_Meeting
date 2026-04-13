@@ -10,8 +10,9 @@
 
 \title{Macroeconomics in the Sequence Space}
 \author{Chen Gao \and Weigao Wang}
+\institute{School of Economics, Peking University}
 \date{\today}
-\subject{}
+
 
 \begin{document}
 
@@ -23,9 +24,94 @@
 
 \section{Sequence Space v.s State Space}
 
-\begin{frame}{Sequence Space v.s State Space}
-    \textit{To be developed}
+\begin{frame}{Sequence Space v.s State Space}{Motivation}
+
+    In heterogeneous-agent models, the main difficulty is that \textbf{the economy’s state includes the whole cross-sectional distribution}.
+
+
+    Sequence-space methods \emph{avoid} carrying this object around explicitly when studying \textbf{local dynamics around the steady state}.
+
+
+
+
 \end{frame}
+
+
+\begin{frame}{Sequence Space v.s State Space}{State Space}
+
+    \begin{definition}
+        A \alert{state-space representation} describes the economy recursively.
+        At date $t$, a state variable $x_t$ summarizes all payoff-relevant information from the past, and the model evolves according to
+        \[
+            x_{t+1}=f(x_t,\varepsilon_{t+1}),
+            \qquad
+            y_t=g(x_t).
+        \]
+        The key idea is: \emph{once $x_t$ is known, the future no longer depends on the past separately.}
+    \end{definition}
+\end{frame}
+
+\begin{frame}{Sequence Space v.s State Space}{Sequence Space}
+
+    \begin{definition}
+        A \alert{sequence-space representation} treats equilibrium as a mapping between entire time paths of endogenous and exogenous variables. We solve for sequences
+        \(
+        \{X_t\}_{t=0}^{\infty}
+        \)
+        such that the equilibrium conditions hold at all dates:
+        \[
+            F\left(\{X_t\}_{t=0}^{\infty},\{Z_t\}_{t=0}^{\infty}\right)=0,
+        \]
+        where $X$ is the sequence of endogenous variables and $Z$ is the sequence of shocks or policy paths.
+    \end{definition}
+
+
+    \textbf{Intuition:}
+    \begin{itemize}
+        \item State space asks: \emph{what is the economy's current state, and how does it transition?}
+        \item Sequence space asks: \emph{given a path of shocks, what equilibrium path of outcomes clears the economy?}
+    \end{itemize}
+\end{frame}
+
+
+\begin{frame}{Sequence Space vs.\ State Space}{Comparison}
+
+    \renewcommand{\arraystretch}{1.4}
+    \begin{tabular}{p{0.20\textwidth} p{0.36\textwidth} p{0.36\textwidth}}
+        \hline
+         & \textbf{State space}                                            & \textbf{Sequence space} \\
+        \hline
+        \textbf{Unknowns}
+         & current state $x_t$
+         & entire paths $\{X_t\}_{t=0}^{\infty}$                                                     \\
+
+        \textbf{Core object}
+         & $x_{t+1}=f(x_t,\varepsilon_{t+1})$
+         & $F\left(\{X_t\}_{t=0}^{\infty},\{Z_t\}_{t=0}^{\infty}\right)=0$                           \\
+
+        \textbf{Linearization}
+         & around current state / transition law
+         & around steady-state perfect-foresight paths                                               \\
+
+        \textbf{Main bottleneck}
+         & high-dimensional state, esp.\ the distribution
+         & large Jacobians, but easy composition/inversion                                           \\
+        \hline
+    \end{tabular}
+
+\end{frame}
+
+
+
+\begin{frame}{Sequence Space v.s State Space}{Takeaways}
+
+    When the distribution is the hard state variable, sequence space often turns a “huge state” problem into a “structured Jacobian” problem.
+
+
+\end{frame}
+
+
+
 
 \section{SSJ Methods}
 

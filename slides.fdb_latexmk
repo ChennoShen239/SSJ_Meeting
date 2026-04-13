@@ -1,11 +1,11 @@
 # Fdb version 4
-["xdvipdfmx"] 1776081125.62986 "slides.xdv" "slides.pdf" "slides" 1776081125.70736 0
-  "slides.xdv" 1776081125.57018 112588 695c7d91dc5e3fa8e4eee47d31122c3f "xelatex"
+["xdvipdfmx"] 1776082820.44798 "slides.xdv" "slides.pdf" "slides" 1776082820.52222 0
+  "slides.xdv" 1776082820.38975 151232 00944d6c1f386ec14633a2c621d2fd94 "xelatex"
   (generated)
   "slides.pdf"
   (rewritten before read)
-["xelatex"] 1776081123.99997 "/Volumes/T9/SSJ_Meeting/slides.tex" "slides.xdv" "slides" 1776081125.70515 0
-  "/Volumes/T9/SSJ_Meeting/slides.tex" 1776081123.77686 2106 cc46e092a53530cccdcfa1e1e867652b ""
+["xelatex"] 1776082818.94533 "/Volumes/T9/SSJ_Meeting/slides.tex" "slides.xdv" "slides" 1776082820.52054 0
+  "/Volumes/T9/SSJ_Meeting/slides.tex" 1776082818.78262 5178 181dbefa0beb1c5cc36b6021158792c8 ""
   "/usr/local/texlive/2026basic/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136768653 1528 f853c4d1b4e0550255e02831fdc8496f ""
   "/usr/local/texlive/2026basic/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2026basic/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -257,11 +257,11 @@
   "/usr/local/texlive/2026basic/texmf-dist/web2c/texmf.cnf" 1770478701 43630 e9fa012910491fe5ae08a72c3c2997a7 ""
   "/usr/local/texlive/2026basic/texmf-var/web2c/xetex/xelatex.fmt" 1773939913 5411349 735606d6a262277ee4b5edcf9f98d808 ""
   "/usr/local/texlive/2026basic/texmf.cnf" 1772405582 628 bbc09d6d38872d53c11bb48dc9b14e88 ""
-  "slides.aux" 1776081125.56765 8583 4fea15ff7c05c3d9061b15992edeaaac "xelatex"
-  "slides.nav" 1776081125.57007 3995 8862d4afa3a030d6cd10b7099fb12032 "xelatex"
-  "slides.out" 1776081125.56958 1591 73dc83fddfedd765d439894aea84d807 "xelatex"
-  "slides.tex" 1776081123.77686 2106 cc46e092a53530cccdcfa1e1e867652b ""
-  "slides.toc" 1776081125.57011 599 a33aa175fe27bc67183592f87952304e "xelatex"
+  "slides.aux" 1776082820.38759 9565 a88d25997d943847ec177cd39992d0c8 "xelatex"
+  "slides.nav" 1776082820.38965 4367 f605128889c7b6cb67edfa6af7adf406 "xelatex"
+  "slides.out" 1776082820.38927 1591 f4ea65b2c0dd5868732815723a1545e3 "xelatex"
+  "slides.tex" 1776082818.78262 5178 181dbefa0beb1c5cc36b6021158792c8 ""
+  "slides.toc" 1776082820.38969 600 de8169431ab6dc414f7d301f71d2abac "xelatex"
   (generated)
   "slides.aux"
   "slides.log"
