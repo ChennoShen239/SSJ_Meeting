@@ -1,8 +1,9 @@
 \babel@toc {english}{}\relax 
-\beamer@sectionintoc {1}{Sequence Space vs.\ State Space}{3}{0}{1}
-\beamer@sectionintoc {2}{SSJ in Krusell-Smith Model}{8}{0}{2}
-\beamer@subsectionintoc {2}{1}{Theoretical progress after SSJ}{24}{0}{2}
-\beamer@subsectionintoc {2}{2}{Application}{27}{0}{2}
+\beamer@sectionintoc {1}{Why Sequence Space?}{3}{0}{1}
+\beamer@sectionintoc {2}{Local Solution}{8}{0}{2}
+\beamer@subsectionintoc {2}{1}{SSJ in Krusell-Smith Model}{9}{0}{2}
+\beamer@subsectionintoc {2}{2}{Theoretical progress after SSJ}{24}{0}{2}
+\beamer@subsectionintoc {2}{3}{Application}{27}{0}{2}
 \beamer@sectionintoc {3}{Global Solution}{28}{0}{3}
 \beamer@subsectionintoc {3}{1}{Repeated transition method}{29}{0}{3}
 \beamer@subsectionintoc {3}{2}{DL in sequence space}{30}{0}{3}

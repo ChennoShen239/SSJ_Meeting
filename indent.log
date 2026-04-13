@@ -1,6 +1,6 @@
 INFO:  latexindent.pl version 4.0, 2026-03-15, a script to indent .tex files
        latexindent.pl lives here: /opt/homebrew/Cellar/latexindent/4.0/libexec/bin/
-       Tue Apr 14 01:11:37 2026
+       Tue Apr 14 01:13:24 2026
        Filename: /Users/chengao/Library/Containers/com.tencent.xinWeChat/Data/Documents/xwechat_files/wxid_q1bai3098ju022_2632/msg/file/2026-04/__latexindent_temp_slides.tex
 INFO:  Processing switches:
        -y|--yaml: YAML settings specified via command line
