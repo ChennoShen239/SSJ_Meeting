@@ -48,52 +48,52 @@
 \headcommand {\beamer@framepages {20}{20}}
 \headcommand {\slideentry {2}{1}{13}{21/21}{SSJ in Krusell-Smith Model}{0}}
 \headcommand {\beamer@framepages {21}{21}}
-\headcommand {\slideentry {2}{1}{14}{22/22}{SSJ in Krusell-Smith Model}{0}}
-\headcommand {\beamer@framepages {22}{22}}
-\headcommand {\slideentry {2}{1}{15}{23/23}{SSJ in Krusell-Smith Model}{0}}
-\headcommand {\beamer@framepages {23}{23}}
-\headcommand {\beamer@subsectionpages {9}{23}}
-\headcommand {\beamer@subsectionentry {0}{2}{2}{24}{Theoretical progress after SSJ}}
-\headcommand {\slideentry {2}{2}{1}{24/24}{Theoretical progress after SSJ}{0}}
-\headcommand {\beamer@framepages {24}{24}}
-\headcommand {\slideentry {2}{2}{2}{25/25}{Theoretical progress after SSJ}{0}}
-\headcommand {\beamer@framepages {25}{25}}
-\headcommand {\slideentry {2}{2}{3}{26/26}{Theoretical progress after SSJ}{0}}
+\headcommand {\slideentry {2}{1}{14}{22/25}{SSJ in Krusell-Smith Model}{0}}
+\headcommand {\beamer@framepages {22}{25}}
+\headcommand {\slideentry {2}{1}{15}{26/26}{SSJ in Krusell-Smith Model}{0}}
 \headcommand {\beamer@framepages {26}{26}}
-\headcommand {\beamer@subsectionpages {24}{26}}
-\headcommand {\beamer@subsectionentry {0}{2}{3}{27}{Application}}
-\headcommand {\slideentry {2}{3}{1}{27/27}{Application}{0}}
+\headcommand {\beamer@subsectionpages {9}{26}}
+\headcommand {\beamer@subsectionentry {0}{2}{2}{27}{Theoretical progress after SSJ}}
+\headcommand {\slideentry {2}{2}{1}{27/27}{Theoretical progress after SSJ}{0}}
 \headcommand {\beamer@framepages {27}{27}}
-\headcommand {\beamer@sectionpages {8}{27}}
-\headcommand {\beamer@subsectionpages {27}{27}}
-\headcommand {\sectionentry {3}{Global Solution}{28}{Global Solution}{0}}
-\headcommand {\slideentry {3}{0}{1}{28/28}{}{0}}
+\headcommand {\slideentry {2}{2}{2}{28/28}{Theoretical progress after SSJ}{0}}
 \headcommand {\beamer@framepages {28}{28}}
-\headcommand {\beamer@subsectionpages {28}{28}}
-\headcommand {\beamer@subsectionentry {0}{3}{1}{29}{Repeated transition method}}
-\headcommand {\slideentry {3}{1}{1}{29/29}{Repeated transition method}{0}}
+\headcommand {\slideentry {2}{2}{3}{29/29}{Theoretical progress after SSJ}{0}}
 \headcommand {\beamer@framepages {29}{29}}
-\headcommand {\beamer@subsectionpages {29}{29}}
-\headcommand {\beamer@subsectionentry {0}{3}{2}{30}{DL in sequence space}}
-\headcommand {\slideentry {3}{2}{1}{30/30}{DL in sequence space}{0}}
+\headcommand {\beamer@subsectionpages {27}{29}}
+\headcommand {\beamer@subsectionentry {0}{2}{3}{30}{Application}}
+\headcommand {\slideentry {2}{3}{1}{30/30}{Application}{0}}
 \headcommand {\beamer@framepages {30}{30}}
+\headcommand {\beamer@sectionpages {8}{30}}
 \headcommand {\beamer@subsectionpages {30}{30}}
-\headcommand {\beamer@subsectionentry {0}{3}{3}{31}{RL in sequence space}}
-\headcommand {\slideentry {3}{3}{1}{31/31}{RL in sequence space}{0}}
+\headcommand {\sectionentry {3}{Global Solution}{31}{Global Solution}{0}}
+\headcommand {\slideentry {3}{0}{1}{31/31}{}{0}}
 \headcommand {\beamer@framepages {31}{31}}
-\headcommand {\beamer@sectionpages {28}{31}}
 \headcommand {\beamer@subsectionpages {31}{31}}
-\headcommand {\sectionentry {4}{Reference}{32}{Reference}{0}}
-\headcommand {\slideentry {4}{0}{1}{32/32}{}{0}}
+\headcommand {\beamer@subsectionentry {0}{3}{1}{32}{Repeated transition method}}
+\headcommand {\slideentry {3}{1}{1}{32/32}{Repeated transition method}{0}}
 \headcommand {\beamer@framepages {32}{32}}
-\headcommand {\slideentry {4}{0}{2}{33/33}{}{0}}
+\headcommand {\beamer@subsectionpages {32}{32}}
+\headcommand {\beamer@subsectionentry {0}{3}{2}{33}{DL in sequence space}}
+\headcommand {\slideentry {3}{2}{1}{33/33}{DL in sequence space}{0}}
 \headcommand {\beamer@framepages {33}{33}}
-\headcommand {\slideentry {4}{0}{2}{33/34}{}{0}}
-\headcommand {\beamer@framepages {33}{34}}
-\headcommand {\slideentry {4}{0}{2}{33/35}{}{0}}
-\headcommand {\beamer@framepages {33}{35}}
-\headcommand {\beamer@partpages {1}{35}}
-\headcommand {\beamer@subsectionpages {32}{35}}
-\headcommand {\beamer@sectionpages {32}{35}}
-\headcommand {\beamer@documentpages {35}}
+\headcommand {\beamer@subsectionpages {33}{33}}
+\headcommand {\beamer@subsectionentry {0}{3}{3}{34}{RL in sequence space}}
+\headcommand {\slideentry {3}{3}{1}{34/34}{RL in sequence space}{0}}
+\headcommand {\beamer@framepages {34}{34}}
+\headcommand {\beamer@sectionpages {31}{34}}
+\headcommand {\beamer@subsectionpages {34}{34}}
+\headcommand {\sectionentry {4}{Reference}{35}{Reference}{0}}
+\headcommand {\slideentry {4}{0}{1}{35/35}{}{0}}
+\headcommand {\beamer@framepages {35}{35}}
+\headcommand {\slideentry {4}{0}{2}{36/36}{}{0}}
+\headcommand {\beamer@framepages {36}{36}}
+\headcommand {\slideentry {4}{0}{2}{36/37}{}{0}}
+\headcommand {\beamer@framepages {36}{37}}
+\headcommand {\slideentry {4}{0}{2}{36/38}{}{0}}
+\headcommand {\beamer@framepages {36}{38}}
+\headcommand {\beamer@partpages {1}{38}}
+\headcommand {\beamer@subsectionpages {35}{38}}
+\headcommand {\beamer@sectionpages {35}{38}}
+\headcommand {\beamer@documentpages {38}}
 \headcommand {\gdef \inserttotalframenumber {31}}

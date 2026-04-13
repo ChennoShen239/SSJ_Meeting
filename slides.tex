@@ -328,7 +328,112 @@
 
 \end{frame}
 
-% ------------------------------------------------
+
+\begin{frame}{Fake News Algorithm}{Three-Step Structure of the HA Model}
+    \centering
+    \begin{tikzpicture}[x=1.9cm,y=1cm,>=Latex,thick]
+
+        % ---------- colors ----------
+        \definecolor{mygreen}{RGB}{0,110,20}
+        \definecolor{myorange}{RGB}{240,120,0}
+        \definecolor{mygray}{RGB}{120,120,120}
+        \definecolor{boxgray}{RGB}{150,150,150}
+        \definecolor{axisgray}{RGB}{40,60,65}
+
+        % ---------- timeline ----------
+        \draw[axisgray, line width=1.1pt, -{Latex[length=3mm]}] (-0.15,0) -- (5.30,0);
+
+        % ticks
+        \foreach \x in {0,1,2,4.2,5.2}{
+                \draw[axisgray, line width=0.9pt] (\x,0.11) -- (\x,-0.11);
+            }
+
+        % labels
+        \node[below=6pt, text=axisgray] at (0,0) {\Large $0$};
+        \node[below=6pt, text=axisgray] at (1,0) {\Large $1$};
+        \node[below=6pt, text=axisgray] at (2,0) {\Large $2$};
+        \node[below=6pt, text=axisgray] at (4.2,0) {\Large $T-1$};
+        \node[below=6pt, text=axisgray] at (5.2,0) {\Large $T$};
+        \node[text=axisgray] at (3.1,-0.52) {\Large $\cdots$};
+
+        % ---------- boxes ----------
+        \def\boxw{0.52}
+        \def\boxh{1.72}
+
+        % t=0
+        \draw<4->[rounded corners=0.15cm, boxgray, line width=0.9pt]
+        (0.5-\boxw/2,-\boxh/2) rectangle (0.5+\boxw/2,\boxh/2);
+        \node<2->[text=mygreen] at (0.5,0.42) {\Large $\mathbf{v}_0$};
+        \node<3->[text=axisgray] at (0.5,-0.42) {\Large $\mathbf{D}_0$};
+        \node<4->[text=mygray] at (0.5,-1.18) {\Large $Y_0$};
+
+        % t=1
+        \draw<4->[rounded corners=0.15cm, boxgray, line width=0.9pt]
+        (1.5-\boxw/2,-\boxh/2) rectangle (1.5+\boxw/2,\boxh/2);
+        \node<2->[text=mygreen] at (1.5,0.42) {\Large $\mathbf{v}_1$};
+        \node<3->[text=myorange] at (1.5,-0.42) {\Large $\mathbf{D}_1$};
+        \node<4->[text=mygray] at (1.5,-1.18) {\Large $Y_1$};
+
+        % t=2
+        \draw<4->[rounded corners=0.15cm, boxgray, line width=0.9pt]
+        (2.5-\boxw/2,-\boxh/2) rectangle (2.5+\boxw/2,\boxh/2);
+        \node<2->[text=mygreen] at (2.5,0.42) {\Large $\mathbf{v}_2$};
+        \node<3->[text=myorange] at (2.5,-0.42) {\Large $\mathbf{D}_2$};
+        \node<4->[text=mygray] at (2.5,-1.18) {\Large $Y_2$};
+
+        % t=T-1
+        \draw<4->[rounded corners=0.15cm, boxgray, line width=0.9pt]
+        (4.7-\boxw/2,-\boxh/2) rectangle (4.7+\boxw/2,\boxh/2);
+        \node<2->[text=mygreen] at (4.7,0.42) {\Large $\mathbf{v}_{T-1}$};
+        \node<3->[text=myorange] at (4.7,-0.42) {\Large $\mathbf{D}_{T-1}$};
+        \node<4->[text=mygray] at (4.7,-1.18) {\Large $Y_{T-1}$};
+
+        % =========================================================
+        % Step 1: backward
+        % =========================================================
+        \draw<2->[mygreen, line width=1pt, ->]
+            (1,0.18) to[out=110,in=70] (0,0.18);
+        \draw<2->[mygreen, line width=1pt, ->]
+            (2,0.18) to[out=110,in=70] (1,0.18);
+
+        % the missing arrow from ... to 2
+        \draw<2->[mygreen, line width=1pt, ->]
+            (3.2,0.18) to[out=110,in=70] (2,0.18);
+
+        \draw<2->[mygreen, line width=1pt, ->]
+            (4.2,0.18) to[out=110,in=70] (3.2,0.18);
+        \draw<2->[mygreen, line width=1pt, ->]
+            (5.2,0.18) to[out=110,in=70] (4.2,0.18);
+
+        \node<2->[mygreen, align=center] at (2.55,1.5)
+            {Step 1: Backward\\[1mm] $\bm{v}_t = v(\bm{v}_{t+1},\bm{X}_t)$};
+
+        % =========================================================
+        % Step 2: forward
+        % =========================================================
+        \draw<3->[myorange, line width=1pt, ->]
+            (1,-0.18) to[out=-70,in=-110] (2,-0.18);
+        \draw<3->[myorange, line width=1pt, ->]
+            (2,-0.18) to[out=-70,in=-110] (3.2,-0.18);
+        \draw<3->[myorange, line width=1pt, ->]
+            (3.2,-0.18) to[out=-70,in=-110] (4.2,-0.18);
+        \draw<3->[myorange, line width=1pt, ->]
+            (4.2,-0.18) to[out=-70,in=-110] (5.2,-0.18);
+
+        \node<3->[myorange, align=center] at (2.60,-2)
+            {Step 2: Forward\\[1mm] $\bm{D}_{t+1}=\Lambda(\bm{v}_{t+1},\bm{X}_t)\bm{D}_t$};
+
+        % =========================================================
+        % Step 3: aggregate
+        % =========================================================
+        \node<4->[text=mygray, align=center] at (2.60,-3.5)
+            {Step 3: Aggregate\\[1mm] $\bm{Y}_t = y(\bm{v}_{t+1},\bm{X}_t)^\prime \bm{D}_t$};
+
+    \end{tikzpicture}
+\end{frame}
+
+
+
 \begin{frame}{Fake News Algorithm}{Steady State and Transition Paths}
     \small
     For a constant aggregate input $\bm{X}_{ss}$, the steady state is a fixed point
@@ -357,106 +462,12 @@
 
     The initial distribution $\bm{D}_0$ is given and often set equal to $\bm{D}_{ss}$.
     \vspace{0.5em}
+
     Hence, this framework is designed to study \alert{transitory shocks around a steady state}.
 \end{frame}
 
 
 
-\begin{frame}{Fake News Algorithm}{Three-Step Structure of the HA Model}
-    \centering
-    \begin{tikzpicture}[x=2.25cm,y=1cm,>=Latex,thick]
-
-        % ---------------- Colors ----------------
-        \definecolor{mygreen}{RGB}{0,110,20}
-        \definecolor{myorange}{RGB}{240,120,0}
-        \definecolor{mygray}{RGB}{120,120,120}
-        \definecolor{boxgray}{RGB}{150,150,150}
-        \definecolor{axisgray}{RGB}{40,60,65}
-
-        % ---------------- Timeline ----------------
-        \draw[axisgray, line width=1.1pt, -{Latex[length=3mm]}] (-0.2,0) -- (5.15,0);
-
-        \foreach \x/\lab in {0/0,1/1,2/2,4/{T-1},5/T}{
-                \draw[axisgray, line width=0.9pt] (\x,0.12) -- (\x,-0.12);
-                \node[below=6pt, text=axisgray] at (\x,0) {\Large $\lab$};
-            }
-
-        \node[text=axisgray] at (3,0) {\Large $\cdots$};
-
-        % ---------------- Helper: box size ----------------
-        \def\boxw{0.48}
-        \def\boxh{1.70}
-        \def\splity{0.85}
-
-        % ---------------- State boxes ----------------
-        % t=0
-        \draw[rounded corners=0.14cm, boxgray, line width=0.9pt]
-        (0.5-\boxw/2,-\boxh/2) rectangle (0.5+\boxw/2,\boxh/2);
-        \draw[boxgray, line width=0.8pt]
-        (0.5-\boxw/2,0) -- (0.5+\boxw/2,0);
-        \node[text=mygreen] at (0.5,0.43) {\Large $\mathbf{v}_0$};
-        \node[text=axisgray] at (0.5,-0.43) {\Large $\mathbf{D}_0$};
-        \node[text=mygray] at (0.5,-1.18) {\Large $Y_0$};
-
-        % t=1
-        \draw[rounded corners=0.14cm, boxgray, line width=0.9pt]
-        (1.5-\boxw/2,-\boxh/2) rectangle (1.5+\boxw/2,\boxh/2);
-        \draw[boxgray, line width=0.8pt]
-        (1.5-\boxw/2,0) -- (1.5+\boxw/2,0);
-        \node[text=mygreen] at (1.5,0.43) {\Large $\mathbf{v}_1$};
-        \node[text=myorange] at (1.5,-0.43) {\Large $\mathbf{D}_1$};
-        \node[text=mygray] at (1.5,-1.18) {\Large $Y_1$};
-
-        % t=2
-        \draw[rounded corners=0.14cm, boxgray, line width=0.9pt]
-        (2.5-\boxw/2,-\boxh/2) rectangle (2.5+\boxw/2,\boxh/2);
-        \draw[boxgray, line width=0.8pt]
-        (2.5-\boxw/2,0) -- (2.5+\boxw/2,0);
-        \node[text=mygreen] at (2.5,0.43) {\Large $\mathbf{v}_2$};
-        \node[text=myorange] at (2.5,-0.43) {\Large $\mathbf{D}_2$};
-        \node[text=mygray] at (2.5,-1.18) {\Large $Y_2$};
-
-        % t=T-1
-        \draw[rounded corners=0.14cm, boxgray, line width=0.9pt]
-        (4.5-\boxw/2,-\boxh/2) rectangle (4.5+\boxw/2,\boxh/2);
-        \draw[boxgray, line width=0.8pt]
-        (4.5-\boxw/2,0) -- (4.5+\boxw/2,0);
-        \node[text=mygreen] at (4.5,0.43) {\Large $\mathbf{v}_{T-1}$};
-        \node[text=myorange] at (4.5,-0.43) {\Large $\mathbf{D}_{T-1}$};
-        \node[text=mygray] at (4.5,-1.18) {\Large $Y_{T-1}$};
-
-        % ---------------- Step 1: backward arrows for v ----------------
-        \draw[mygreen, line width=1pt, ->]
-        (1,0.18) to[out=110,in=70] (0,0.18);
-        \draw[mygreen, line width=1pt, ->]
-        (2,0.18) to[out=110,in=70] (1,0.18);
-        \draw[mygreen, line width=1pt, ->]
-        (4,0.18) to[out=110,in=70] (2.95,0.18);
-        \draw[mygreen, line width=1pt, ->]
-        (5,0.18) to[out=110,in=70] (4,0.18);
-
-        \node[mygreen, font=\small\bfseries, align=center] at (2.5,1.18)
-        {Step 1: Backward solve\\[1mm] $\bm{v}_t = v(\bm{v}_{t+1},\bm{X}_t)$};
-
-        % ---------------- Step 2: forward arrows for D ----------------
-        \draw[myorange, line width=1pt, ->]
-        (1,-0.18) to[out=-70,in=-110] (2,-0.18);
-        \draw[myorange, line width=1pt, ->]
-        (2,-0.18) to[out=-70,in=-110] (3,-0.18);
-        \draw[myorange, line width=1pt, ->]
-        (3,-0.18) to[out=-70,in=-110] (4,-0.18);
-        \draw[myorange, line width=1pt, ->]
-        (4,-0.18) to[out=-70,in=-110] (5,-0.18);
-
-        \node[myorange, font=\small\bfseries, align=center] at (2.55,-1.95)
-        {Step 2: Forward update\\[1mm] $\bm{D}_{t+1}=\Lambda(\bm{v}_{t+1},\bm{X}_t)\bm{D}_t$};
-
-        % ---------------- Step 3: aggregate labels ----------------
-        \node[text=mygray, font=\small\bfseries, align=center] at (2.55,-2.75)
-        {Step 3: Aggregate outcomes\\[1mm] $\bm{Y}_t = y(\bm{v}_{t+1},\bm{X}_t)^\prime \bm{D}_t$};
-
-    \end{tikzpicture}
-\end{frame}
 
 
 

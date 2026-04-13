@@ -2,10 +2,10 @@
 \beamer@sectionintoc {1}{Why Sequence Space?}{3}{0}{1}
 \beamer@sectionintoc {2}{Local Solution}{8}{0}{2}
 \beamer@subsectionintoc {2}{1}{SSJ in Krusell-Smith Model}{9}{0}{2}
-\beamer@subsectionintoc {2}{2}{Theoretical progress after SSJ}{24}{0}{2}
-\beamer@subsectionintoc {2}{3}{Application}{27}{0}{2}
-\beamer@sectionintoc {3}{Global Solution}{28}{0}{3}
-\beamer@subsectionintoc {3}{1}{Repeated transition method}{29}{0}{3}
-\beamer@subsectionintoc {3}{2}{DL in sequence space}{30}{0}{3}
-\beamer@subsectionintoc {3}{3}{RL in sequence space}{31}{0}{3}
-\beamer@sectionintoc {4}{Reference}{32}{0}{4}
+\beamer@subsectionintoc {2}{2}{Theoretical progress after SSJ}{27}{0}{2}
+\beamer@subsectionintoc {2}{3}{Application}{30}{0}{2}
+\beamer@sectionintoc {3}{Global Solution}{31}{0}{3}
+\beamer@subsectionintoc {3}{1}{Repeated transition method}{32}{0}{3}
+\beamer@subsectionintoc {3}{2}{DL in sequence space}{33}{0}{3}
+\beamer@subsectionintoc {3}{3}{RL in sequence space}{34}{0}{3}
+\beamer@sectionintoc {4}{Reference}{35}{0}{4}
