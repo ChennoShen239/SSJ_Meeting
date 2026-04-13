@@ -160,6 +160,80 @@
               \end{align*}
 
     \end{itemize}
+
+    \begin{alertblock}{Key Insight}
+        The paths of prices $\{r_t, w_t\}_{t=0}^{\infty}$  are now functions of the exogenous paths $\{Z_t,N_t\}_{t=0}^{\infty}$ and the endogenous path $\{K_t\}_{t=0}^{\infty}$.
+    \end{alertblock}
+\end{frame}
+
+
+
+\begin{frame}{Example: The Krusell-Smith Model}{Capital Market-Clearing Condition}
+    Combining together, we can express the capital market-clearing condition at each point in time as a function $H_t$:
+    \[H_t(\mathbf{K},\mathbf{Z})\equiv\mathcal{K}_t\left(\left\{ \underbrace{\alpha Z_s\left(\frac{K_{s-1}}{\sum\pi(e)en}\right)^{\alpha-1}-\delta}_{r_s}, \underbrace{(1-\alpha)Z_s\left(\frac{K_{s-1}}{\sum\pi(e)en}\right)^\alpha}_{w_s} \right\}_{s=0}^{\infty}\right)-K_t=0\]
+    where $\mathbf{K}$ is the vector of capital holdings $\{K_t\}_{t=0}^{\infty}$ and $\mathbf{Z}$ is the vector of exogenous shocks $\{Z_t\}_{t=0}^{\infty}$.
+
+    \begin{block}{Equilibrium Capital Path}
+        Given initial capital $K_{-1}$ and the exogenous path for productivity $\mathbf{Z}$ , we have equilibrium path of capital $\{K_t\}_{t=0}^{\infty}$ by \alert{solving the nonlinear equation $H_t(\mathbf{K},\mathbf{Z})=0$}.
+    \end{block}
+
+\end{frame}
+
+
+\begin{frame}{Example: The Krusell-Smith Model}{IRF}
+    By  \emph{implicit function theorem}, given an exo. shock $\mathrm{d} \mathbf{Z}= (\mathrm{d} Z_0,\mathrm{d} Z_1...)'$ at $t=0$, the linear impulse response of capital to this shock is given by:
+    \[
+        d\mathbf{K} = - H_K^{-1} H_Z \, d\mathbf{Z}
+    \]
+
+    where $H_K$ and $H_Z$ denote the Jacobians of $H$ with respect to $\mathbf{K}$ and $\mathbf{Z}$, evaluated at the steady state.
+    \begin{itemize}
+        \item Given $\mathrm{d}\mathbf{K}$, the impulse responses of other variables—for example, $\{Y_t, r_t, w_t\}_{t=0}^{\infty}$—follow immediately.
+
+        \item In practice, $H_t(\mathbf{K},\mathbf{Z})=0$ is solved up to a sufficiently large horizon $T$ such that $\mathbf{K}$ and $\mathbf{Z}$ have approximately returned to their steady states by time $T$.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Example: The Krusell-Smith Model}{Constructing the Jacobian}
+    \begin{itemize}
+        \item  We use the \emph{chain rule} to relate the Jacobians $H_K$ and $H_Z$ to the derivatives of the $\mathcal{K}$.
+        \item For example, differentiating $H_t(\mathbf{K},\mathbf{Z})=0$ with respect to $K_s$
+        \item     The $(t, s)$ entry of $H_K$ is:
+              \[
+                  [H_K]_{t,s} = \frac{\partial \mathcal{K}_t}{\partial r_{s+1}} \frac{\partial r_{s+1}}{\partial K_s}
+                  + \frac{\partial \mathcal{K}_t}{\partial w_{s+1}} \frac{\partial w_{s+1}}{\partial K_s} - \mathbf{1}_{\{s = t\}}
+              \]
+
+        \item A similar expression applies to $H_Z$.
+        \item In addition, the derivatives such as $\frac{\partial r_{s+1}}{\partial K_s}$ at $(K^{ss}, Z^{ss})$ can all be computed analytically.
+        \item For example:
+              \[
+                  \frac{\partial r_{s+1}}{\partial K_s} = \alpha(\alpha - 1) Z^{ss} (K^{ss})^{\alpha-2} (N^{ss})^{1-\alpha}
+              \]
+
+    \end{itemize}
+\end{frame}
+
+
+
+\begin{frame}{Example: The Krusell-Smith Model}{Constructing the Jacobian}
+    Recall that:
+    \[
+        d\mathbf{K} = - H_K^{-1} H_Z \, d\mathbf{Z},
+    \]
+    To get $H_K^{-1} H_Z $, the only thing left is to solve the Jacobians of the $\mathcal{K}$ function with
+    respect to its two inputs $r$ and $w$.
+
+
+    \[
+        [H_K]_{t,s} =\alert{ \frac{\partial \mathcal{K}_t}{\partial r_{s+1}} }\frac{\partial r_{s+1}}{\partial K_s}
+        + \alert{ \frac{\partial \mathcal{K}_t}{\partial w_{s+1}} } \frac{\partial w_{s+1}}{\partial K_s} - \mathbf{1}_{\{s = t\}}
+    \]
+\end{frame}
+
+
+\begin{frame}{Fake News Algorithm}{General Model Representation}
+
 \end{frame}
 \section{SSJ development}
 

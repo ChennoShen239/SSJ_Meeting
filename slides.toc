@@ -1,10 +1,10 @@
 \babel@toc {english}{}\relax 
 \beamer@sectionintoc {1}{Sequence Space vs.\ State Space}{3}{0}{1}
 \beamer@sectionintoc {2}{SSJ in Krusell-Smith Model}{8}{0}{2}
-\beamer@sectionintoc {3}{SSJ development}{14}{0}{3}
-\beamer@subsectionintoc {3}{1}{Application}{18}{0}{3}
-\beamer@sectionintoc {4}{Global Solution}{27}{0}{4}
-\beamer@subsectionintoc {4}{1}{Global Nonlinear Solutions in Sequence Space and the Generalized Transition Function}{28}{0}{4}
-\beamer@subsectionintoc {4}{2}{DL in sequence space}{29}{0}{4}
-\beamer@subsectionintoc {4}{3}{RL in sequence space}{30}{0}{4}
-\beamer@sectionintoc {5}{Reference}{31}{0}{5}
+\beamer@sectionintoc {3}{SSJ development}{19}{0}{3}
+\beamer@subsectionintoc {3}{1}{Application}{23}{0}{3}
+\beamer@sectionintoc {4}{Global Solution}{32}{0}{4}
+\beamer@subsectionintoc {4}{1}{Global Nonlinear Solutions in Sequence Space and the Generalized Transition Function}{33}{0}{4}
+\beamer@subsectionintoc {4}{2}{DL in sequence space}{34}{0}{4}
+\beamer@subsectionintoc {4}{3}{RL in sequence space}{35}{0}{4}
+\beamer@sectionintoc {5}{Reference}{36}{0}{5}

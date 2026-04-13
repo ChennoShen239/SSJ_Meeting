@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.3.20)  13 APR 2026 23:20
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.3.20)  14 APR 2026 00:43
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1211,7 +1211,16 @@ Overfull \vbox (5.0967pt too high) detected at line 150
 
 ] [13
 
-] [14
+]
+Overfull \hbox (2.18083pt too wide) detected at line 180
+\OML/cmm/m/it/10.95 H[]\OT1/zplm/m/n/10.95 (\OT1/iwona/m/n/10.95 K, Z\OT1/zplm/m/n/10.95 ) \OMS/cmsy/m/n/10.95 ^^Q K[] [] ^^@ \OML/cmm/m/it/10.95 K[] \OT1/zplm/m/n/10.95 = \OT1/iwona/m/n/10.95 0
+ []
+
+
+Overfull \vbox (7.49854pt too high) detected at line 180
+ []
+
+[14
 
 ] [15
 
@@ -1249,6 +1258,16 @@ Overfull \vbox (5.0967pt too high) detected at line 150
 
 ] [32
 
+] [33
+
+] [34
+
+] [35
+
+] [36
+
+] [37
+
 ]
 \tf@nav=\write6
 \openout6 = `slides.nav'.
@@ -1265,21 +1284,21 @@ LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
  ***********
 Package rerunfilecheck Info: File `slides.out' has not changed.
-(rerunfilecheck)             Checksum: 99B3E8E36C5D80E4C709AE85ECC09373;1672.
+(rerunfilecheck)             Checksum: 783638C54AB94A05CADBB51CE8246D2D;1672.
  ) 
 Here is how much of TeX's memory you used:
- 39332 strings out of 469006
- 847350 string characters out of 5454813
- 1291109 words of memory out of 5000000
- 67218 multiletter control sequences out of 15000+600000
- 683373 words of font info for 87 fonts, out of 8000000 for 9000
+ 39397 strings out of 469006
+ 848479 string characters out of 5454813
+ 1292107 words of memory out of 5000000
+ 67270 multiletter control sequences out of 15000+600000
+ 684589 words of font info for 90 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
  101i,16n,139p,579b,862s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/libertinus-type1/LibertinusSans-Italic.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/libertinus-type1/LibertinusSans-Regular.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/mathpazo/fplmbb.pfb>
-Output written on slides.pdf (32 pages, 300815 bytes).
+</usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/libertinus-type1/LibertinusSans-Italic.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/libertinus-type1/LibertinusSans-Regular.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/mathpazo/fplmbb.pfb>
+Output written on slides.pdf (37 pages, 332422 bytes).
 PDF statistics:
- 349 PDF objects out of 1000 (max. 8388607)
- 259 compressed objects within 3 object streams
- 74 named destinations out of 1000 (max. 500000)
+ 388 PDF objects out of 1000 (max. 8388607)
+ 289 compressed objects within 3 object streams
+ 84 named destinations out of 1000 (max. 500000)
  265 words of extra memory for PDF output out of 10000 (max. 10000000)
 
