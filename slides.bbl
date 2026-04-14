@@ -7,7 +7,8 @@ Angeletos, G.-M., Guerreiro, J., and Zhang, D.~R. (2025).
 
 \bibitem[Auclert et~al., 2021]{auclert2021using}
 Auclert, A., Bard{\'o}czy, B., Rognlie, M., and Straub, L. (2021).
-\newblock Using the sequence-space jacobian to solve and estimate heterogeneous-agent models.
+\newblock Using the sequence-space jacobian to solve and estimate
+  heterogeneous-agent models.
 \newblock {\em Econometrica}, 89(5):2375--2408.
 
 \bibitem[Auclert et~al., 2024a]{auclert2024optimal}
@@ -22,12 +23,14 @@ Auclert, A., Majic, E., Rognlie, M., and Straub, L. (2025a).
 
 \bibitem[Auclert et~al., 2025b]{auclert2025beyond}
 Auclert, A., Rigato, R., Rognlie, M., and Straub, L. (2025b).
-\newblock Beyond certainty equivalence: Second-order dynamics in the sequence space.
+\newblock Beyond certainty equivalence: Second-order dynamics in the sequence
+  space.
 \newblock Presentation slides.
 
 \bibitem[Auclert et~al., 2020]{auclert2020micro}
 Auclert, A., Rognlie, M., and Straub, L. (2020).
-\newblock Micro jumps, macro humps: Monetary policy and business cycles in an estimated hank model.
+\newblock Micro jumps, macro humps: Monetary policy and business cycles in an
+  estimated hank model.
 \newblock Technical report, National Bureau of Economic Research.
 
 \bibitem[Auclert et~al., 2024b]{auclert2024intertemporal}
@@ -47,7 +50,8 @@ Azinovic-Yang, M. and {\v{Z}}emli{\v{c}}ka, J. (2025).
 
 \bibitem[Bard{\'o}czy and Vel{\'a}squez-Giraldo, 2024]{bardoczy2024hank}
 Bard{\'o}czy, B. and Vel{\'a}squez-Giraldo, M. (2024).
-\newblock Hank comes of age: Monetary policy with heterogeneous overlapping generations.
+\newblock Hank comes of age: Monetary policy with heterogeneous overlapping
+  generations.
 
 \bibitem[Bardoczy and Velasquez~Giraldo, 2025]{bardoczy2025sequence}
 Bardoczy, B. and Velasquez~Giraldo, M. (2025).
@@ -84,7 +88,8 @@ Kekre, R. (2023).
 
 \bibitem[Lee, 2025]{lee2025global}
 Lee, H. (2025).
-\newblock Global nonlinear solutions in sequence space and the generalized transition function.
+\newblock Global nonlinear solutions in sequence space and the generalized
+  transition function.
 \newblock Technical report, Working paper.
 
 \bibitem[McKay and Wolf, 2022]{mckay2022optimal}
@@ -104,7 +109,8 @@ Winberry, T., Auclert, A., Rognlie, M., and Straub, L. (2025).
 
 \bibitem[Yang et~al., 2025]{yang2025structural}
 Yang, Y., Wang, C., Schaab, A., and Moll, B. (2025).
-\newblock Structural reinforcement learning for heterogeneous agent macroeconomics.
+\newblock Structural reinforcement learning for heterogeneous agent
+  macroeconomics.
 \newblock {\em arXiv preprint arXiv:2512.18892}.
 
 \end{thebibliography}

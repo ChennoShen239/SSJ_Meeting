@@ -10,6 +10,12 @@
 \definecolor{mygray}{RGB}{120,120,120}
 \definecolor{boxgray}{RGB}{150,150,150}
 \definecolor{axisgray}{RGB}{40,60,65}
+\definecolor{citegray}{RGB}{165,165,165}
+
+\makeatletter
+\renewcommand{\@cite}[2]{{\color{citegray}\footnotesize(#1\if@tempswa, #2\fi)}}
+\makeatother
+
 
 \usetheme[
   style=minimal,
@@ -19,6 +25,8 @@
   sansface={libertinus},
 %   mathfont={libertinus},
 ]{Celestia}
+
+\AtBeginDocument{\hypersetup{colorlinks=true,allcolors=citegray,citecolor=citegray}}
 
 \title{Macroeconomics in the Sequence Space}
 \author{Chen Gao \and Weigao Wang}
@@ -733,16 +741,253 @@
 
 
 
-\begin{frame}{Determinacy and Large-Scale Solutions in the Sequence Space}
-    \textit{To be developed}
+\begin{frame}{Determinacy and Large-Scale Solutions in the Sequence Space}{From truncated Jacobians to quasi-Toeplitz operators}
+\small
+\begin{block}{Main result}
+For stationary models, sequence-space Jacobians admit the decomposition
+\[
+J = T(j) + E,
+\qquad
+j(z)=\sum_{k=-\infty}^{\infty} j_k z^k,
+\]
+where $T(j)$ is Toeplitz and $E$ is a compact correction.
+\end{block}
+
+\begin{itemize}
+    \item Far from date $0$, the Jacobian is approximately translation invariant:
+    \[
+    J_{t,s}\approx j_{t-s}.
+    \]
+    \item $E$ captures \alert{missing anticipation}: shocks near $t=0$ are not fully anticipated in the past.
+    \item This applies to stationary heterogeneous-agent blocks \& stable linear expectational systems.
+\end{itemize}
+
 \end{frame}
 
-\begin{frame}{2nd SSJ}
-    \textit{To be developed}
+\begin{frame}{Determinacy and Large-Scale Solutions in the Sequence Space}{Determinacy in sequence space}
+\small
+To solve equilibrium, we need
+\[
+Jx = y.
+\]
+
+For block quasi-Toeplitz $J$, define the matrix-valued symbol $j(z)$ and study $\det j(z)$ on the unit circle.
+
+\begin{block}{Winding-number test}
+\[
+\mathrm{wind}(\det j)
+=
+\mathrm{nonex}(J)-\mathrm{indet}(J).
+\]
+Generically:
+\[
+\begin{cases}
+\mathrm{wind}(\det j)=0 &\Rightarrow \text{unique solution},\\
+\mathrm{wind}(\det j)<0 &\Rightarrow \text{indeterminacy},\\
+\mathrm{wind}(\det j)>0 &\Rightarrow \text{nonexistence}.
+\end{cases}
+\]
+\end{block}
+
+\begin{itemize}
+    \item Extends Onatski's Toeplitz test to the \alert{quasi-Toeplitz} case.
+    \item Equivalent to Blanchard--Kahn in standard linear systems,
+    but works \alert{in sequence space}.
+\end{itemize}
 \end{frame}
 
-\begin{frame}{SSJ in Continuous Time}
-    \textit{To be developed}
+\begin{frame}{Determinacy and Large-Scale Solutions in the Sequence Space}{Large-scale solution}
+\small
+The idea is to exploit the Toeplitz core instead of directly inverting a huge truncated matrix.
+
+\begin{block}{Preconditioned iterative solution}
+Use an approximate inverse
+\[
+P \approx T(j^{-1})+\widetilde E
+\]
+as a preconditioner, and solve the truncated system iteratively (e.g. GMRES).
+\end{block}
+
+\begin{itemize}
+    \item Toeplitz part is cheap to apply/store:
+    \[
+    T_T(j)x \quad \text{via FFT in } O(T\log T).
+    \]
+    \item Compact correction is compressed in low rank:
+    \[
+    J_{T,T}\approx T_T(j)+U_{T,r}V_{T,r}' ,\qquad r\ll T.
+    \]
+    \item This reduces truncation error and avoids direct $nT\times nT$ inversion.
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Determinacy and Large-Scale Solutions in the Sequence Space}{Takeaway \cite{auclert2025determinacy}}
+\small
+\begin{alertblock}{What this adds to SSJ}
+The paper extends SSJ in two directions:
+\begin{itemize}
+    \item \alert{theory}: existence / uniqueness / determinacy;
+    \item \alert{computation}: very large sequence-space systems can be solved quickly.
+\end{itemize}
+\end{alertblock}
+\end{frame}
+
+\begin{frame}{2nd SSJ}{From certainty equivalence to certainty correspondence}
+\footnotesize
+
+\begin{block}{Known result}
+At first order, which is the usual certainty equivalence
+\[
+\text{perfect-foresight sequence space}
+\Longleftrightarrow
+\text{linear stochastic MA}(\infty),
+\]
+\end{block}
+
+Compare:
+
+\[
+X_t\!\left(\{\sigma Z_s\}_{s\ge0},D_{ss}\right)
+\qquad\text{and}\qquad
+\widetilde X_t=\mathcal X_t(\sigma,\epsilon_t,\epsilon_{t-1},\ldots;\{Z_s\}).
+\]
+
+\begin{alertblock}{Certainty correspondence}
+The paper's claim is that, at \alert{second order},
+\[
+\text{2nd-order perfect-foresight responses}
+\Longleftrightarrow
+\text{coefficients of a quadratic MA}(\infty)\text{ for }\widetilde X_t.
+\]
+So SSJ is still enough beyond certainty equivalence.
+\end{alertblock}
+
+\end{frame}
+
+\begin{frame}{2nd SSJ}{What corresponds to what?}
+\footnotesize
+
+Expand the stochastic solution in $\sigma$:
+\[
+\widetilde X_t
+=
+X
++\sum_{j\ge0} x_j \epsilon_{t-j}
++\frac12\!\left[
+\mathcal X_{\sigma\sigma}(0)\sigma^2
++
+\sum_{j,k\ge0}\mathcal X_{\epsilon_{-j}\epsilon_{-k}}(0)\,
+\epsilon_{t-j}\epsilon_{t-k}
+\right]
++O(\sigma^3).
+\]
+
+By symmetry in $\sigma$,
+\[
+\mathcal X_{\sigma\epsilon_{-j}}(0)=0.
+\]
+
+\begin{block}{Interpretation}
+\begin{itemize}
+    \item $\{x_j\}$ are the familiar \alert{1st-order perfect-foresight IRFs}.
+    \item The quadratic coefficients
+    \[
+    \mathcal X_{\epsilon_{-j}\epsilon_{-k}}(0)
+    \]
+    are identified by \alert{2nd-order perfect-foresight responses}.
+\end{itemize}
+\end{block}
+
+This is the paper's second-order analogue of the usual SSJ logic.
+
+\end{frame}
+
+\begin{frame}{2nd SSJ}{3. Why does this matter?}
+\footnotesize
+
+Rewrite the quadratic MA as
+\[
+\widetilde X_t \simeq
+X
++\sum_{j\ge0} x_j \epsilon_{t-j}
++\frac12 \mathcal X_{\sigma\sigma}(0)\sigma^2
++\frac12\sum_{j\ge0}\mathcal X_{\epsilon_{-j}\epsilon_{-j}}(0)\epsilon_{t-j}^2
++\sum_{j<k}\mathcal X_{\epsilon_{-j}\epsilon_{-k}}(0)\epsilon_{t-j}\epsilon_{t-k}.
+\]
+
+\begin{itemize}
+    \item Constant term:
+    \alert{Anticipated risk}.
+    \item $\epsilon^2$ terms:
+    \alert{Size dependence}.
+    \item $\epsilon_{t-j}\epsilon_{t-k}$ terms:
+    \alert{State dependence}.
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{2nd SSJ}{Takeaway \cite{auclert2025beyond}}
+\small
+\begin{alertblock}{What this adds to SSJ}
+The paper extends SSJ in two directions:
+\begin{itemize}
+    \item Extends SSJ from linear IRFs to \alert{nonlinear, state-dependent} dynamics in sequence space;
+    \item A practical framework for studying risk, nonlinear propagation, and welfare in rich heterogeneous-agent models.
+\end{itemize}
+\end{alertblock}
+\end{frame}
+
+
+\begin{frame}{SSJ in Continuous Time}{What changes relative to discrete-time SSJ?}
+\footnotesize
+
+\begin{block}{Core comparison}
+Discrete-time SSJ / FNA:
+\[
+\text{discretize first} \;\Longrightarrow\; \text{differentiate numerically}.
+\]
+
+Continuous-time SSJ:
+\[
+\text{differentiate in continuous time} \;\Longrightarrow\; \text{discretize later}.
+\]
+\end{block}
+
+\begin{itemize}
+    \item The paper keeps the \alert{same sequence-space logic} as Auclert et al.:
+    household response $\rightarrow$ distribution $\rightarrow$ fake news $\rightarrow$ Jacobian.
+    \item The main change is only in the \alert{first step}:
+    instead of numerically perturbing a nonlinear Euler equation,
+    the household response is characterized analytically in continuous time.
+\end{itemize}
+
+\begin{alertblock}{Key message}
+So this is not a different solution concept.  
+It is best seen as a \alert{continuous-time version of FNA} with a cleaner first step.
+\end{alertblock}
+
+\end{frame}
+
+
+\begin{frame}{SSJ in Continuous Time}{Takeaway \cite{bilal2025some}}
+\footnotesize
+
+\begin{itemize}
+    \item \alert{Faster}: Jacobians and impulse responses are about \alert{3 times faster} to compute.
+    \item \alert{Where does the gain come from?}  
+    From the policy-function step only:
+    linear PDEs replace nonlinear backward solves plus numerical differentiation.
+    \item \alert{Why continuous time helps}: with a binding borrowing constraint,
+    the first-order condition still holds with equality, so the perturbation is cleaner.
+\end{itemize}
+
+\begin{alertblock}{Broader contribution}
+The paper shows that SSJ / FNA is not tied to discrete time.  
+It extends sequence-space methods naturally to \alert{continuous-time HA/HANK models},
+especially environments with rich heterogeneity and occasionally binding constraints.
+\end{alertblock}
+
 \end{frame}
 
 
@@ -752,8 +997,8 @@
     \begin{itemize}
         \item Fiscal and monetary policy \cite{auclert2025fiscal,auclert2024intertemporal}
         \item Het households + het firms \cite{winberry2025new}
-        \item Behavioural macro \cite{auclert2020micro,angeletos2025rank}
-        \item Life-cycle model \cite{bardoczy2024hank,bardoczy2025sequence}
+        \item Behavioural macro \cite{angeletos2025rank,auclert2020micro}
+        \item Life-cycle model \cite{bardoczy2025sequence,bardoczy2024hank}
         \item Dynamic spatial model \cite{donald2025optimal,fan2023learning}
         \item Production network \cite{schaab2023monetary}
         \item Het banks \cite{bellifemine2022hbank}
