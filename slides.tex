@@ -622,6 +622,7 @@
 
     This corresponds to a simple graph:
 
+    \begin{center}
     \begin{tikzpicture}[
             >=Latex,
             box/.style={draw=teal!60!black, thick, rectangle,  align=center},
@@ -644,10 +645,12 @@
         \draw[flow] (leftbox.east) -- node[lab, above] {$K$} (market.west);
 
     \end{tikzpicture}
+    \end{center}
 
 \end{frame}
 
 \begin{frame}{DAG}{DAGs combining simple and HA blocks}
+    \begin{center}
     \begin{tikzpicture}[
             >=Latex,
             box/.style={draw=teal!60!black, thick, rectangle,  align=center},
@@ -670,6 +673,7 @@
         \draw[flow] (leftbox.east) -- node[lab, above] {$K$} (market.west);
 
     \end{tikzpicture}
+    \end{center}
     \begin{itemize}
         \item Each node (``block'') takes sequences as inputs and outputs.
         \item Inputs of later blocks are outputs of earlier blocks.
@@ -684,6 +688,7 @@
 
 
 \begin{frame}{DAG}{DAGs combining simple and HA blocks}
+    \begin{center}
     \begin{tikzpicture}[
             >=Latex,
             box/.style={draw=teal!60!black, thick, rectangle,  align=center},
@@ -706,6 +711,7 @@
         \draw[flow] (leftbox.east) -- node[lab, above] {$K$} (market.west);
 
     \end{tikzpicture}
+    \end{center}
     \begin{itemize}
         \item Define $\mathbf{J}^{o,i}$ to be the \alert{total derivative} of $o$ along the DAG with respect to the exogenous or endogenous variable $i$ (distinct from the block Jacobian $\mathcal{J}^{o,i}$).
         \item Here, for example, $\mathbf{J}^{r,K}$ equals $\mathcal{J}^{r,K}$, etc.: the direct effect is the only effect.
