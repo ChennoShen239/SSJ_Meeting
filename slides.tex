@@ -42,6 +42,8 @@
     \tableofcontents
 \end{frame}
 
+\small
+
 \section{Why Sequence Space?}
 
 \begin{frame}{Sequence Space vs.\ State Space}{Motivation}
@@ -49,7 +51,7 @@
     \begin{itemize}
         \item In heterogeneous-agent (HA) models, the economy’s state is the \alert{entire cross-sectional distribution} — an infinite-dimensional object.
         \item Sequence-space methods \emph{sidestep} this challenge: they characterize \alert{local dynamics around the steady state} without ever carrying the distribution as a state variable.
-        \item The key insight: aggregate equilibrium responses to shocks can be encoded in \alert{Jacobian matrices} of aggregate outcomes with respect to aggregate inputs.
+        \item The key insight: aggregate equilibrium dynamics can be represented in sequence space as mappings from \alert{aggregate shock paths} to \alert{aggregate outcomes}, with Jacobians arising as the local linear approximation of these mappings.
     \end{itemize}
 
 \end{frame}
@@ -92,14 +94,14 @@
     \end{block}
 
     \begin{block}{Takeaway}
-        When the distribution is the intractable state variable, sequence space reframes a ``huge state'' problem as a \alert{structured Jacobian} problem — amenable to fast, scalable computation.
+        When the distribution is the intractable state variable, sequence space replaces a high-dimensional state-space problem with a representation in terms of \alert{equilibrium mappings over aggregate paths}, making analysis and computation much more tractable.
     \end{block}
 \end{frame}
 
 
 
 \section{Local Solution}
-\subsection{SSJ in Krusell-Smith Model}
+\subsection{SSJ}
 \begin{frame}{Example: The Krusell-Smith Model}{Setup}
     \begin{itemize}
         \item The economy is populated by a mass 1 of heterogeneous households,
@@ -266,8 +268,6 @@
     \end{alertblock}
 \end{frame}
 
-
-\subsection{Fake News Algorithm}
 \begin{frame}{Fake News Algorithm}{General Model Representation}
 
     We represent a heterogeneous-agent problem as a mapping from a time path of
@@ -834,7 +834,7 @@ The paper extends SSJ in two directions:
 \end{frame}
 
 \begin{frame}{2nd SSJ}{From certainty equivalence to certainty correspondence}
-\footnotesize
+\small
 
 \begin{block}{Known result}
 At first order, which is the usual certainty equivalence
@@ -854,7 +854,6 @@ X_t\!\left(\{\sigma Z_s\}_{s\ge0},D_{ss}\right)
 \]
 
 \begin{alertblock}{Certainty correspondence}
-The paper's claim is that, at \alert{second order},
 \[
 \text{2nd-order perfect-foresight responses}
 \Longleftrightarrow
@@ -866,7 +865,7 @@ So SSJ is still enough beyond certainty equivalence.
 \end{frame}
 
 \begin{frame}{2nd SSJ}{What corresponds to what?}
-\footnotesize
+\small
 
 Expand the stochastic solution in $\sigma$:
 \[
@@ -899,12 +898,10 @@ By symmetry in $\sigma$,
 \end{itemize}
 \end{block}
 
-This is the paper's second-order analogue of the usual SSJ logic.
-
 \end{frame}
 
-\begin{frame}{2nd SSJ}{3. Why does this matter?}
-\footnotesize
+\begin{frame}{2nd SSJ}{Why does this matter?}
+\small
 
 Rewrite the quadratic MA as
 \[
@@ -940,7 +937,7 @@ The paper extends SSJ in two directions:
 
 
 \begin{frame}{SSJ in Continuous Time}{What changes relative to discrete-time SSJ?}
-\footnotesize
+\small
 
 \begin{block}{Core comparison}
 Discrete-time SSJ / FNA:
@@ -962,16 +959,11 @@ Continuous-time SSJ:
     the household response is characterized analytically in continuous time.
 \end{itemize}
 
-\begin{alertblock}{Key message}
-So this is not a different solution concept.  
-It is best seen as a \alert{continuous-time version of FNA} with a cleaner first step.
-\end{alertblock}
-
 \end{frame}
 
 
 \begin{frame}{SSJ in Continuous Time}{Takeaway \cite{bilal2025some}}
-\footnotesize
+\small
 
 \begin{itemize}
     \item \alert{Faster}: Jacobians and impulse responses are about \alert{3 times faster} to compute.
@@ -1012,21 +1004,170 @@ especially environments with rich heterogeneity and occasionally binding constra
 
 \subsection{Repeated transition method}
 
-\begin{frame}{Repeated transition method}
-    \textit{To be developed}
+\begin{frame}{Repeated transition method}{From local SSJ to global sequence space}
+\small
+
+\begin{block}{What is the extension?}
+Standard SSJ is mainly a \alert{local} method:
+\[
+\text{1st-order} \;+\; \text{perfect foresight} \;+\; \text{IRFs around a reference point}.
+\]
+
+RTM extends sequence-space methods to
+\[
+\text{global} \;+\; \text{nonlinear} \;+\; \text{aggregate uncertainty}.
+\]
+\end{block}
+
+\begin{itemize}
+    \item It does \alert{not} assume perfect foresight.
+    \item It does \alert{not} require a parametric law of motion for the aggregate distribution.
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Repeated transition method}{Why ``repeated transitions''?}
+\small
+
+To solve backward at time $t$, agents need a conditional expectation of continuation values:
+\[
+E_t V_{t+1}
+=
+\Pi_{S_t,G} V(\cdot;\Phi_{t+1},G)
++
+\Pi_{S_t,B} V(\cdot;\Phi_{t+1},B).
+\]
+
+\begin{block}{RTM's trick}
+If the simulated path is long enough, a similar aggregate state reappears.
+Find a period
+\[
+\tilde t+1
+=
+\arg\min_{\tau}\|\Phi_{\tau}^{(n)}-\Phi_{t+1}^{(n)}\|
+\]
+with the \alert{counterfactual shock realization}.
+Then use the realized value function at $\tilde t+1$ to fill in the missing continuation value.
+\end{block}
+
+\begin{itemize}
+    \item Intuition: \alert{history repeats itself} along an ergodic equilibrium path.
+    \item So expectations are built from \alert{repeated transitions}, not from an estimated law of motion.
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Repeated transition method}{Takeaway \cite{lee2025global}}
+\small
+
+\begin{itemize}
+    \item \alert{More general than SSJ}: can study global nonlinear dynamics, not only local IRFs.
+    \item \alert{Avoids law-of-motion misspecification}: no need to summarize the distribution with a guessed forecasting rule.
+\end{itemize}
+
+\begin{alertblock}{Takeaway}
+RTM keeps the sequence-space perspective, but turns it into a \alert{global stochastic solution method}:
+better suited for nonlinear state dependence, occasionally binding constraints, and models with non-trivial market clearing.
+\end{alertblock}
+
 \end{frame}
 
 \subsection{DL in sequence space}
 
-\begin{frame}{DL in sequence space}
-    \textit{To be developed}
+\begin{frame}{DL in sequence space}{From local SSJ to global sequence space}
+\small
+
+\begin{block}{What is the extension?}
+Standard SSJ is mainly a \alert{local} method:
+\[
+\text{aggregate state} \xrightarrow{\text{Jacobian}} \text{local IRFs}.
+\]
+This paper instead builds a \alert{global approximation} to equilibrium in sequence space.
+\end{block}
+
+In place of a high-dimensional aggregate state such as $(z_t,\mu_t)$, use a truncated shock history
+\[
+z_t^T=(z_{t-T},z_{t-T+1},\ldots,z_t),
+\]
+
+\begin{itemize}
+    \item In ergodic economies, the truncation error vanishes as $T$ grows.
+    \item So the aggregate state is approximated by a \alert{sequence of past aggregate shocks},
+    not by moments or histograms of the distribution.
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{DL in sequence space}{How deep learning enters}
+\small
+
+Parameterize equilibrium objects---policies or prices---with a neural network:
+\[
+\mathcal N_\rho(X_t^{\text{seq},T}) \approx \text{equilibrium object at } t.
+\]
+
+Train the network to satisfy equilibrium conditions along simulated ergodic paths:
+\[
+\rho^*
+=
+\arg\min_\rho
+\frac{1}{N}\sum_{t=1}^N
+\big(\text{equilibrium residual}_t(\rho)\big)^2 .
+\]
+
+\begin{itemize}
+    \item The network input is the truncated history of aggregate shocks.
+    \item The training data come from simulated paths of the economy.
+\end{itemize}
+
+\begin{alertblock}{Compared with SSJ}
+Instead of computing \alert{derivatives} around a reference point, the method directly learns
+\alert{nonlinear equilibrium mappings} over the ergodic set.
+\end{alertblock}
+
+\end{frame}
+
+\begin{frame}{DL in sequence space}{Takeaway \cite{azinovic2025deep}}
+\small
+
+\begin{itemize}
+    \item \alert{Handles richer models globally}: large shocks, aggregate uncertainty, and nonlinearities.
+    \item \alert{Scales to high-dimensional environments}: OLG, heterogeneous households \& firms,
+    and life-cycle models with discrete retirement choice.
+    \item \alert{Shape-preserving architectures}: predicted policies can be forced to be monotone
+    (or concave), which makes EGM usable inside the algorithm.
+\end{itemize}
+
+\begin{alertblock}{Takeaway}
+The paper extends sequence-space methods from \alert{fast local perturbation} to
+\alert{global nonlinear equilibrium computation}, using deep learning to make long shock histories
+computationally tractable.
+\end{alertblock}
+
 \end{frame}
 
 \subsection{RL in sequence space}
 
-\begin{frame}{RL in sequence space}
-    \textit{To be developed}
+\begin{frame}{RL in sequence space}{Agents learn prices \cite{yang2025structural}}
+\small
+
+The key step is to replace the high-dimensional distribution state by low-dimensional prices:
+\[
+p_t = P^*(g_t,z_t),
+\qquad
+\pi_t = \pi(s_t,z_t,p_t).
+\]
+
+\begin{itemize}
+    \item Households care directly about \alert{prices}, not the full distribution.
+    \item The algorithm therefore works with \alert{prices as state variables}.
+    \item This sidesteps the \alert{Master equation}, where the distribution would enter the Bellman equation.
+\end{itemize}
+
 \end{frame}
+
+
+
 
 \section{Reference}
 
