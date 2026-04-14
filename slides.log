@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.3.20)  14 APR 2026 01:34
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.3.20)  14 APR 2026 14:08
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -532,6 +532,8 @@ Package bm Info: No bold for \OMX/cmex/m/n, using \pmb.
 Package bm Info: No bold for \U/msa/m/n, using \pmb.
 Package bm Info: No bold for \U/msb/m/n, using \pmb.
 LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 149.
+) (/usr/local/texlive/2026basic/texmf-dist/tex/latex/cancel/cancel.sty
+Package: cancel 2013/04/12 v2.2 Cancel math terms
 ) (/usr/local/texlive/2026basic/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty (/usr/local/texlive/2026basic/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
 Package: pgf 2025-08-29 v3.1.11a (3.1.11a)
  (/usr/local/texlive/2026basic/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.code.tex
@@ -593,7 +595,23 @@ File: pgflibraryarrows.meta.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 File: tikzlibrarycalc.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 ) (/usr/local/texlive/2026basic/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarypositioning.code.tex
 File: tikzlibrarypositioning.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-) (/usr/local/texlive/2026basic/texmf-dist/tex/latex/beamerthemecelestia/beamerthemeCelestia.sty
+) (/usr/local/texlive/2026basic/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarybending.code.tex
+File: tikzlibrarybending.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+ (/usr/local/texlive/2026basic/texmf-dist/tex/generic/pgf/modules/pgfmodulebending.code.tex
+File: pgfmodulebending.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+ (/usr/local/texlive/2026basic/texmf-dist/tex/generic/pgf/modules/pgfmodulenonlineartransformations.code.tex
+File: pgfmodulenonlineartransformations.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgftransformnonlinearflatness=\dimen319
+) (/usr/local/texlive/2026basic/texmf-dist/tex/generic/pgf/libraries/pgflibrarycurvilinear.code.tex
+File: pgflibrarycurvilinear.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgf@curvilinear@time@a=\dimen320
+\pgf@curvilinear@length@a=\dimen321
+\pgf@curvilinear@length@b=\dimen322
+\pgf@curvilinear@length@c=\dimen323
+\pgf@curvilinear@length@d=\dimen324
+)
+\pgf@arrows@the@rigidity=\dimen325
+)) (/usr/local/texlive/2026basic/texmf-dist/tex/latex/beamerthemecelestia/beamerthemeCelestia.sty
 Package: beamerthemeCelestia 2026/03/15 v1.2.1
  (/usr/local/texlive/2026basic/texmf-dist/tex/generic/xstring/xstring.sty (/usr/local/texlive/2026basic/texmf-dist/tex/generic/xstring/xstring.tex
 \xs_counta=\count367
@@ -632,7 +650,7 @@ LaTeX Encoding Info:    Redeclaring text command \IJ (encoding T1) on input line
 LaTeX Encoding Info:    Ignoring declaration for text command \ij (encoding ?) on input line 2084.
 LaTeX Encoding Info:    Ignoring declaration for text command \IJ (encoding ?) on input line 2086.
 LaTeX Encoding Info:    Ignoring declaration for text command \SS (encoding ?) on input line 2111.
-\U@D=\dimen319
+\U@D=\dimen326
 \l@unhyphenated=\language23
  (/usr/local/texlive/2026basic/texmf-dist/tex/generic/babel/txtbabel.def)
 \bbl@readstream=\read3
@@ -696,14 +714,14 @@ File: pgflibraryshapes.multipart.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 \pgfnodepartsixbox=\box103
 \pgfnodepartfivebox=\box104
 ))) (/usr/local/texlive/2026basic/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.fractals.code.tex (/usr/local/texlive/2026basic/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.code.tex (/usr/local/texlive/2026basic/texmf-dist/tex/generic/pgf/modules/pgfmoduledecorations.code.tex
-\pgfdecoratedcompleteddistance=\dimen320
-\pgfdecoratedremainingdistance=\dimen321
-\pgfdecoratedinputsegmentcompleteddistance=\dimen322
-\pgfdecoratedinputsegmentremainingdistance=\dimen323
-\pgf@decorate@distancetomove=\dimen324
+\pgfdecoratedcompleteddistance=\dimen327
+\pgfdecoratedremainingdistance=\dimen328
+\pgfdecoratedinputsegmentcompleteddistance=\dimen329
+\pgfdecoratedinputsegmentremainingdistance=\dimen330
+\pgf@decorate@distancetomove=\dimen331
 \pgf@decorate@repeatstate=\count381
-\pgfdecorationsegmentamplitude=\dimen325
-\pgfdecorationsegmentlength=\dimen326
+\pgfdecorationsegmentamplitude=\dimen332
+\pgfdecorationsegmentlength=\dimen333
 )
 \tikz@lib@dec@box=\box105
 ) (/usr/local/texlive/2026basic/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrarydecorations.fractals.code.tex)) (/usr/local/texlive/2026basic/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryfadings.code.tex
@@ -730,7 +748,7 @@ Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
 \c@tcblayer=\count383
 \c@tcolorbox@number=\count384
 \l__tcobox_tmpa_box=\box110
-\l__tcobox_tmpa_dim=\dimen327
+\l__tcobox_tmpa_dim=\dimen334
 \tcb@temp=\box111
 \tcb@temp=\box112
 \tcb@temp=\box113
@@ -767,9 +785,9 @@ Library (tcolorbox): 'tcbhooks.code.tex' version '6.9.0'
 Library (tcolorbox): 'tcbtheorems.code.tex' version '6.9.0'
 ) (/usr/local/texlive/2026basic/texmf-dist/tex/latex/tcolorbox/tcbfitting.code.tex
 Library (tcolorbox): 'tcbfitting.code.tex' version '6.9.0'
-\tcbfitdim=\dimen328
-\tcb@lowerfitdim=\dimen329
-\tcb@upperfitdim=\dimen330
+\tcbfitdim=\dimen335
+\tcb@lowerfitdim=\dimen336
+\tcb@upperfitdim=\dimen337
 \tcb@cur@hbadness=\count389
 ) (/usr/local/texlive/2026basic/texmf-dist/tex/latex/tcolorbox/tcblistingsutf8.code.tex
 Library (tcolorbox): 'tcblistingsutf8.code.tex' version '6.9.0'
@@ -780,14 +798,14 @@ Library (tcolorbox): 'tcblistings.code.tex' version '6.9.0'
 \lst@gtempboxa=\box119
 \lst@token=\toks58
 \lst@length=\count391
-\lst@currlwidth=\dimen331
+\lst@currlwidth=\dimen338
 \lst@column=\count392
 \lst@pos=\count393
-\lst@lostspace=\dimen332
-\lst@width=\dimen333
+\lst@lostspace=\dimen339
+\lst@width=\dimen340
 \lst@newlines=\count394
 \lst@lineno=\count395
-\lst@maxwidth=\dimen334
+\lst@maxwidth=\dimen341
  (/usr/local/texlive/2026basic/texmf-dist/tex/latex/listings/lstpatch.sty
 File: lstpatch.sty 2025/11/14 1.11b (Carsten Heinz)
 ) (/usr/local/texlive/2026basic/texmf-dist/tex/latex/listings/lstmisc.sty
@@ -826,22 +844,22 @@ Library (tcolorbox): 'tcbposter.code.tex' version '6.9.0'
 Package: multicol 2025/10/21 v2.0b multicolumn formatting (FMi)
 \c@tracingmulticols=\count399
 \mult@box=\box121
-\multicol@leftmargin=\dimen335
+\multicol@leftmargin=\dimen342
 \c@unbalance=\count400
 \c@collectmore=\count401
 \doublecol@number=\count402
 \multicoltolerance=\count403
 \multicolpretolerance=\count404
-\full@width=\dimen336
-\page@free=\dimen337
-\premulticols=\dimen338
-\postmulticols=\dimen339
+\full@width=\dimen343
+\page@free=\dimen344
+\premulticols=\dimen345
+\postmulticols=\dimen346
 \multicolsep=\skip67
 \multicolbaselineskip=\skip68
 \partial@page=\box122
 \last@line=\box123
 \mc@boxedresult=\box124
-\maxbalancingoverflow=\dimen340
+\maxbalancingoverflow=\dimen347
 \mult@rightbox=\box125
 \mult@grightbox=\box126
 \mult@firstbox=\box127
@@ -885,9 +903,9 @@ Package: multicol 2025/10/21 v2.0b multicolumn formatting (FMi)
 \c@minrows=\count405
 \c@columnbadness=\count406
 \c@finalcolumnbadness=\count407
-\last@try=\dimen341
-\multicolovershoot=\dimen342
-\multicolundershoot=\dimen343
+\last@try=\dimen348
+\multicolovershoot=\dimen349
+\multicolundershoot=\dimen350
 \mult@nat@firstbox=\box165
 \colbreak@box=\box166
 \mc@col@check@num=\count408
@@ -976,8 +994,8 @@ Package: beamerinnerthemetcolorbox 2026/01/16 version v1.4 Beamer blocks with tc
 \c@quizchoice=\count412
 Package hyperref Info: Option `colorlinks' set `true' on input line 922.
 \celestia@ft@left@margin=\skip70
-\celestia@leftskip=\dimen344
-\celestia@rightskip=\dimen345
+\celestia@leftskip=\dimen351
+\celestia@rightskip=\dimen352
 \celestia@title@skip=\skip71
 \c@tcb@cnt@theoreminner=\count413
 \c@th=\count414
@@ -1017,14 +1035,14 @@ Package hyperref Info: Option `colorlinks' set `true' on input line 922.
 Package: caption 2023/08/05 v3.6o Customizing captions (AR)
  (/usr/local/texlive/2026basic/texmf-dist/tex/latex/caption/caption3.sty
 Package: caption3 2023/07/31 v2.4d caption3 kernel (AR)
-\caption@tempdima=\dimen346
-\captionmargin=\dimen347
-\caption@leftmargin=\dimen348
-\caption@rightmargin=\dimen349
-\caption@width=\dimen350
-\caption@indent=\dimen351
-\caption@parindent=\dimen352
-\caption@hangindent=\dimen353
+\caption@tempdima=\dimen353
+\captionmargin=\dimen354
+\caption@leftmargin=\dimen355
+\caption@rightmargin=\dimen356
+\caption@width=\dimen357
+\caption@indent=\dimen358
+\caption@parindent=\dimen359
+\caption@hangindent=\dimen360
 Package caption Info: beamer document class detected.
  (/usr/local/texlive/2026basic/texmf-dist/tex/latex/caption/caption-beamer.sto
 File: caption-beamer.sto 2022/01/06 v2.0c Adaption of the caption package to the beamer document classes (AR)
@@ -1038,33 +1056,33 @@ Package caption Info: listings package is loaded.
 )
 \celestia@code@skip=\skip72
 )
-LaTeX Font Info:    Trying to load font information for T1+LibertinusSans-TLF on input line 23.
+LaTeX Font Info:    Trying to load font information for T1+LibertinusSans-TLF on input line 29.
  (/usr/local/texlive/2026basic/texmf-dist/tex/latex/libertinus-type1/T1LibertinusSans-TLF.fd
 File: T1LibertinusSans-TLF.fd 2024/09/22 (autoinst) Font definitions for T1/LibertinusSans-TLF.
 )
 LaTeX Font Info:    Font shape `T1/LibertinusSans-TLF/m/n' will be
-(Font)              scaled to size 10.95pt on input line 23.
+(Font)              scaled to size 10.95pt on input line 29.
  (./slides.aux)
 \openout1 = `slides.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1103,13 +1121,13 @@ LaTeX Font Info:    ... okay on input line 23.
 (/usr/local/texlive/2026basic/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count449
-\scratchdimen=\dimen354
+\scratchdimen=\dimen361
 \scratchbox=\box167
 \nofMPsegments=\count450
 \nofMParguments=\count451
 \everyMPshowfont=\toks64
 \MPscratchCnt=\count452
-\MPscratchDim=\dimen355
+\MPscratchDim=\dimen362
 \MPnumerator=\count453
 \makeMPintoPDFobject=\count454
 \everyMPtoPDFconversion=\toks65
@@ -1119,7 +1137,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
  (/usr/local/texlive/2026basic/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-Package hyperref Info: Link coloring ON on input line 23.
+Package hyperref Info: Link coloring ON on input line 29.
  (./slides.out) (./slides.out)
 \@outlinefile=\write5
 \openout5 = `slides.out'.
@@ -1144,43 +1162,43 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
  (./slides.nav)
 LaTeX Font Info:    Font shape `T1/LibertinusSans-TLF/m/n' will be
-(Font)              scaled to size 6.0pt on input line 23.
+(Font)              scaled to size 6.0pt on input line 29.
 LaTeX Font Info:    Font shape `T1/LibertinusSans-TLF/m/n' will be
-(Font)              scaled to size 8.0pt on input line 23.
+(Font)              scaled to size 8.0pt on input line 29.
 LaTeX Font Info:    Font shape `T1/LibertinusSans-TLF/m/n' will be
-(Font)              scaled to size 17.30101pt on input line 25.
+(Font)              scaled to size 17.30101pt on input line 31.
 LaTeX Font Info:    Font shape `T1/LibertinusSans-TLF/b/n' will be
-(Font)              scaled to size 17.30101pt on input line 25.
+(Font)              scaled to size 17.30101pt on input line 31.
 LaTeX Font Info:    Font shape `T1/LibertinusSans-TLF/sb/n' will be
-(Font)              scaled to size 17.30101pt on input line 25.
-LaTeX Font Info:    Trying to load font information for OT1+iwona on input line 25.
-LaTeX Font Info:    No file OT1iwona.fd. on input line 25.
-LaTeX Font Info:    Trying to load font information for OML+iwona on input line 25.
-LaTeX Font Info:    No file OMLiwona.fd. on input line 25.
-LaTeX Font Info:    Trying to load font information for OMS+iwona on input line 25.
-LaTeX Font Info:    No file OMSiwona.fd. on input line 25.
-LaTeX Font Info:    Trying to load font information for OMX+iwona on input line 25.
-LaTeX Font Info:    No file OMXiwona.fd. on input line 25.
+(Font)              scaled to size 17.30101pt on input line 31.
+LaTeX Font Info:    Trying to load font information for OT1+iwona on input line 31.
+LaTeX Font Info:    No file OT1iwona.fd. on input line 31.
+LaTeX Font Info:    Trying to load font information for OML+iwona on input line 31.
+LaTeX Font Info:    No file OMLiwona.fd. on input line 31.
+LaTeX Font Info:    Trying to load font information for OMS+iwona on input line 31.
+LaTeX Font Info:    No file OMSiwona.fd. on input line 31.
+LaTeX Font Info:    Trying to load font information for OMX+iwona on input line 31.
+LaTeX Font Info:    No file OMXiwona.fd. on input line 31.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 11.40997pt on input line 25.
+(Font)              scaled to size 11.40997pt on input line 31.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 8.33606pt on input line 25.
+(Font)              scaled to size 8.33606pt on input line 31.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 6.25204pt on input line 25.
+(Font)              scaled to size 6.25204pt on input line 31.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 11.40997pt on input line 25.
+(Font)              scaled to size 11.40997pt on input line 31.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 8.33606pt on input line 25.
+(Font)              scaled to size 8.33606pt on input line 31.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 6.25204pt on input line 25.
-LaTeX Font Info:    Trying to load font information for OT1+zplm on input line 25.
+(Font)              scaled to size 6.25204pt on input line 31.
+LaTeX Font Info:    Trying to load font information for OT1+zplm on input line 31.
  (/usr/local/texlive/2026basic/texmf-dist/tex/latex/psnfss/ot1zplm.fd
 File: ot1zplm.fd 2002/09/08 Fontinst v1.914 font definitions for OT1/zplm.
 )
 LaTeX Font Info:    Font shape `T1/LibertinusSans-TLF/m/n' will be
-(Font)              scaled to size 10.0pt on input line 25.
+(Font)              scaled to size 10.0pt on input line 31.
 LaTeX Font Info:    Font shape `T1/LibertinusSans-TLF/m/n' will be
-(Font)              scaled to size 4.0pt on input line 25.
+(Font)              scaled to size 4.0pt on input line 31.
  [1
 
 {/usr/local/texlive/2026basic/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2026basic/texmf-dist/fonts/enc/dvips/libertinus-type1/lbn1_mfadfl.enc}] (./slides.toc
@@ -1190,16 +1208,16 @@ LaTeX Font Info:    Font shape `T1/LibertinusSans-TLF/sb/n' will be
 
 ]
 LaTeX Font Info:    Font shape `T1/LibertinusSans-TLF/m/n' will be
-(Font)              scaled to size 17.28pt on input line 31.
+(Font)              scaled to size 17.28pt on input line 37.
 LaTeX Font Info:    Font shape `T1/LibertinusSans-TLF/sb/n' will be
-(Font)              scaled to size 17.28pt on input line 31.
+(Font)              scaled to size 17.28pt on input line 37.
  [3
 
 ]
 LaTeX Font Info:    Font shape `T1/LibertinusSans-TLF/m/it' will be
-(Font)              scaled to size 10.95pt on input line 41.
+(Font)              scaled to size 10.95pt on input line 47.
 LaTeX Font Info:    Font shape `T1/LibertinusSans-TLF/sb/n' will be
-(Font)              scaled to size 10.0pt on input line 41.
+(Font)              scaled to size 10.0pt on input line 47.
  [4
 
 {/usr/local/texlive/2026basic/texmf-dist/fonts/enc/dvips/libertinus-type1/lbn1_hvvyjb.enc}] [5
@@ -1211,7 +1229,7 @@ LaTeX Font Info:    Font shape `T1/LibertinusSans-TLF/sb/n' will be
 ] [8
 
 ]
-LaTeX Font Info:    Trying to load font information for U+fplmbb on input line 103.
+LaTeX Font Info:    Trying to load font information for U+fplmbb on input line 109.
  (/usr/local/texlive/2026basic/texmf-dist/tex/latex/psnfss/ufplmbb.fd
 File: ufplmbb.fd 2003/10/30 Fontinst v1.914 font definitions for U/fplmbb.
 ) [9
@@ -1221,7 +1239,7 @@ File: ufplmbb.fd 2003/10/30 Fontinst v1.914 font definitions for U/fplmbb.
 ] [11
 
 ]
-Overfull \vbox (5.0967pt too high) detected at line 154
+Overfull \vbox (5.0967pt too high) detected at line 160
  []
 
 [12
@@ -1229,12 +1247,12 @@ Overfull \vbox (5.0967pt too high) detected at line 154
 ] [13
 
 ]
-Overfull \hbox (7.59482pt too wide) detected at line 184
+Overfull \hbox (7.59482pt too wide) detected at line 190
 \OML/cmm/m/it/10.95 H[]\OT1/zplm/m/n/10.95 (\OML/cmm/b/it/10.95 K\OT1/cmr/m/n/10.95 , \OML/cmm/b/it/10.95 Z\OT1/zplm/m/n/10.95 ) \OMS/cmsy/m/n/10.95 ^^Q K[] [] ^^@ \OML/cmm/m/it/10.95 K[] \OT1/zplm/m/n/10.95 = \OT1/cmr/m/n/10.95 0
  []
 
 
-Overfull \vbox (7.49854pt too high) detected at line 184
+Overfull \vbox (7.49854pt too high) detected at line 190
  []
 
 [14
@@ -1253,29 +1271,29 @@ Overfull \vbox (7.49854pt too high) detected at line 184
 
 ]
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 10.42007pt on input line 330.
+(Font)              scaled to size 10.42007pt on input line 345.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 7.91925pt on input line 330.
+(Font)              scaled to size 7.91925pt on input line 345.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 10.42007pt on input line 330.
+(Font)              scaled to size 10.42007pt on input line 345.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 7.91925pt on input line 330.
+(Font)              scaled to size 7.91925pt on input line 345.
+ [21
 
-Overfull \vbox (2.83876pt too high) detected at line 330
+]
+Overfull \vbox (2.83876pt too high) detected at line 370
  []
 
-[21
+[22
 
 ]
 LaTeX Font Info:    Font shape `T1/LibertinusSans-TLF/m/n' will be
-(Font)              scaled to size 14.4pt on input line 435.
+(Font)              scaled to size 14.4pt on input line 471.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 15.0049pt on input line 435.
+(Font)              scaled to size 15.0049pt on input line 471.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 15.0049pt on input line 435.
- [22
-
-] [23
+(Font)              scaled to size 15.0049pt on input line 471.
+ [23
 
 ] [24
 
@@ -1293,23 +1311,51 @@ LaTeX Font Info:    Font shape `U/msb/m/n' will be
 
 ] [31
 
-] [32
+]
+LaTeX Font Info:    Font shape `T1/LibertinusSans-TLF/sb/n' will be
+(Font)              scaled to size 8.0pt on input line 607.
+ [32
 
-] [33
+]
+Overfull \hbox (7.59482pt too wide) detected at line 640
+\OML/iwona/m/it/10.95 H[]\OT1/zplm/m/n/10.95 (\OML/cmm/b/it/10.95 K\OT1/iwona/b/n/10.95 , \OML/cmm/b/it/10.95 Z\OT1/zplm/m/n/10.95 ) \OMS/iwona/m/n/10.95 ^^Q K[] [] ^^@ \OML/iwona/m/it/10.95 K[] \OT1/zplm/m/n/10.95 = \OT1/iwona/b/n/10.95 0
+ []
+
+[33
 
 ] [34
 
 ] [35
 
+] [36
+
+] [37
+
+] [38
+
+] [39
+
+] [40
+
+] [41
+
+] [42
+
+] [43
+
+] [44
+
+] [45
+
 ] (./slides.bbl
 LaTeX Font Info:    Font shape `T1/LibertinusSans-TLF/m/it' will be
 (Font)              scaled to size 8.0pt on input line 11.
-) [36
+) [46
 
- </usr/local/texlive/2026basic/texmf-dist/tex/latex/beamer/beamericonarticle.pdf>] [37
+ </usr/local/texlive/2026basic/texmf-dist/tex/latex/beamer/beamericonarticle.pdf>] [47
 
 
-] [38
+] [48
 
 
 ]
@@ -1328,21 +1374,21 @@ LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
  ***********
 Package rerunfilecheck Info: File `slides.out' has not changed.
-(rerunfilecheck)             Checksum: 071CD3B029DC7649CF9B17C7A40C6D1B;1684.
+(rerunfilecheck)             Checksum: AA4ECFC8F2AD11B9423D76B7985D6FA0;1684.
  ) 
 Here is how much of TeX's memory you used:
- 40123 strings out of 469006
- 865843 string characters out of 5454813
- 1313245 words of memory out of 5000000
- 67938 multiletter control sequences out of 15000+600000
+ 40537 strings out of 469006
+ 875721 string characters out of 5454813
+ 1317536 words of memory out of 5000000
+ 68316 multiletter control sequences out of 15000+600000
  706049 words of font info for 131 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
- 101i,16n,139p,453b,867s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/libertinus-type1/LibertinusSans-Italic.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/libertinus-type1/LibertinusSans-Regular.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/mathpazo/fplmbb.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/mathpazo/fplmr.pfb>
-Output written on slides.pdf (38 pages, 398997 bytes).
+ 101i,19n,139p,453b,867s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/libertinus-type1/LibertinusSans-Italic.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/libertinus-type1/LibertinusSans-Regular.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/mathpazo/fplmbb.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/mathpazo/fplmr.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb>
+Output written on slides.pdf (48 pages, 427211 bytes).
 PDF statistics:
- 478 PDF objects out of 1000 (max. 8388607)
- 364 compressed objects within 4 object streams
- 110 named destinations out of 1000 (max. 500000)
+ 538 PDF objects out of 1000 (max. 8388607)
+ 411 compressed objects within 5 object streams
+ 130 named destinations out of 1000 (max. 500000)
  281 words of extra memory for PDF output out of 10000 (max. 10000000)
 

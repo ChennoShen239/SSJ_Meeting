@@ -1,9 +1,15 @@
 \documentclass[aspectratio=169]{beamer}
 
 \usepackage{amsmath, amssymb, bm}
-
+\usepackage{cancel}
 \usepackage{tikz}
-\usetikzlibrary{arrows.meta,calc,positioning}
+\usetikzlibrary{arrows.meta,calc,positioning,bending}
+
+\definecolor{mygreen}{RGB}{0,110,20}
+\definecolor{myorange}{RGB}{240,120,0}
+\definecolor{mygray}{RGB}{120,120,120}
+\definecolor{boxgray}{RGB}{150,150,150}
+\definecolor{axisgray}{RGB}{40,60,65}
 
 \usetheme[
   style=minimal,
@@ -304,6 +310,40 @@
     \end{itemize}
 \end{frame}
 
+
+
+\begin{frame}{Fake News Algorithm}{Steady State and Transition Paths}
+    \small
+    For a constant aggregate input $\bm{X}_{ss}$, the steady state is a fixed point
+    \[
+        (\bm{Y}_{ss}, \bm{v}_{ss}, \bm{D}_{ss})
+    \]
+    of the system.
+
+    \vspace{0.5em}
+
+    For convenience, define
+    \[
+        \Lambda_{ss} \equiv \Lambda(\bm{v}_{ss}, \bm{X}_{ss}),
+        \qquad
+        y_{ss} \equiv y(\bm{v}_{ss}, \bm{X}_{ss}).
+    \]
+
+    \vspace{0.5em}
+
+    We consider transition paths of length $T$ that end at the steady state:
+    \[
+        \bm{X}_{T-1} = \bm{X}_{ss},
+        \qquad
+        \bm{v}_T = \bm{v}_{ss}.
+    \]
+
+    The initial distribution $\bm{D}_0$ is given and often set equal to $\bm{D}_{ss}$.
+    \vspace{0.5em}
+
+    Hence, this framework is designed to study \alert{transitory shocks around a steady state}.
+\end{frame}
+
 % ------------------------------------------------
 \begin{frame}{Fake News Algorithm}{Economic Meaning of the System}
     \small
@@ -336,11 +376,7 @@
         \path[use as bounding box] (-0.3,-3.9) rectangle (5.4,1.9);
 
         % ---------- colors ----------
-        \definecolor{mygreen}{RGB}{0,110,20}
-        \definecolor{myorange}{RGB}{240,120,0}
-        \definecolor{mygray}{RGB}{120,120,120}
-        \definecolor{boxgray}{RGB}{150,150,150}
-        \definecolor{axisgray}{RGB}{40,60,65}
+
 
         % ---------- timeline ----------
         \draw[axisgray, line width=1.1pt, -{Latex[length=3mm]}] (-0.15,0) -- (5.30,0);
@@ -436,44 +472,266 @@
 
 
 
-\begin{frame}{Fake News Algorithm}{Steady State and Transition Paths}
-    \small
-    For a constant aggregate input $\bm{X}_{ss}$, the steady state is a fixed point
-    \[
-        (\bm{Y}_{ss}, \bm{v}_{ss}, \bm{D}_{ss})
-    \]
-    of the system.
+
+
+\begin{frame}{Fake News Algorithm}{Calculating the Jacobian: direct vs. new algorithm}
+
+    \begin{itemize}
+        \item The direct algorithm requires a separate backward and forward iteration for each $s = 0, \ldots, T-1$; \alert{this is costly}.
+        \item SSJ method uses a single \textcolor{mygreen}{backward} and \textcolor{myorange}{forward} iteration to get all $T$ columns.
+        \item \emph{This improves speed by a factor of roughly $T$ with no loss in accuracy.}
+        \item The key is to \alert{exploit time symmetries in the linearized system}.
+    \end{itemize}
+
+
+    The linearized system:
+    \begin{align*}
+        d\bm{Y}_t     & =\textcolor{mygreen}{d\bm{y}_t' \bm{D}_{ss}} + \textcolor{myorange}{\bm{y}_{ss}'\, d\bm{D}_t} \\
+        d\bm{D}_{t+1} & =\textcolor{mygreen}{d\Lambda_t \bm{D}_{ss}} + \textcolor{myorange}{\Lambda_{ss} d\bm{D}_t}   \\
+        \bm{D}_0      & = d\bm{D}_{ss}
+    \end{align*}
 
     \vspace{0.5em}
 
-    For convenience, define
-    \[
-        \Lambda_{ss} \equiv \Lambda(\bm{v}_{ss}, \bm{X}_{ss}),
-        \qquad
-        y_{ss} \equiv y(\bm{v}_{ss}, \bm{X}_{ss}).
-    \]
+    Since everything is linear, we can look at terms from \textcolor{mygreen}{backward} and \textcolor{myorange}{forward} iterations separately, then combine them.
 
-    \vspace{0.5em}
-
-    We consider transition paths of length $T$ that end at the steady state:
-    \[
-        \bm{X}_{T-1} = \bm{X}_{ss},
-        \qquad
-        \bm{v}_T = \bm{v}_{ss}.
-    \]
-
-    The initial distribution $\bm{D}_0$ is given and often set equal to $\bm{D}_{ss}$.
-    \vspace{0.5em}
-
-    Hence, this framework is designed to study \alert{transitory shocks around a steady state}.
 \end{frame}
 
 
+\begin{frame}{Fake News Algorithm}{Terms from backward iteration}
+    Holding $\bm{D}_t = \bm{D}_{ss}$ fixed, what is the effect of $d\bm{X}_s$?
+    \begin{align*}
+        d\bm{Y}_t     & = \textcolor{mygreen}{d\bm{y}_t^{0} \bm{D}_{ss}} + \cancel{\textcolor{myorange}{\bm{y}_{ss}'\, d\bm{D}_t}} \\
+        d\bm{D}_{t+1} & = \textcolor{mygreen}{d\Lambda_t^{0} \bm{D}_{ss}} + \cancel{\textcolor{myorange}{\Lambda_{ss} d\bm{D}_t}}
+    \end{align*}
+
+    \begin{itemize}
+        \item $d\bm{y}_t^{0}$ and $d\Lambda_t^{0}$ are purely \textcolor{myorange}{forward-looking} from the Bellman equation.
+        \item They depend only on the time until the shock, $s-t$.
+    \end{itemize}
+    Define:
+    \[
+        \mathcal{ Y}_{s-t} \equiv \frac{d\bm{y}_t^{0} \bm{D}_{ss}}{d\bm{X}_s}  \qquad
+        \mathcal{ D}_{s-t} \equiv \frac{d\Lambda_t^{0} \bm{D}_{ss}}{d\bm{X}_s}
+    \]
+
+    Use a single \textcolor{mygreen}{backward} iteration with a shock $d\bm{X}_s$ at $s = T-1$ to obtain $d\bm{y}_t^{0}$ and $d\Lambda_t^{0}$ for all $t = T-1, \ldots, 0$.
 
 
+\end{frame}
 
 
+\begin{frame}{Fake News Algorithm}{Terms from forward iteration}
+    Holding $\bm{y}_t = \bm{y}_{ss}$ and $\Lambda_t = \Lambda_{ss}$ fixed, what is the effect of $d\bm{D}_t$?
+    \begin{align*}
+        d\bm{Y}_t     & = \cancel{\textcolor{mygreen}{d\bm{y}_t^{0} \bm{D}_{ss}}} + \textcolor{myorange}{\bm{y}_{ss}'\, d\bm{D}_t} \\
+        d\bm{D}_{t+1} & = \cancel{\textcolor{mygreen}{d\Lambda_t^{0} \bm{D}_{ss}}} + \textcolor{myorange}{\Lambda_{ss} d\bm{D}_t}
+    \end{align*}
+
+    Since everything’s linear, some linear functional (row vector) maps $d\bm{D}_t$ to $d\bm{Y}_t$: what is it?
+    \begin{itemize}
+        \item Can write for $s \leq t$ (zero for $s > t$):
+              \[
+                  d\bm{Y}_t=\underbrace{\bm{y}_{ss}'(\Lambda_{ss}')^{t-s}}_{\equiv\mathcal{P}_{t-s}'}d\bm{D}_s
+              \]
+
+        \item These $\mathcal{P}_u$ can be calculated recursively as:
+              \[
+                  \mathcal{P}_u = \Lambda_{ss}' \mathcal{P}_{u-1}
+              \]
+        \item Thus, a single ``transpose'' \textcolor{myorange}{forward} iteration gives all $\mathcal{P}_u$.
+
+
+    \end{itemize}
+
+\end{frame}
+
+\begin{frame}{Fake News Algorithm}{Putting it together: the Jacobian}
+    For shock $d\bm{X}_s$, we want:\[   d\bm{Y}_t      =\textcolor{mygreen}{d\bm{y}_t' \bm{D}_{ss}} + \textcolor{myorange}{\bm{y}_{ss}'\, d\bm{D}_t}\]
+
+    Change in policy, holding distribution constant:
+    \[
+        \textcolor{mygreen}{d\bm{y}_t' \bm{D}_{ss}} = \mathcal{Y}_{s-t} d\bm{X}_s
+    \]
+    Change in distribution, holding policy constant:
+    \[
+        \textcolor{myorange}{\bm{y}_{ss}'\, d\bm{D}_t} = (\mathcal{P}_0' \mathcal{D}_{s-t+1}+...+\mathcal{P}_{t-1}' \mathcal{D}_s) d\bm{X}_s
+    \]
+    sum of shocks $\mathcal{D}$ to distribution from anticipating $d\bm{X}_s$ before $t$, propagated forward to effect on $d\bm{Y}_t$ with $\mathcal{P}$
+
+    The \alert{full Jacobian} is then:
+    \[
+        \mathcal{J}_{t,s} = \mathcal{Y}_{s-t} + (\mathcal{P}_0' \mathcal{D}_{s-t+1}+...+\mathcal{P}_{t-1}' \mathcal{D}_s)
+    \]
+\end{frame}
+
+\begin{frame}{Fake News Algorithm}{Fake news matrix}
+    Define the \alert{fake news matrix} as:
+    \[
+        \mathcal{F}_{t,s} \equiv
+        \begin{cases}
+            \mathcal{Y}_s                            & \text{if } t = 0, \\
+            \mathcal{P}_{t-1}^{\prime} \mathcal{D}_s & \text{if } t > 0.
+        \end{cases}
+    \]
+
+    \begin{itemize}
+        \item \textbf{Interpretation:}
+              \begin{itemize}
+                  \item $t = 0$: agents get news of shock at date $s \geq 0$
+                  \item $t \geq 1$: news of unrealized shock disappears (“fake news”)
+              \end{itemize}
+        \item Build Jacobian (response to news shocks) recursively from fake news matrix (response to fake news shocks) as:
+    \end{itemize}
+
+    \[
+        \mathcal{J}_{t,s} \equiv
+        \begin{cases}
+            \mathcal{F}_{t,s}                         & \text{if } t = 0 \text{ or } s = 0, \\
+            \mathcal{F}_{t,s} + \mathcal{J}_{t-1,s-1} & \text{otherwise}
+        \end{cases}
+    \]
+\end{frame}
+
+
+\begin{frame}{Fake News Algorithm}{Algorithm}
+    To obtain Jacobians $\mathcal{J}^{o,i}$ for many inputs $dX^i$ and outputs $dY^o$:
+    \begin{enumerate}
+        \item For each input $i$, perform \textcolor{mygreen}{backward} iteration with $T$ steps to get all $\mathcal{y}_u^{o,i}$ and $\mathcal{D}_u^{i}$.
+        \item For each output $o$, perform \textcolor{myorange}{transpose forward} iteration with $T-1$ steps to get all $\mathcal{P}_u^{o}$.
+        \item For each pair $(o,i)$, construct \alert{the fake news matrix} $\mathcal{F}^{o,i}$ from $\mathcal{y}^{o,i}$ in the first row and the product $(\mathcal{P}^{o})'\mathcal{D}^{i}$ for other rows.
+        \item For each pair $(o,i)$, recursively compute $\mathcal{J}^{o,i}$ from $\mathcal{F}^{o,i}$.
+    \end{enumerate}
+    \vspace{0.5em}
+    \alert{Step 1} is almost always the bottleneck.
+\end{frame}
 \subsection{Theoretical progress after SSJ}
+
+\begin{frame}{DAG}{Krusell-Smith model as a directed acyclic graph (DAG)}
+    Recall that we wrote equilibrium in KS model as system
+
+    \[H_t(\bm{K},\bm{Z})\equiv\mathcal{K}_t\left(\left\{ \underbrace{\alpha Z_s\left(\frac{K_{s-1}}{\sum\pi(e)en}\right)^{\alpha-1}-\delta}_{r_s}, \underbrace{(1-\alpha)Z_s\left(\frac{K_{s-1}}{\sum\pi(e)en}\right)^\alpha}_{w_s} \right\}_{s=0}^{\infty}\right)-K_t=0\]
+
+    This corresponds to a simple graph:
+
+    \begin{tikzpicture}[
+            >=Latex,
+            box/.style={draw=teal!60!black, thick, rectangle,  align=center},
+            bluecirc/.style={draw=blue, thick, circle, align=center, text=blue},
+            redcirc/.style={draw=red, thick, circle, align=center, text=red},
+            flow/.style={->, thick, draw=teal!60!black},
+            lab/.style={midway, fill=white, inner sep=1pt}
+        ]
+
+        % nodes
+        \node[box] (leftbox) at (0,0) {exog.\ $Z$ \\ endog.\ $K$};
+        \node[bluecirc] (firms) at (3.2,1.2) {firms};
+        \node[redcirc] (ha) at (5.2,1.2) {HA};
+        \node[box] (market) at (9.2,0) {asset mkt. \\ clearing $(H)$};
+
+        % arrows
+        \draw[flow] (leftbox.north east) to[bend left=10] node[lab, above left] {$K,\,Z$} (firms.west);
+        \draw[flow] (firms.east) -- node[lab, above] {$r,w$} (ha.west);
+        \draw[flow] (ha.east) to[bend left=8] node[lab,above right] {$\mathcal{K}$} (market.north west);
+        \draw[flow] (leftbox.east) -- node[lab, above] {$K$} (market.west);
+
+    \end{tikzpicture}
+
+\end{frame}
+
+\begin{frame}{DAG}{DAGs combining simple and HA blocks}
+    \begin{tikzpicture}[
+            >=Latex,
+            box/.style={draw=teal!60!black, thick, rectangle,  align=center},
+            bluecirc/.style={draw=blue, thick, circle, align=center, text=blue},
+            redcirc/.style={draw=red, thick, circle, align=center, text=red},
+            flow/.style={->, thick, draw=teal!60!black},
+            lab/.style={midway, fill=white, inner sep=1pt}
+        ]
+
+        % nodes
+        \node[box] (leftbox) at (0,0) {exog.\ $Z$ \\ endog.\ $K$};
+        \node[bluecirc] (firms) at (3.2,1.2) {firms};
+        \node[redcirc] (ha) at (5.2,1.2) {HA};
+        \node[box] (market) at (9.2,0) {asset mkt. \\ clearing $(H)$};
+
+        % arrows
+        \draw[flow] (leftbox.north east) to[bend left=10] node[lab, above left] {$K,\,Z$} (firms.west);
+        \draw[flow] (firms.east) -- node[lab, above] {$r,w$} (ha.west);
+        \draw[flow] (ha.east) to[bend left=8] node[lab,above right] {$\mathcal{K}$} (market.north west);
+        \draw[flow] (leftbox.east) -- node[lab, above] {$K$} (market.west);
+
+    \end{tikzpicture}
+    \begin{itemize}
+        \item Each node (``block'') takes sequences as inputs and outputs.
+        \item Inputs of later blocks are outputs of earlier blocks.
+        \item The number of endogenous variables (``unknowns'') equals the number of equations in $H$ (``targets''); solve to get equilibrium.
+        \item Two kinds of blocks in SHADE models:
+              \begin{itemize}
+                  \item \textcolor{blue}{Simple blocks:} Analytical equations directly in aggregates, e.g.\ $r_t = \alpha Z_t K_{t-1}^{\alpha-1} - \delta$; Jacobians are sparse and easy to obtain.
+                  \item \textcolor{red}{HA blocks:} As described previously.
+              \end{itemize}
+    \end{itemize}
+\end{frame}
+
+
+\begin{frame}{DAG}{DAGs combining simple and HA blocks}
+    \begin{tikzpicture}[
+            >=Latex,
+            box/.style={draw=teal!60!black, thick, rectangle,  align=center},
+            bluecirc/.style={draw=blue, thick, circle, align=center, text=blue},
+            redcirc/.style={draw=red, thick, circle, align=center, text=red},
+            flow/.style={->, thick, draw=teal!60!black},
+            lab/.style={midway, fill=white, inner sep=1pt}
+        ]
+
+        % nodes
+        \node[box] (leftbox) at (0,0) {exog.\ $Z$ \\ endog.\ $K$};
+        \node[bluecirc] (firms) at (3.2,1.2) {firms};
+        \node[redcirc] (ha) at (5.2,1.2) {HA};
+        \node[box] (market) at (9.2,0) {asset mkt. \\ clearing $(H)$};
+
+        % arrows
+        \draw[flow] (leftbox.north east) to[bend left=10] node[lab, above left] {$K,\,Z$} (firms.west);
+        \draw[flow] (firms.east) -- node[lab, above] {$r,w$} (ha.west);
+        \draw[flow] (ha.east) to[bend left=8] node[lab,above right] {$\mathcal{K}$} (market.north west);
+        \draw[flow] (leftbox.east) -- node[lab, above] {$K$} (market.west);
+
+    \end{tikzpicture}
+    \begin{itemize}
+        \item Define $\mathbf{J}^{o,i}$ to be the \alert{total derivative} of $o$ along the DAG with respect to the exogenous or endogenous variable $i$ (distinct from the block Jacobian $\mathcal{J}^{o,i}$).
+        \item Here, for example, $\mathbf{J}^{r,K}$ equals $\mathcal{J}^{r,K}$, etc.: the direct effect is the only effect.
+        \item Then we need the chain rule. For instance:
+              \[
+                  \textcolor{red}{ \mathbf{J}^{\mathcal{K},K}} = \textcolor{red}{\mathcal{J}^{\mathcal{K},r}} \textcolor{blue}{\mathbf{J}^{r,K}} + \textcolor{red}{\mathcal{J}^{\mathcal{K},w}} \textcolor{blue}{\mathbf{J}^{w,K}}
+              \]
+        \item Finally, we obtain $\mathbf{H}_K$ and $\mathbf{H}_Z$; then $\mathbf{G}^{K,Z} \equiv -\mathbf{H}_K^{-1}\mathbf{H}_Z$ gives the general equilibrium map from $Z$ to $K$, and all $\mathbf{G}^{o,Z}$ are determined from it.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{DAG}{General case: solving with forward accumulation}
+    \begin{itemize}
+        \item Initialize $\mathbf{J}^{i,i}$ as the identity for all exogenous or unknown $i$.
+        \item Evaluate the chain rule following a topological sort:
+              \[
+                  \mathbf{J}^{o,i} = \sum_{m \in I_b} \mathcal{J}^{o,m} \mathbf{J}^{m,i}
+              \]
+              on blocks $b$ to get $\mathbf{H}_U = \mathbf{J}^{H,U}$ and $\mathbf{H}_Z = \mathbf{J}^{H,Z}$.
+        \item This is called ``forward accumulation'' in the algorithmic differentiation literature.
+        \item Compute the general equilibrium mapping:
+              \(
+              \mathbf{G}^{U,Z} = -\mathbf{H}_U^{-1} \mathbf{H}_Z
+              \)
+        \item Then do forward accumulation again:
+              \[
+                  \mathbf{G}^{o,Z} = \sum_{m \in I_b} \mathcal{J}^{o,m} \mathbf{G}^{m,Z}
+              \]
+              to get general equilibrium mappings $\mathbf{G}^{o,Z}$ from shocks $dZ$ to all variables $o$ of interest.
+        \item This gives impulse responses to every shock simultaneously.
+    \end{itemize}
+\end{frame}
+
+
 
 \begin{frame}{Determinacy and Large-Scale Solutions in the Sequence Space}
     \textit{To be developed}
