@@ -1,0 +1,11 @@
+\babel@toc {english}{}\relax 
+\beamer@sectionintoc {1}{Why Sequence Space?}{3}{0}{1}
+\beamer@sectionintoc {2}{Local Solution}{8}{0}{2}
+\beamer@subsectionintoc {2}{1}{SSJ}{9}{0}{2}
+\beamer@subsectionintoc {2}{2}{Theoretical progress after SSJ}{33}{0}{2}
+\beamer@subsectionintoc {2}{3}{Application}{47}{0}{2}
+\beamer@sectionintoc {3}{Global Solution}{48}{0}{3}
+\beamer@subsectionintoc {3}{1}{Repeated transition method}{49}{0}{3}
+\beamer@subsectionintoc {3}{2}{DL in sequence space}{52}{0}{3}
+\beamer@subsectionintoc {3}{3}{RL in sequence space}{55}{0}{3}
+\beamer@sectionintoc {4}{Reference}{56}{0}{4}

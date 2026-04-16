@@ -22,13 +22,13 @@
   palette=horizon,
   frametitle=subtle,
   progressbar,
-  sansface={libertinus},
+%   sansface={libertinus},
 %   mathface=libertinus,
 ]{Celestia}
 
 
 
-\AtBeginDocument{\hypersetup{colorlinks=true,allcolors=citegray,citecolor=citegray}}
+\AtBeginDocument{\hypersetup{colorlinks=true,citecolor=citegray}}
 
 \title{Macroeconomics in the Sequence Space}
 \author{Chen Gao \and Weigao Wang}
@@ -103,284 +103,134 @@
 
 
 \section{Local Solution}
+
+
 \subsection{SSJ}
-\begin{frame}{Example: The Krusell-Smith Model}{Setup}
-    \begin{itemize}
-        \item The economy is populated by a mass 1 of heterogeneous households,
-        \item Each household maximizes its expected lifetime utility:
-              \[
-                  \mathbb{E}_0\left[\sum_{t=0}^{\infty} \beta^t u(c_t)\right],
-              \]
-        \item Standard CRRA utility,
-        \item There exist $n_e$ idiosyncratic states w/ transition matrix $P(e,e')$ and stationary distribution $\pi$,
-        \item Agents supply an exogenous number of hours $n$, and earn wage income $w_t e n$,
-        \item Agents can only trade in capital $k$, which pays a rental rate $r_t$ net of depreciation.
-    \end{itemize}
+\begin{frame}{Steady State}{The Standard Incomplete Markets Model}
+    Core of the canonical HA model: the SIM model
+    \begin{align}
+        V_t (s, a) & = \max_{c,\, a'} \; u (c) + \beta \mathbb{E} \left[ V_{t+1} (s', a') \mid s \right], \label{eq:sim-bellman} \\
+        \text{s.t.} \quad & a' + c = (1 + r_t) a + y_t (s) \\
+        & a' \geq a
+    \end{align} 
 
+    We basically need 4 steps to solve the steady state:
+    \begin{enumerate}
+        \item Discretize the state space
+        \item Solve for steady state policy functions $a'(s, a)$ and $c(s, a)$
+        \item Solve for steady state distribution $D(s, a)$
+        \item Aggregate assets and consumption
+    \end{enumerate}
+\end{frame}
+
+
+\begin{frame}{Steady State}{Step 1: Discretization}
+    \textbf{Asset Grid for $a$:}
+    \begin{itemize}
+        \item It is common to use a uniform grid.
+        \item Most nonlinearity occurs near the borrowing constraint $a$, so more points should be placed close to the constraint.
+        \item \textbf{Solution:} Use a double exponential grid:
+        \[
+            a_i = \underline{a} + \exp\left(\exp(u_i) - 1\right) - 1
+        \]
+        where $u_i$ is uniform on $[0, \bar{u}]$.
+    \end{itemize}
+    \textbf{Markov Chain for $s$:}
+    \begin{itemize}
+        \item Approximate an AR(1) process with persistence $\rho$.
+        \item For $\rho \approx 1$, use Rouwenhorst’s method.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Steady State}{Step 2: Steady State policies}
+    We'll use two optimality conditions: 
+
+    \textbf{Envelope Condition:}
+    \begin{equation}
+        V_{a,t}\left(s,a\right) = \left( 1 + r_{t} \right) u'\left(c_{t}\left(s,a\right)\right)\label{eq:sim-envelope}
+    \end{equation}
+
+    \textbf{First Order Condition:}
+    \begin{equation}
+        u'\left( c_{t}\left( s, a \right) \right) \geq \beta \mathbb{E}\left[ V_{a,t+1}\left( s', a_{t}^{\prime}\left( s, a \right) \right) \right]\label{eq:sim-foc}
+    \end{equation}
+    with equality unless the budget constraint binds.
+
+\vspace{0.5em}
+    The key to solving for steady state policies is to use \textbf{EGM} backward iteration. Each iteration proceeds as follows:
+    \[
+        V_{a,t+1}\left( s', a' \right)
+        \xrightarrow{\eqref{eq:sim-foc}} 
+        c_{t}^{\text{endo}}\left( s, a' \right)
+        \xrightarrow{\text{interpolate}} 
+        a_{t}'\left( s, a \right)
+        \xrightarrow{\eqref{eq:sim-bellman}} 
+        c_{t}\left( s, a \right)
+        \xrightarrow{\eqref{eq:sim-envelope}} 
+        V_{a,t}\left( s, a \right)
+    \]
+\end{frame}
+
+
+\begin{frame}{Steady State}{Step 3: Distribution}
+    \textbf{Goal:} Update the next period distribution $D_{t+1}(s, a)$ using the policy function $a'_t(s, a)$.
+
+    \textbf{Issue:} The policy $a'_t(s, a)$ generally \alert{does not land exactly on the grid points}.
+
+
+    \vspace{0.5em}
+
+
+    \textbf{Solution:} Use \alert{lotteries} to distribute probability mass. The idea is to map the current mass to adjacent grid points in the next period based on interpolation weights.
+
+
+    \vspace{0.5em}
+
+    Suppose for two grid points $a_i$, $a_{i+1}$, the policy yields:
+    \[
+        a'_t(s, a) = \pi a_i + (1 - \pi) a_{i+1}
+    \]
+    where $0 \leq \pi \leq 1$. Then, send mass $\pi D_t(s, a)$ to $(s', a_i)$ and $(1 - \pi) D_t(s, a)$ to $(s', a_{i+1})$.
+
+
+    \vspace{0.5em}
+
+    \textbf{Key Idea:} No simulation is needed! We iteratively update the distribution until it converges.
 
 \end{frame}
 
-\begin{frame}{Example: The Krusell-Smith Model}{Household Problem}
-    The value function of an agent entering period w/ state $(e,k_-)$ is given by:
-
+\begin{frame}{Steady State}{Step 4: Aggregation}
+    For each period $t$, the aggregate variables are easily obtained from the distribution and policy functions:
     \begin{align*}
-        V_t(e, k_-)               & = \max_{c,\,k}  u(c) + \beta \sum_{e'} V_{t+1}(e', k) \, P(e,e') \\
-        \text{s.t.} \qquad  c + k & = (1 + r_t)k_- + w_t e n                                         \\
-        k                         & \geq 0
+        C_t &= \sum_{s,a} c_t(s, a) \cdot D_t(s, a) \\
+        A_t &= \sum_{s,a} a'_t(s, a) \cdot D_t(s, a)
     \end{align*}
-
-    \begin{itemize}
-        \item Denote by $c^*_t(e, k_-)$ and $k^*_t(e, k_-)$ the policy functions that solve the Bellman equation.
-        \item Also denote by $D_t(e, K_-)$ the measure of households in state $e$ that own capital in a set $K_-$ at the start of date $t$.
-    \end{itemize}
-\end{frame}
-
-
-\begin{frame}{Example: The Krusell-Smith Model}{Household Problem}
-    The distribution $D_t$ has law of motion
-    \[
-        D_{t+1}(e', K) = D_t(e, k^{*-1}_t(e, K)) P(e,e').
-    \]
-    where $k^{*-1}_t(e, K)$ denotes the inverse of $k^*_t(e, K)$.
-
-    \begin{itemize}
-        \item We assume that prior to $t = 0$, the economy is in a steady state.
-        \item We suppose that agents start in this stationary distribution at date $0$, so that $D_0 = D_{ss}$.
-    \end{itemize}
-
-\end{frame}
-
-
-\begin{frame}{Example: The Krusell-Smith Model}{Aggregate Capital}
-    \begin{itemize}
-        \item For any $t$, the policy $k^*_t(e, k_-)$ is a function of the future path
-              $\{r_s, w_s\}_{s=t}^{\infty}$.
-        \item \alert{Given $D_0 = D_{ss}$, the distribution $D_t(e, K)$ at any $t$ is a function of the entire path $\{r_s, w_s\}_{s=0}^{\infty}$.}
-        \item The aggregate household capital holdings are characterized by a capital function $\mathcal{K}_t(\{r_s, w_s\}_{s=0}^{\infty})$.
-
-              \[
-                  \mathcal{K}_t\left(\{r_s, w_s\}_{s=0}^{\infty}\right) =
-                  \sum_{e} \int_{k_-}
-                  k^*_t(e, k_-) D_t(e, dk_-)
-              \]
-    \end{itemize}
-
-    \begin{alertblock}{Key Insight}
-        The ability to reduce interactions between heterogeneous agents to functions such as $\mathcal{K}_t$,
-        which map aggregate sequences into aggregate sequences, is key to the sequence-space Jacobian method.
-    \end{alertblock}
-\end{frame}
-
-
-\begin{frame}{Example: The Krusell-Smith Model}{Production}
-    \begin{itemize}
-        \item Firm adopts a Cobb-Douglas production function: \[Y_t = Z_t K_t^{\alpha} N_t^{1-\alpha}\]
-        \item The firm’s first-order conditions:
-              \begin{align*}
-                  r_t & = \alpha Z_t K_{t-1}^{\alpha-1} N_t^{1-\alpha} -\delta \\
-                  w_t & = (1 - \alpha) Z_t K_{t-1}^{\alpha} N_t^{-\alpha}
-              \end{align*}
-
-    \end{itemize}
-
-    \begin{alertblock}{Key Insight}
-        The paths of prices $\{r_t, w_t\}_{t=0}^{\infty}$  are now functions of the exogenous paths $\{Z_t,N_t\}_{t=0}^{\infty}$ and the endogenous path $\{K_t\}_{t=0}^{\infty}$.
-    \end{alertblock}
 \end{frame}
 
 
 
-\begin{frame}{Example: The Krusell-Smith Model}{Capital Market-Clearing Condition}
-    Combining together, we can express the capital market-clearing condition at each point in time as a function $H_t$:
-    \[H_t(\bm{K},\bm{Z})\equiv\mathcal{K}_t\left(\left\{ \underbrace{\alpha Z_s\left(\frac{K_{s-1}}{\sum\pi(e)en}\right)^{\alpha-1}-\delta}_{r_s}, \underbrace{(1-\alpha)Z_s\left(\frac{K_{s-1}}{\sum\pi(e)en}\right)^\alpha}_{w_s} \right\}_{s=0}^{\infty}\right)-K_t=0\]
-    where $\bm{K}$ is the vector of capital holdings $\{K_t\}_{t=0}^{\infty}$ and $\bm{Z}$ is the vector of exogenous shocks $\{Z_t\}_{t=0}^{\infty}$.
+\begin{frame}{Computing HA Jacobians: the “fake news” algorithm}{Partial Equilibrium Dynamics}
 
-    \begin{block}{Equilibrium Capital Path}
-        Given initial capital $K_{-1}$ and the exogenous path for productivity $\bm{Z}$ , we have equilibrium path of capital $\{K_t\}_{t=0}^{\infty}$ by \alert{solving the nonlinear equation $H_t(\bm{K},\bm{Z})=0$}.
-    \end{block}
+    \textbf{Q:} Given time-varying $\{r_t\}_{t=0}^T$ or $\{y_t(s)\}_{t=0}^T$, how to get $C_t$, $A_t$?
 
-\end{frame}
-
-
-\begin{frame}{Example: The Krusell-Smith Model}{IRF}
-    By  \emph{implicit function theorem}, given an exo. shock $\mathrm{d} \bm{Z}= (\mathrm{d} Z_0,\mathrm{d} Z_1...)'$ at $t=0$, the linear impulse response of capital to this shock is given by:
-    \[
-        d\bm{K} = - H_K^{-1} H_Z \, d\bm{Z}
-    \]
-
-    where $H_K$ and $H_Z$ denote the Jacobians of $H$ with respect to $\bm{K}$ and $\bm{Z}$, evaluated at the steady state.
-    \begin{itemize}
-        \item Given $\mathrm{d}\bm{K}$, the impulse responses of other variables—for example, $\{Y_t, r_t, w_t\}_{t=0}^{\infty}$—follow immediately.
-
-        \item In practice, $H_t(\bm{K},\bm{Z})=0$ is solved up to a sufficiently large horizon $T$ such that $\bm{K}$ and $\bm{Z}$ have approximately returned to their steady states by time $T$.
-    \end{itemize}
-\end{frame}
-
-\begin{frame}{Example: The Krusell-Smith Model}{Constructing the Jacobian}
-    \begin{itemize}
-        \item  We use the \emph{chain rule} to relate the Jacobians $H_K$ and $H_Z$ to the derivatives of the $\mathcal{K}$.
-        \item For example, differentiating $H_t(\bm{K},\bm{Z})=0$ with respect to $K_s$
-        \item     The $(t, s)$ entry of $H_K$ is:
-              \[
-                  [H_K]_{t,s} = \frac{\partial \mathcal{K}_t}{\partial r_{s+1}} \frac{\partial r_{s+1}}{\partial K_s}
-                  + \frac{\partial \mathcal{K}_t}{\partial w_{s+1}} \frac{\partial w_{s+1}}{\partial K_s} - \bm{1}_{\{s = t\}}
-              \]
-
-        \item A similar expression applies to $H_Z$.
-        \item In addition, the derivatives such as $\frac{\partial r_{s+1}}{\partial K_s}$ at $(K^{ss}, Z^{ss})$ can all be computed analytically.
-        \item For example:
-              \[
-                  \frac{\partial r_{s+1}}{\partial K_s} = \alpha(\alpha - 1) Z^{ss} (K^{ss})^{\alpha-2} (N^{ss})^{1-\alpha}
-              \]
-
-    \end{itemize}
-\end{frame}
-
-
-
-\begin{frame}{Example: The Krusell-Smith Model}{Constructing the Jacobian}
-    Recall that:
-    \[
-        d\bm{K} = - H_K^{-1} H_Z \, d\bm{Z},
-    \]
-    To get $H_K^{-1} H_Z $, the only thing left is to solve the Jacobians of the $\mathcal{K}$ function with
-    respect to its two inputs $r$ and $w$.
-
-
-    \[
-        [H_K]_{t,s} =\alert{ \frac{\partial \mathcal{K}_t}{\partial r_{s+1}} }\frac{\partial r_{s+1}}{\partial K_s}
-        + \alert{ \frac{\partial \mathcal{K}_t}{\partial w_{s+1}} } \frac{\partial w_{s+1}}{\partial K_s} - \bm{1}_{\{s = t\}}
-    \]
-
-    Let \[\mathcal{J}_{t,s}^{\mathcal{K},r}=\frac{\partial\mathcal{K}_t}{\partial r_s},\quad\mathcal{J}_{t,s}^{\mathcal{K},w}=\frac{\partial\mathcal{K}_t}{\partial w_s}\] be the Jacobians up to some truncation horizon $T$.
-
-
-
-\end{frame}
-
-
-\begin{frame}{Example: The Krusell-Smith Model}{Constructing the Jacobian}
-    \begin{alertblock}{Sufficient statistics}
-        The Jacobians $\mathcal{J}^{\mathcal{K},r}$ and $\mathcal{J}^{\mathcal{K},w}$ are sufficient statistics for the household in sequence space equilibrium:
-        \begin{itemize}
-            \item Shocks propagate through the dynamics of the household capital distribution, but\emph{ we do not need those details if we have the Jacobians.}
-            \item Column $s$ of $\mathcal{J}^{\mathcal{K},r}$ is \alert{the impulse response of capital to a news shock $dr_s$}; the Jacobian gives these for all $s=0,\ldots,T-1$.
-            \item These are rich objects, but \emph{there is a fast new algorithm to compute them.}
-        \end{itemize}
-    \end{alertblock}
-\end{frame}
-
-\begin{frame}{Fake News Algorithm}{General Model Representation}
-
-    We represent a heterogeneous-agent problem as a mapping from a time path of
-    aggregate inputs $\{\bm{X}_t\}$ to a time path of aggregate outputs $\{\bm{Y}_t\}$.
 
     \vspace{0.5em}
 
-    Assume:
-    \begin{itemize}
-        \item $\bm{X}_t \in \mathbb{R}^{n_x}$: aggregate inputs,
-        \item $\bm{Y}_t \in \mathbb{R}^{n_y}$: aggregate outputs,
-        \item the distribution is discretized on $n_g$ grid points,
-        \item $\bm{D}_t \in \mathbb{R}^{n_g}$: cross-sectional distribution of agents at time $t$.
-    \end{itemize}
-
-    \vspace{0.5em}
-
-    Aggregate outputs are averages of individual outcomes against the distribution:
-    \[
-        \bm{Y}_t = \bm{y}_t' \bm{D}_t,
-    \]
-    where $\bm{y}_t$ is an $n_g \times n_y$ matrix of individual outcomes
-    (for example, consumption, savings, labor supply, or other individual-level objects).
-\end{frame}
-
-
-\begin{frame}{Fake News Algorithm}{Three Core Equations}
-
-    We assume there exist three functions $v$, $\Lambda$, and $y$ such that,
-    for a given initial distribution $\bm{D}_0$, the aggregate sequence solves
-    \[
-        \bm{v}_t = v(\bm{v}_{t+1}, \bm{X}_t),
-    \]
-    \[
-        \bm{D}_{t+1} = \Lambda(\bm{v}_{t+1}, \bm{X}_t)\,\bm{D}_t,
-    \]
-    \[
-        \bm{Y}_t = y(\bm{v}_{t+1}, \bm{X}_t)' \bm{D}_t.
-    \]
-
-    \vspace{0.7em}
-
-    Interpretation:
-    \begin{itemize}
-        \item $\bm{v}_t$: backward-looking object, typically the value function;
-        \item $\Lambda(\bm{v}_{t+1}, \bm{X}_t)$: transition matrix governing the law of motion of the distribution;
-        \item $y(\bm{v}_{t+1}, \bm{X}_t)$: individual outcomes used to aggregate into $\bm{Y}_t$.
-    \end{itemize}
-\end{frame}
-
-
-
-\begin{frame}{Fake News Algorithm}{Steady State and Transition Paths}
-    \small
-    For a constant aggregate input $\bm{X}_{ss}$, the steady state is a fixed point
-    \[
-        (\bm{Y}_{ss}, \bm{v}_{ss}, \bm{D}_{ss})
-    \]
-    of the system.
-
-    \vspace{0.5em}
-
-    For convenience, define
-    \[
-        \Lambda_{ss} \equiv \Lambda(\bm{v}_{ss}, \bm{X}_{ss}),
-        \qquad
-        y_{ss} \equiv y(\bm{v}_{ss}, \bm{X}_{ss}).
-    \]
-
-    \vspace{0.5em}
-
-    We consider transition paths of length $T$ that end at the steady state:
-    \[
-        \bm{X}_{T-1} = \bm{X}_{ss},
-        \qquad
-        \bm{v}_T = \bm{v}_{ss}.
-    \]
-
-    The initial distribution $\bm{D}_0$ is given and often set equal to $\bm{D}_{ss}$.
-    \vspace{0.5em}
-
-    Hence, this framework is designed to study \alert{transitory shocks around a steady state}.
-\end{frame}
-
-% ------------------------------------------------
-\begin{frame}{Fake News Algorithm}{Economic Meaning of the System}
-    \small
-    \begin{block}{Step 1: Backward}
-        Given the future object $\bm{v}_{t+1}$ and current aggregates $\bm{X}_t$,
-        solve for the current object $\bm{v}_t$.
-    \end{block}
-
-    \begin{block}{Step 2: Forward}
-        Use $\Lambda(\bm{v}_{t+1}, \bm{X}_t)$ to update the cross-sectional distribution:
+    \textbf{A:} Backward and Forward Iteration!
+    \begin{enumerate}
+        \item From $V_{a,T} = V_{a,\mathrm{ss}}$, iterate \textbf{backward} to get $a'_t(s,a)$, $c_t(s,a)$ for all $t \geq 0$.
+        \item From $D_0(s,a) = D_{\mathrm{ss}}(s,a)$, iterate \textbf{forward} to get $D_t(s,a)$ from $a'_t(s,a)$.
+        \item Compute
         \[
-            \bm{D}_{t+1} = \Lambda(\bm{v}_{t+1}, \bm{X}_t)\bm{D}_t.
+            C_t = \sum_{s,a} c_t(s,a) \cdot D_t(s,a), \qquad
+            A_t = \sum_{s,a} a'_t(s,a) \cdot D_t(s,a)
         \]
-    \end{block}
-
-    \begin{block}{Step 3: Aggregate}
-        Aggregate individual outcomes across agents:
-        \[
-            \bm{Y}_t = y(\bm{v}_{t+1}, \bm{X}_t)' \bm{D}_t.
-        \]
-    \end{block}
-
+    \end{enumerate}
 
 \end{frame}
 
 
-\begin{frame}{Fake News Algorithm}{Three-Step Structure of the HA Model}
+\begin{frame}{Computing HA Jacobians: the “fake news” algorithm}{Partial Equilibrium Dynamics}
     \centering
     \begin{tikzpicture}[x=1.9cm,y=1cm,>=Latex,thick]
         \path[use as bounding box] (-0.3,-3.9) rectangle (5.4,1.9);
@@ -411,30 +261,30 @@
         % t=0
         \draw<4->[rounded corners=0.15cm, boxgray, line width=0.9pt]
         (0.5-\boxw/2,-\boxh/2) rectangle (0.5+\boxw/2,\boxh/2);
-        \node<2->[text=mygreen] at (0.5,0.42) { $\mathbf{v}_0$};
-        \node<3->[text=axisgray] at (0.5,-0.42) { $\mathbf{D}_0$};
-        \node<4->[text=mygray] at (0.5,-1.18) { $Y_0$};
+        \node<2->[text=mygreen] at (0.5,0.42) { $c_0$};
+        \node<3->[text=axisgray] at (0.5,-0.42) { $D_0$};
+        \node<4->[text=mygray] at (0.5,-1.18) { $C_0$};
 
         % t=1
         \draw<4->[rounded corners=0.15cm, boxgray, line width=0.9pt]
         (1.5-\boxw/2,-\boxh/2) rectangle (1.5+\boxw/2,\boxh/2);
-        \node<2->[text=mygreen] at (1.5,0.42) { $\mathbf{v}_1$};
-        \node<3->[text=myorange] at (1.5,-0.42) { $\mathbf{D}_1$};
-        \node<4->[text=mygray] at (1.5,-1.18) { $Y_1$};
+        \node<2->[text=mygreen] at (1.5,0.42) { $c_1$};
+        \node<3->[text=myorange] at (1.5,-0.42) { $D_1$};
+        \node<4->[text=mygray] at (1.5,-1.18) { $C_1$};
 
         % t=2
         \draw<4->[rounded corners=0.15cm, boxgray, line width=0.9pt]
         (2.5-\boxw/2,-\boxh/2) rectangle (2.5+\boxw/2,\boxh/2);
-        \node<2->[text=mygreen] at (2.5,0.42) { $\mathbf{v}_2$};
-        \node<3->[text=myorange] at (2.5,-0.42) { $\mathbf{D}_2$};
-        \node<4->[text=mygray] at (2.5,-1.18) { $Y_2$};
+        \node<2->[text=mygreen] at (2.5,0.42) { $c_2$};
+        \node<3->[text=myorange] at (2.5,-0.42) { $D_2$};
+        \node<4->[text=mygray] at (2.5,-1.18) { $C_2$};
 
         % t=T-1
         \draw<4->[rounded corners=0.15cm, boxgray, line width=0.9pt]
         (4.7-\boxw/2,-\boxh/2) rectangle (4.7+\boxw/2,\boxh/2);
-        \node<2->[text=mygreen] at (4.7,0.42) { $\mathbf{v}_{T-1}$};
-        \node<3->[text=myorange] at (4.7,-0.42) { $\mathbf{D}_{T-1}$};
-        \node<4->[text=mygray] at (4.7,-1.18) { $Y_{T-1}$};
+        \node<2->[text=mygreen] at (4.7,0.42) { $c_{T-1}$};
+        \node<3->[text=myorange] at (4.7,-0.42) { $D_{T-1}$};
+        \node<4->[text=mygray] at (4.7,-1.18) { $C_{T-1}$};
 
         % =========================================================
         % Step 1: backward
@@ -454,7 +304,7 @@
             (5.2,0.18) to[out=110,in=70] (4.2,0.18);
 
         \node<2->[mygreen, align=center] at (2.55,1.5)
-            {Step 1: Backward\\[1mm] $\bm{v}_t = v(\bm{v}_{t+1},\bm{X}_t)$};
+            {Step 1: Backward};
 
         % =========================================================
         % Step 2: forward
@@ -469,159 +319,185 @@
             (4.2,-0.18) to[out=-70,in=-110] (5.2,-0.18);
 
         \node<3->[myorange, align=center] at (2.60,-2)
-            {Step 2: Forward\\[1mm] $\bm{D}_{t+1}=\Lambda(\bm{v}_{t+1},\bm{X}_t)\bm{D}_t$};
+            {Step 2: Forward};
 
         % =========================================================
         % Step 3: aggregate
         % =========================================================
         \node<4->[text=mygray, align=center] at (2.60,-3.5)
-            {Step 3: Aggregate\\[1mm] $\bm{Y}_t = y(\bm{v}_{t+1},\bm{X}_t)^\prime \bm{D}_t$};
+            {Step 3: Aggregate};
 
     \end{tikzpicture}
 \end{frame}
 
 
+\begin{frame}{Computing HA Jacobians: the ``fake news'' algorithm}{Sequence-space Jacobians}
+
+    Denote the impulse response of aggregate consumption $C_t$ to a one-time productivity shock $y_s$ at  time $s$ by:
+    \[
+        \frac{\partial C_t}{\partial y_s}
+    \]
+    We want the stacked matrix:
+    \[
+        \mathcal{J}^{C,y} \equiv \begin{pmatrix} \dfrac{\partial C_t}{\partial y_s} \end{pmatrix}_{T \times T}  =  \begin{pmatrix} \mathcal{J}_{ts}^{C,y} \end{pmatrix}_{T \times T}
+    \]
+    Such a matrix is the \alert{sequence-space Jacobian (SSJ)}.
+
+\end{frame}
 
 
 
-\begin{frame}{Fake News Algorithm}{Calculating the Jacobian: direct vs. new algorithm}
-
-    \begin{itemize}
-        \item The direct algorithm requires a separate backward and forward iteration for each $s = 0, \ldots, T-1$; \alert{this is costly}.
-        \item SSJ method uses a single \textcolor{mygreen}{backward} and \textcolor{myorange}{forward} iteration to get all $T$ columns.
-        \item \emph{This improves speed by a factor of roughly $T$ with no loss in accuracy.}
-        \item The key is to \alert{exploit time symmetries in the linearized system}.
-    \end{itemize}
+\begin{frame}{Computing HA Jacobians: the ``fake news'' algorithm}{How to compute}
+    To compute the SSJ, we truncate to some finite time $T$ (e.g., $T = 300$).
 
 
-    The linearized system:
-    \begin{align*}
-        d\bm{Y}_t     & =\textcolor{mygreen}{d\bm{y}_t' \bm{D}_{ss}} + \textcolor{myorange}{\bm{y}_{ss}'\, d\bm{D}_t} \\
-        d\bm{D}_{t+1} & =\textcolor{mygreen}{d\Lambda_t \bm{D}_{ss}} + \textcolor{myorange}{\Lambda_{ss} d\bm{D}_t}   \\
-        \bm{D}_0      & = d\bm{D}_{ss}
-    \end{align*}
+    For a generic approach with $T$ columns, one would need $T^2$ backward iterations and $T^2$ forward iterations. 
+    
+    \emph{Simply loop over all $s$ and $t$!}
 
     \vspace{0.5em}
 
-    Since everything is linear, we can look at terms from \textcolor{mygreen}{backward} and \textcolor{myorange}{forward} iterations separately, then combine them.
+
+    \textbf{Key result:} This paper computes the SSJ with only $T$ backward and $T$ forward iterations.
 
 \end{frame}
 
+\begin{frame}{Computing HA Jacobians: the ``fake news'' algorithm}{From $\mathcal{O}(T^2)$ to $\mathcal{O}(T)$: First Row}
+    Denote by $c_t^s(s,a)$ and $a_t^s(s,a)$ the policies at time $t$ in response to a shock at time $s$.
 
-\begin{frame}{Fake News Algorithm}{Terms from backward iteration}
-    Holding $\bm{D}_t = \bm{D}_{ss}$ fixed, what is the effect of $d\bm{X}_s$?
-    \begin{align*}
-        d\bm{Y}_t     & = \textcolor{mygreen}{d\bm{y}_t^{0} \bm{D}_{ss}} + \cancel{\textcolor{myorange}{\bm{y}_{ss}'\, d\bm{D}_t}} \\
-        d\bm{D}_{t+1} & = \textcolor{mygreen}{d\Lambda_t^{0} \bm{D}_{ss}} + \cancel{\textcolor{myorange}{\Lambda_{ss} d\bm{D}_t}}
-    \end{align*}
+    \vspace{0.6em}
 
+    \textbf{Key idea 1:} Only the time difference $s-t$ until the perturbation matters.
+
+    \[
+    c_t^s(s,a) =
+    \begin{cases}
+        c_{ss}(s,a) & \text{if } s < t \\[0.8em]
+        c_{T-1-(s-t)}^{T-1}(s,a) & \text{if } s \geq t
+    \end{cases}
+    \]
+
+    \emph{We only compute a single backward iteration with $s = T-1$ to obtain all the $c_t^s(s,a)$.}
+
+    \vspace{0.6em}
+
+    For aggregate responses:
     \begin{itemize}
-        \item $d\bm{y}_t^{0}$ and $d\Lambda_t^{0}$ are purely \textcolor{myorange}{forward-looking} from the Bellman equation.
-        \item They depend only on the time until the shock, $s-t$.
+        \item $C_0^s = \sum_{s,a} c_0^s(s,a)\, D_{ss}(s,a)$, so we get the \alert{first row} of the Jacobian: $\mathcal{J}_{0s}^{C,y} = \dfrac{\partial C_0}{\partial y_s}$.
+        \item $D_1^s(s,a)$ is then implied by $c_0^s(s,a)$ for all $s$.
     \end{itemize}
-    Define:
-    \[
-        \mathcal{ Y}_{s-t} \equiv \frac{d\bm{y}_t^{0} \bm{D}_{ss}}{d\bm{X}_s}  \qquad
-        \mathcal{ D}_{s-t} \equiv \frac{d\Lambda_t^{0} \bm{D}_{ss}}{d\bm{X}_s}
-    \]
-
-    Use a single \textcolor{mygreen}{backward} iteration with a shock $d\bm{X}_s$ at $s = T-1$ to obtain $d\bm{y}_t^{0}$ and $d\Lambda_t^{0}$ for all $t = T-1, \ldots, 0$.
-
-
 \end{frame}
 
-
-\begin{frame}{Fake News Algorithm}{Terms from forward iteration}
-    Holding $\bm{y}_t = \bm{y}_{ss}$ and $\Lambda_t = \Lambda_{ss}$ fixed, what is the effect of $d\bm{D}_t$?
-    \begin{align*}
-        d\bm{Y}_t     & = \cancel{\textcolor{mygreen}{d\bm{y}_t^{0} \bm{D}_{ss}}} + \textcolor{myorange}{\bm{y}_{ss}'\, d\bm{D}_t} \\
-        d\bm{D}_{t+1} & = \cancel{\textcolor{mygreen}{d\Lambda_t^{0} \bm{D}_{ss}}} + \textcolor{myorange}{\Lambda_{ss} d\bm{D}_t}
-    \end{align*}
-
-    Since everything’s linear, some linear functional (row vector) maps $d\bm{D}_t$ to $d\bm{Y}_t$: what is it?
+\begin{frame}{Computing HA Jacobians: the ``fake news'' algorithm}{From $\mathcal{O}(T^2)$ to $\mathcal{O}(T)$: First Column}
     \begin{itemize}
-        \item Can write for $s \leq t$ (zero for $s > t$):
-              \[
-                  d\bm{Y}_t=\underbrace{\bm{y}_{ss}'(\Lambda_{ss}')^{t-s}}_{\equiv\mathcal{P}_{t-s}'}d\bm{D}_s
-              \]
-
-        \item These $\mathcal{P}_u$ can be calculated recursively as:
-              \[
-                  \mathcal{P}_u = \Lambda_{ss}' \mathcal{P}_{u-1}
-              \]
-        \item Thus, a single ``transpose'' \textcolor{myorange}{forward} iteration gives all $\mathcal{P}_u$.
-
-
+        \item Intuitively, we can continue to compute $D_t^s(s,a)$, then aggregate $c_t^s = c_t^{s'} D_t^s$ for all $s,t$ (Still $O(T^2)!$)
+        \item Observe that to first order,
+        \[
+        dC_t^s = dc_t^{s'} D_{ss} + c_{ss}' dD_t^s
+        \]
+        \item Consider $s=0$. For $t \geq 1$, only the second term remains,
+        \[
+        dc_t^0 = \underbrace{\cancel{dc_t^{0'} D_{ss}}}_{c_t^s(s,a)=c_{ss}(s,a),s<t} + c_{ss}' dD_t^0 = c_{ss}' (\Lambda_{ss}')^{t-1} dD_1^0
+        \]
+        \item Here, $\Lambda_{ss}$ is the steady-state transition matrix for $(s,a)$,\alert{ obtained by $c_{ss}(s,a)$ } so
+        \begin{equation}
+            dC_t^0 = c_{ss}' (\Lambda_{ss}')^{t-1} dD_1^0 \label{eq:dc_t0}
+        \end{equation}
+        \item Then we get the \alert{first column} of the Jacobian: $\mathcal{J}_{t0}^{C,y} = \frac{\partial c_t}{\partial y_0}$ by \eqref{eq:dc_t0}.
     \end{itemize}
-
 \end{frame}
 
-\begin{frame}{Fake News Algorithm}{Putting it together: the Jacobian}
-    For shock $d\bm{X}_s$, we want:\[   d\bm{Y}_t      =\textcolor{mygreen}{d\bm{y}_t' \bm{D}_{ss}} + \textcolor{myorange}{\bm{y}_{ss}'\, d\bm{D}_t}\]
 
-    Change in policy, holding distribution constant:
+\begin{frame}{Computing HA Jacobians: the ``fake news'' algorithm}{From $\mathcal{O}(T^2)$ to $\mathcal{O}(T)$: Fake news for the rest!}
+    How about $s > 0$? Given policy symmetry, we have $d\mathbf{c}_t^s = d\mathbf{c}_{t-1}^{s-1}$. It follows:
     \[
-        \textcolor{mygreen}{d\bm{y}_t' \bm{D}_{ss}} = \mathcal{Y}_{s-t} d\bm{X}_s
+        dC_t^s - dC_{t-1}^{s-1} =\cancel{ \left( d\mathbf{c}_t^s - d\mathbf{c}_{t-1}^{s-1} \right)^\prime \mathbf{D}_{ss}}
+        +\ \mathbf{c}_{ss}^\prime \left( d\mathbf{D}_t^s - d\mathbf{D}_{t-1}^{s-1} \right)
     \]
-    Change in distribution, holding policy constant:
+    Given \alert{$c_t^s = c_{t-1}^{s-1} \implies \Lambda_t^s = \Lambda_{t-1}^{s-1}$, } it is then easy to see
     \[
-        \textcolor{myorange}{\bm{y}_{ss}'\, d\bm{D}_t} = (\mathcal{P}_0' \mathcal{D}_{s-t+1}+...+\mathcal{P}_{t-1}' \mathcal{D}_s) d\bm{X}_s
+        D_t^s - D_{t-1}^{s-1}
+        = \prod_{j=1}^{t-1} \left( \Lambda_j^{s\,\prime} \right) \left( \Lambda_0^{s} - I \right)^\prime D_{ss}
+        = \prod_{j=1}^{t-1} \left( \Lambda_j^{s\,\prime} \right) ( D_1^s - D_{ss} )
     \]
-    sum of shocks $\mathcal{D}$ to distribution from anticipating $d\bm{X}_s$ before $t$, propagated forward to effect on $d\bm{Y}_t$ with $\mathcal{P}$
+    Holding $\Lambda_j^{s} \equiv \Lambda_{ss}$, we have
+    \begin{equation}
+        \mathcal{F}_{ts}\,dx \overset{\text{def}}{=}
+        \mathbf{c}_{ss}^\prime \left(d\mathbf{D}_t^s - d\mathbf{D}_{t-1}^{s-1}\right)
+        = \mathbf{c}_{ss}^\prime \left( \Lambda_{ss}^\prime \right)^{t-1} d\mathbf{D}_1^s
+        \equiv \left( \mathcal{J}_{ts}^{C,y} - \mathcal{J}_{t-1,s-1}^{C,y} \right) dx \label{eq:fake_news}
+    \end{equation}
 
-    The \alert{full Jacobian} is then:
-    \[
-        \mathcal{J}_{t,s} = \mathcal{Y}_{s-t} + (\mathcal{P}_0' \mathcal{D}_{s-t+1}+...+\mathcal{P}_{t-1}' \mathcal{D}_s)
-    \]
-\end{frame}
-
-\begin{frame}{Fake News Algorithm}{Fake news matrix}
-    Define the \alert{fake news matrix} as:
-    \[
-        \mathcal{F}_{t,s} \equiv
-        \begin{cases}
-            \mathcal{Y}_s                            & \text{if } t = 0, \\
-            \mathcal{P}_{t-1}^{\prime} \mathcal{D}_s & \text{if } t > 0.
-        \end{cases}
-    \]
-
+    We interpret the $\mathcal{F}_{ts}$ as the \textbf{"fake news"} shock on $C_t$:
     \begin{itemize}
-        \item \textbf{Interpretation:}
-              \begin{itemize}
-                  \item $t = 0$: agents get news of shock at date $s \geq 0$
-                  \item $t \geq 1$: news of unrealized shock disappears (“fake news”)
-              \end{itemize}
-        \item Build Jacobian (response to news shocks) recursively from fake news matrix (response to fake news shocks) as:
+        \item[$\bullet$] $t = 0$: news shock that period $s$ shock hits $\Rightarrow d\mathbf{D}_1^s$
+        \item[$\bullet$] $t = 1$: fake news that there won't be a shock at $s \Rightarrow c_{ss} \Rightarrow \Lambda_{ss}$ afterwards
     \end{itemize}
-
-    \[
-        \mathcal{J}_{t,s} \equiv
-        \begin{cases}
-            \mathcal{F}_{t,s}                         & \text{if } t = 0 \text{ or } s = 0, \\
-            \mathcal{F}_{t,s} + \mathcal{J}_{t-1,s-1} & \text{otherwise}
-        \end{cases}
-    \]
 \end{frame}
 
 
-\begin{frame}{Fake News Algorithm}{Algorithm}
-    To obtain Jacobians $\mathcal{J}^{o,i}$ for many inputs $dX^i$ and outputs $dY^o$:
-    \begin{enumerate}
-        \item For each input $i$, perform \textcolor{mygreen}{backward} iteration with $T$ steps to get all $\mathcal{y}_u^{o,i}$ and $\mathcal{D}_u^{i}$.
-        \item For each output $o$, perform \textcolor{myorange}{transpose forward} iteration with $T-1$ steps to get all $\mathcal{P}_u^{o}$.
-        \item For each pair $(o,i)$, construct \alert{the fake news matrix} $\mathcal{F}^{o,i}$ from $\mathcal{y}^{o,i}$ in the first row and the product $(\mathcal{P}^{o})'\mathcal{D}^{i}$ for other rows.
-        \item For each pair $(o,i)$, recursively compute $\mathcal{J}^{o,i}$ from $\mathcal{F}^{o,i}$.
-    \end{enumerate}
+\begin{frame}{Computing HA Jacobians: the ``fake news'' algorithm}{From $\mathcal{O}(T^2)$ to $\mathcal{O}(T)$: Whole $\mathcal{J}^{C,y}$}
+    \textbf{Key Idea 2:} Recover $\mathcal{J}^{C,y}$ from 1st row, 1st column and $\mathcal{F}$.
+
+    News shock is a sequence of fake news shocks!
+
+    \[
+    \mathcal{J}^{C,y} =
+    \begin{pmatrix}
+        \mathcal{J}_{00} & \mathcal{J}_{01} & \mathcal{J}_{02} & \dots \\
+        \mathcal{J}_{10} & \mathcal{J}_{00} + \mathcal{F}_{00} & \mathcal{J}_{01} + \mathcal{F}_{01} & \dots \\
+        \mathcal{J}_{20} & \mathcal{J}_{10} + \mathcal{F}_{10} & \mathcal{J}_{11} + \mathcal{F}_{11} & \dots \\
+        \vdots & \vdots & \vdots & \ddots \\
+    \end{pmatrix}
+    \]
+
+    where, by the recursive structure, representative entries are given by:
+
+    \[
+    \mathcal{J}_{ts} =
+    \begin{cases}
+        \mathcal{J}_{t0} & \text{if } s = 0 \\
+        \mathcal{J}_{0s} & \text{if } t = 0 \\
+        \mathcal{J}_{t-1,s-1} + \mathcal{F}_{t-1,s-1} & \text{if } t,s \geq 1
+    \end{cases}
+    \]
+
+\end{frame}
+
+
+\begin{frame}{Computing HA Jacobians: the ``fake news'' algorithm}{Implementation}
+    Define the expectation function:
+    \[
+        \mathcal{E}_t(s, a) \equiv \mathbb{E} \left[ c_{ss}(s_t, a_t) \mid s_0 = s,\, a_0 = a \right]
+    \]
+    that is, the expected consumption at time $t$ for an agent starting at $(s,a)$ today.
+
     \vspace{0.5em}
-    \alert{Step 1} is almost always the bottleneck.
+
+    This is very easy to compute recursively:
+    \[
+        \mathcal{E}_0 = c_{ss}, \qquad
+        \mathcal{E}_t = \Lambda_{ss} \mathcal{E}_{t-1}
+    \]
+
+    \vspace{0.5em}
+
+    \textbf{Key Idea 3:} The $\mathcal{E}_t'$ are enough to get all $t \geq 1$ rows of $\mathcal{F}$:
+
+    \begin{itemize}
+        \item \textbf{First column} ($s = 0$): from \eqref{eq:dc_t0},\; $\mathcal{J}_{t0}\, dx = \mathcal{E}_t' \, dD^0_1$
+        \item \textbf{Other columns} ($s > 0$): from \eqref{eq:fake_news},\; $\mathcal{F}_{ts}\, dx = \mathcal{E}_t' \, dD^s_1$
+        \item \textbf{Result:} Eventually only $O(T)$ computation!
+    \end{itemize}
 \end{frame}
+
 \subsection{Theoretical progress after SSJ}
 
 \begin{frame}{DAG}{Krusell-Smith model as a directed acyclic graph (DAG)}
     Recall that we wrote equilibrium in KS model as system
 
-    \[H_t(\bm{K},\bm{Z})\equiv\mathcal{K}_t\left(\left\{ \underbrace{\alpha Z_s\left(\frac{K_{s-1}}{\sum\pi(e)en}\right)^{\alpha-1}-\delta}_{r_s}, \underbrace{(1-\alpha)Z_s\left(\frac{K_{s-1}}{\sum\pi(e)en}\right)^\alpha}_{w_s} \right\}_{s=0}^{\infty}\right)-K_t=0\]
-
+    \[H_t(\bm{K},\bm{Z})\equiv\mathcal{K}_t\left(\left\{ \underbrace{\alpha Z_s K_{s-1}^{\alpha-1}-\delta}_{r_s}, \underbrace{(1-\alpha)Z_s K_{s-1}^\alpha}_{w_s} \right\}_{s=0}^{\infty}\right)-K_t=0\]
+where $\mathcal{K}_t \equiv A_t$ is the aggregate capital stock at time $t$ and $\bm{Z} \equiv \{Z_s\}_{s=0}^{\infty}$ is the time-varying TFP process.
     This corresponds to a simple graph:
 
     \begin{center}
@@ -680,7 +556,7 @@
         \item Each node (``block'') takes sequences as inputs and outputs.
         \item Inputs of later blocks are outputs of earlier blocks.
         \item The number of endogenous variables (``unknowns'') equals the number of equations in $H$ (``targets''); solve to get equilibrium.
-        \item Two kinds of blocks in SHADE models:
+        \item Two kinds of blocks:
               \begin{itemize}
                   \item \textcolor{blue}{Simple blocks:} Analytical equations directly in aggregates, e.g.\ $r_t = \alpha Z_t K_{t-1}^{\alpha-1} - \delta$; Jacobians are sparse and easy to obtain.
                   \item \textcolor{red}{HA blocks:} As described previously.

@@ -1,16 +1,5 @@
 \begin{thebibliography}{}
 
-\bibitem[Achdou et~al., 2022]{achdou2022income}
-Achdou, Y., Han, J., Lasry, J.-M., Lions, P.-L., and Moll, B. (2022).
-\newblock Income and wealth distribution in macroeconomics: A continuous-time
-  approach.
-\newblock {\em The review of economic studies}, 89(1):45--86.
-
-\bibitem[Aiyagari, 1994]{aiyagari1994uninsured}
-Aiyagari, S.~R. (1994).
-\newblock Uninsured idiosyncratic risk and aggregate saving.
-\newblock {\em The Quarterly Journal of Economics}, 109(3):659--684.
-
 \bibitem[Angeletos et~al., 2025]{angeletos2025rank}
 Angeletos, G.-M., Guerreiro, J., and Zhang, D.~R. (2025).
 \newblock From rank to hank, without fire.
@@ -18,8 +7,7 @@ Angeletos, G.-M., Guerreiro, J., and Zhang, D.~R. (2025).
 
 \bibitem[Auclert et~al., 2021]{auclert2021using}
 Auclert, A., Bard{\'o}czy, B., Rognlie, M., and Straub, L. (2021).
-\newblock Using the sequence-space jacobian to solve and estimate
-  heterogeneous-agent models.
+\newblock Using the sequence-space jacobian to solve and estimate heterogeneous-agent models.
 \newblock {\em Econometrica}, 89(5):2375--2408.
 
 \bibitem[Auclert et~al., 2024a]{auclert2024optimal}
@@ -34,14 +22,12 @@ Auclert, A., Majic, E., Rognlie, M., and Straub, L. (2025a).
 
 \bibitem[Auclert et~al., 2025b]{auclert2025beyond}
 Auclert, A., Rigato, R., Rognlie, M., and Straub, L. (2025b).
-\newblock Beyond certainty equivalence: Second-order dynamics in the sequence
-  space.
+\newblock Beyond certainty equivalence: Second-order dynamics in the sequence space.
 \newblock Presentation slides.
 
 \bibitem[Auclert et~al., 2020]{auclert2020micro}
 Auclert, A., Rognlie, M., and Straub, L. (2020).
-\newblock Micro jumps, macro humps: Monetary policy and business cycles in an
-  estimated hank model.
+\newblock Micro jumps, macro humps: Monetary policy and business cycles in an estimated hank model.
 \newblock Technical report, National Bureau of Economic Research.
 
 \bibitem[Auclert et~al., 2024b]{auclert2024intertemporal}
@@ -61,8 +47,7 @@ Azinovic-Yang, M. and {\v{Z}}emli{\v{c}}ka, J. (2025).
 
 \bibitem[Bard{\'o}czy and Vel{\'a}squez-Giraldo, 2024]{bardoczy2024hank}
 Bard{\'o}czy, B. and Vel{\'a}squez-Giraldo, M. (2024).
-\newblock Hank comes of age: Monetary policy with heterogeneous overlapping
-  generations.
+\newblock Hank comes of age: Monetary policy with heterogeneous overlapping generations.
 
 \bibitem[Bardoczy and Velasquez~Giraldo, 2025]{bardoczy2025sequence}
 Bardoczy, B. and Velasquez~Giraldo, M. (2025).
@@ -77,12 +62,6 @@ Bellifemine, M., Jamilov, R., and Monacelli, T. (2022).
 Bilal, A. and Goyal, S. (2025).
 \newblock Some pleasant sequence-space arithmetic in continuous time.
 \newblock Technical report, National Bureau of Economic Research.
-
-\bibitem[Boppart et~al., 2018]{boppart2018exploiting}
-Boppart, T., Krusell, P., and Mitman, K. (2018).
-\newblock Exploiting mit shocks in heterogeneous-agent economies: the impulse
-  response as a numerical derivative.
-\newblock {\em Journal of Economic Dynamics and Control}, 89:68--92.
 
 \bibitem[Donald et~al., 2025]{donald2025optimal}
 Donald, E., Fukui, M., and Miyauchi, Y. (2025).
@@ -103,27 +82,15 @@ Kekre, R. (2023).
 \newblock Unemployment insurance in macroeconomic stabilization.
 \newblock {\em Review of Economic Studies}, 90(5):2439--2480.
 
-\bibitem[Krusell and Smith, 1998]{krusell1998income}
-Krusell, P. and Smith, Jr, A.~A. (1998).
-\newblock Income and wealth heterogeneity in the macroeconomy.
-\newblock {\em Journal of political Economy}, 106(5):867--896.
-
 \bibitem[Lee, 2025]{lee2025global}
 Lee, H. (2025).
-\newblock Global nonlinear solutions in sequence space and the generalized
-  transition function.
+\newblock Global nonlinear solutions in sequence space and the generalized transition function.
 \newblock Technical report, Working paper.
 
 \bibitem[McKay and Wolf, 2022]{mckay2022optimal}
 McKay, A. and Wolf, C. (2022).
 \newblock Optimal policy rules in hank.
 \newblock {\em Manuscript, January}, pages 121--144.
-
-\bibitem[Moll, 2025]{moll2025trouble}
-Moll, B. (2025).
-\newblock The trouble with rational expectations in heterogeneous agent models:
-  A challenge for macroeconomics.
-\newblock {\em The Economic Journal}, page ueaf104.
 
 \bibitem[Schaab and Tan, 2023]{schaab2023monetary}
 Schaab, A. and Tan, S.~Y. (2023).
@@ -137,8 +104,7 @@ Winberry, T., Auclert, A., Rognlie, M., and Straub, L. (2025).
 
 \bibitem[Yang et~al., 2025]{yang2025structural}
 Yang, Y., Wang, C., Schaab, A., and Moll, B. (2025).
-\newblock Structural reinforcement learning for heterogeneous agent
-  macroeconomics.
+\newblock Structural reinforcement learning for heterogeneous agent macroeconomics.
 \newblock {\em arXiv preprint arXiv:2512.18892}.
 
 \end{thebibliography}
