@@ -28,7 +28,7 @@
 
 
 
-\AtBeginDocument{\hypersetup{colorlinks=true,citecolor=citegray}}
+\AtBeginDocument{\hypersetup{colorlinks=true,allcolors=citegray,citecolor=citegray}}
 
 \title{Macroeconomics in the Sequence Space}
 \author{Chen Gao \and Weigao Wang}
@@ -630,9 +630,7 @@ where $\mathcal{K}_t \equiv A_t$ is the aggregate capital stock at time $t$ and 
 \begin{block}{Main result}
 For stationary models, sequence-space Jacobians admit the decomposition
 \[
-J = T(j) + E,
-\qquad
-j(z)=\sum_{k=-\infty}^{\infty} j_k z^k,
+J = T(j) + E
 \]
 where $T(j)$ is Toeplitz and $E$ is a compact correction.
 \end{block}
@@ -648,41 +646,9 @@ where $T(j)$ is Toeplitz and $E$ is a compact correction.
 
 \end{frame}
 
-\begin{frame}{Determinacy and Large-Scale Solutions in the Sequence Space}{Determinacy in sequence space}
-\small
-To solve equilibrium, we need
-\[
-Jx = y.
-\]
-
-For block quasi-Toeplitz $J$, define the matrix-valued symbol $j(z)$ and study $\det j(z)$ on the unit circle.
-
-\begin{block}{Winding-number test}
-\[
-\mathrm{wind}(\det j)
-=
-\mathrm{nonex}(J)-\mathrm{indet}(J).
-\]
-Generically:
-\[
-\begin{cases}
-\mathrm{wind}(\det j)=0 &\Rightarrow \text{unique solution},\\
-\mathrm{wind}(\det j)<0 &\Rightarrow \text{indeterminacy},\\
-\mathrm{wind}(\det j)>0 &\Rightarrow \text{nonexistence}.
-\end{cases}
-\]
-\end{block}
-
-\begin{itemize}
-    \item Extends Onatski's Toeplitz test to the \alert{quasi-Toeplitz} case.
-    \item Equivalent to Blanchard--Kahn in standard linear systems,
-    but works \alert{in sequence space}.
-\end{itemize}
-\end{frame}
-
 \begin{frame}{Determinacy and Large-Scale Solutions in the Sequence Space}{Large-scale solution}
 \small
-The idea is to exploit the Toeplitz core instead of directly inverting a huge truncated matrix.
+We need to solve $Jx = y$. Instead of directly inverting a huge truncated matrix,
 
 \begin{block}{Preconditioned iterative solution}
 Use an approximate inverse
@@ -695,11 +661,11 @@ as a preconditioner, and solve the truncated system iteratively (e.g. GMRES).
 \begin{itemize}
     \item Toeplitz part is cheap to apply/store:
     \[
-    T_T(j)x \quad \text{via FFT in } O(T\log T).
+    T_T(j^{-1}) \quad \text{via FFT in } O(T\log T).
     \]
     \item Compact correction is compressed in low rank:
     \[
-    J_{T,T}\approx T_T(j)+U_{T,r}V_{T,r}' ,\qquad r\ll T.
+    \widetilde E\approx U_{T,r}V_{T,r}' ,\qquad r\ll T.
     \]
     \item This reduces truncation error and avoids direct $nT\times nT$ inversion.
 \end{itemize}
@@ -975,8 +941,7 @@ z_t^T=(z_{t-T},z_{t-T+1},\ldots,z_t),
 \]
 
 \begin{itemize}
-    \item In ergodic economies, the truncation error vanishes as $T$ grows.
-    \item So the aggregate state is approximated by a \alert{sequence of past aggregate shocks},
+    \item The aggregate state is approximated by a \alert{sequence of past aggregate shocks},
     not by moments or histograms of the distribution.
 \end{itemize}
 
