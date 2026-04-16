@@ -422,10 +422,10 @@
     \]
     Holding $\Lambda_j^{s} \equiv \Lambda_{ss}$, we have
     \begin{equation}
-        \mathcal{F}_{ts}\,dx \overset{\text{def}}{=}
+        \mathcal{F}_{ts}\,dy_s \overset{\text{def}}{=}
         \mathbf{c}_{ss}^\prime \left(d\mathbf{D}_t^s - d\mathbf{D}_{t-1}^{s-1}\right)
         = \mathbf{c}_{ss}^\prime \left( \Lambda_{ss}^\prime \right)^{t-1} d\mathbf{D}_1^s
-        \equiv \left( \mathcal{J}_{ts}^{C,y} - \mathcal{J}_{t-1,s-1}^{C,y} \right) dx \label{eq:fake_news}
+        \equiv \left( \mathcal{J}_{ts}^{C,y} - \mathcal{J}_{t-1,s-1}^{C,y} \right) dy_s \label{eq:fake_news}
     \end{equation}
 
     We interpret the $\mathcal{F}_{ts}$ as the \textbf{"fake news"} shock on $C_t$:
@@ -485,8 +485,8 @@
     \textbf{Key Idea 3:} The $\mathcal{E}_t'$ are enough to get all $t \geq 1$ rows of $\mathcal{F}$:
 
     \begin{itemize}
-        \item \textbf{First column} ($s = 0$): from \eqref{eq:dc_t0},\; $\mathcal{J}_{t0}\, dx = \mathcal{E}_t' \, dD^0_1$
-        \item \textbf{Other columns} ($s > 0$): from \eqref{eq:fake_news},\; $\mathcal{F}_{ts}\, dx = \mathcal{E}_t' \, dD^s_1$
+        \item \textbf{First column} ($s = 0$): from \eqref{eq:dc_t0},\; $\mathcal{J}_{t0}\, dy_s = \mathcal{E}_t' \, dD^0_1$
+        \item \textbf{Other columns} ($s > 0$): from \eqref{eq:fake_news},\; $\mathcal{F}_{ts}\, dy_s = \mathcal{E}_t' \, dD^s_1$
         \item \textbf{Result:} Eventually only $O(T)$ computation!
     \end{itemize}
 \end{frame}

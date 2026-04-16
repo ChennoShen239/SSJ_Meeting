@@ -1,14 +1,14 @@
 # Fdb version 4
-["bibtex slides copy"] 1776357225.58803 "slides copy.aux" "slides copy.bbl" "slides copy" 1776357552.53257 0
+["bibtex slides copy"] 1776357225.58803 "slides copy.aux" "slides copy.bbl" "slides copy" 1776359911.08116 0
   "./reference.bib" 1776356488.55749 6915 b4fdd3a9e9d5c72c68139f8ea6dc6abf ""
   "/usr/local/texlive/2026basic/texmf-dist/bibtex/bst/base/apalike.bst" 1292289607 24635 604dafcc79f521a11ea73e506e1fbd98 ""
-  "slides copy.aux" 1776357552.33145 17577 9f4b274e3c348e3cabd131b23105018e "pdflatex"
+  "slides copy.aux" 1776359910.89882 17577 9f4b274e3c348e3cabd131b23105018e "pdflatex"
   (generated)
   "slides copy.bbl"
   "slides copy.blg"
   (rewritten before read)
-["pdflatex"] 1776357549.95903 "/Volumes/T9/SSJ_Meeting/slides copy.tex" "slides copy.pdf" "slides copy" 1776357552.5327 0
-  "/Volumes/T9/SSJ_Meeting/slides copy.tex" 1776357549.80595 38878 c97be7474997b9d37035ce3b2ff4db4a ""
+["pdflatex"] 1776359908.62561 "/Volumes/T9/SSJ_Meeting/slides copy.tex" "slides copy.pdf" "slides copy" 1776359911.08127 0
+  "/Volumes/T9/SSJ_Meeting/slides copy.tex" 1776359908.39243 38886 aa09fb9565ab7f4e348bc5b64d68b32a ""
   "/usr/local/texlive/2026basic/texmf-dist/fonts/enc/dvips/iwona/ex-iwona.enc" 1276043435 3130 8cd10f890623d1a768321ebf954797d3 ""
   "/usr/local/texlive/2026basic/texmf-dist/fonts/enc/dvips/iwona/mi-iwona.enc" 1276043435 2214 c999541a20776b560b1683fd4d39b07f ""
   "/usr/local/texlive/2026basic/texmf-dist/fonts/enc/dvips/iwona/rm-iwona.enc" 1276043435 1962 cace5a3042b67248932d50e41975d81a ""
@@ -336,12 +336,12 @@
   "/usr/local/texlive/2026basic/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1776153916 5573048 7a352fbedf9fe0ed9a294adc42e81bc4 ""
   "/usr/local/texlive/2026basic/texmf-var/web2c/pdftex/pdflatex.fmt" 1776153965 3636685 8f5cab4dc743775d525277a2045af46e ""
   "/usr/local/texlive/2026basic/texmf.cnf" 1772405582 628 bbc09d6d38872d53c11bb48dc9b14e88 ""
-  "slides copy.aux" 1776357552.33145 17577 9f4b274e3c348e3cabd131b23105018e "pdflatex"
+  "slides copy.aux" 1776359910.89882 17577 9f4b274e3c348e3cabd131b23105018e "pdflatex"
   "slides copy.bbl" 1776357225.6356 6081 d59f8c3d0406041db1754c5bfa823a8f "bibtex slides copy"
-  "slides copy.nav" 1776357552.33414 6806 29277641c77884750d3f4355667b8d87 "pdflatex"
-  "slides copy.out" 1776357552.33387 1400 94937db9ea98ddeb4bd219f6c6ef3de9 "pdflatex"
-  "slides copy.tex" 1776357549.80595 38878 c97be7474997b9d37035ce3b2ff4db4a ""
-  "slides copy.toc" 1776357552.33443 600 4c35e25af4cacfc5de0dabd662e2d92e "pdflatex"
+  "slides copy.nav" 1776359910.90163 6806 29277641c77884750d3f4355667b8d87 "pdflatex"
+  "slides copy.out" 1776359910.90139 1400 94937db9ea98ddeb4bd219f6c6ef3de9 "pdflatex"
+  "slides copy.tex" 1776359908.39243 38886 aa09fb9565ab7f4e348bc5b64d68b32a ""
+  "slides copy.toc" 1776359910.90166 600 4c35e25af4cacfc5de0dabd662e2d92e "pdflatex"
   (generated)
   "slides copy.aux"
   "slides copy.log"
