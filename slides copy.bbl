@@ -1,5 +1,15 @@
 \begin{thebibliography}{}
 
+\bibitem[Achdou et~al., 2022]{achdou2022income}
+Achdou, Y., Han, J., Lasry, J.-M., Lions, P.-L., and Moll, B. (2022).
+\newblock Income and wealth distribution in macroeconomics: A continuous-time approach.
+\newblock {\em The review of economic studies}, 89(1):45--86.
+
+\bibitem[Aiyagari, 1994]{aiyagari1994uninsured}
+Aiyagari, S.~R. (1994).
+\newblock Uninsured idiosyncratic risk and aggregate saving.
+\newblock {\em The Quarterly Journal of Economics}, 109(3):659--684.
+
 \bibitem[Angeletos et~al., 2025]{angeletos2025rank}
 Angeletos, G.-M., Guerreiro, J., and Zhang, D.~R. (2025).
 \newblock From rank to hank, without fire.
@@ -63,6 +73,11 @@ Bilal, A. and Goyal, S. (2025).
 \newblock Some pleasant sequence-space arithmetic in continuous time.
 \newblock Technical report, National Bureau of Economic Research.
 
+\bibitem[Boppart et~al., 2018]{boppart2018exploiting}
+Boppart, T., Krusell, P., and Mitman, K. (2018).
+\newblock Exploiting mit shocks in heterogeneous-agent economies: the impulse response as a numerical derivative.
+\newblock {\em Journal of Economic Dynamics and Control}, 89:68--92.
+
 \bibitem[Donald et~al., 2025]{donald2025optimal}
 Donald, E., Fukui, M., and Miyauchi, Y. (2025).
 \newblock Optimal dynamic spatial policy.
@@ -82,6 +97,11 @@ Kekre, R. (2023).
 \newblock Unemployment insurance in macroeconomic stabilization.
 \newblock {\em Review of Economic Studies}, 90(5):2439--2480.
 
+\bibitem[Krusell and Smith, 1998]{krusell1998income}
+Krusell, P. and Smith, Jr, A.~A. (1998).
+\newblock Income and wealth heterogeneity in the macroeconomy.
+\newblock {\em Journal of political Economy}, 106(5):867--896.
+
 \bibitem[Lee, 2025]{lee2025global}
 Lee, H. (2025).
 \newblock Global nonlinear solutions in sequence space and the generalized transition function.
@@ -91,6 +111,11 @@ Lee, H. (2025).
 McKay, A. and Wolf, C. (2022).
 \newblock Optimal policy rules in hank.
 \newblock {\em Manuscript, January}, pages 121--144.
+
+\bibitem[Moll, 2025]{moll2025trouble}
+Moll, B. (2025).
+\newblock The trouble with rational expectations in heterogeneous agent models: A challenge for macroeconomics.
+\newblock {\em The Economic Journal}, page ueaf104.
 
 \bibitem[Schaab and Tan, 2023]{schaab2023monetary}
 Schaab, A. and Tan, S.~Y. (2023).

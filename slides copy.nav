@@ -120,8 +120,10 @@
 \headcommand {\beamer@framepages {50}{51}}
 \headcommand {\slideentry {4}{0}{2}{50/52}{}{0}}
 \headcommand {\beamer@framepages {50}{52}}
-\headcommand {\beamer@partpages {1}{52}}
-\headcommand {\beamer@subsectionpages {49}{52}}
-\headcommand {\beamer@sectionpages {49}{52}}
-\headcommand {\beamer@documentpages {52}}
-\headcommand {\gdef \inserttotalframenumber {45}}
+\headcommand {\slideentry {4}{0}{2}{50/53}{}{0}}
+\headcommand {\beamer@framepages {50}{53}}
+\headcommand {\beamer@partpages {1}{53}}
+\headcommand {\beamer@subsectionpages {49}{53}}
+\headcommand {\beamer@sectionpages {49}{53}}
+\headcommand {\beamer@documentpages {53}}
+\headcommand {\gdef \inserttotalframenumber {46}}

@@ -22,7 +22,7 @@
   palette=horizon,
   frametitle=subtle,
   progressbar,
-%   sansface={libertinus},
+  sansface={libertinus},
 %   mathface=libertinus,
 ]{Celestia}
 
@@ -304,7 +304,7 @@
             (5.2,0.18) to[out=110,in=70] (4.2,0.18);
 
         \node<2->[mygreen, align=center] at (2.55,1.5)
-            {Step 1: Backward};
+            {Step 1: Backward to get $c_t(s,a)$};
 
         % =========================================================
         % Step 2: forward
@@ -319,13 +319,13 @@
             (4.2,-0.18) to[out=-70,in=-110] (5.2,-0.18);
 
         \node<3->[myorange, align=center] at (2.60,-2)
-            {Step 2: Forward};
+            {Step 2: Forward to get $D_t(s,a)$};
 
         % =========================================================
         % Step 3: aggregate
         % =========================================================
-        \node<4->[text=mygray, align=center] at (2.60,-3.5)
-            {Step 3: Aggregate};
+        \node<4->[text=mygray, align=center] at (2.60,-2.5)
+            {Step 3: Aggregate to get $C_t$, $A_t$};
 
     \end{tikzpicture}
 \end{frame}
@@ -397,7 +397,7 @@
         \]
         \item Consider $s=0$. For $t \geq 1$, only the second term remains,
         \[
-        dc_t^0 = \underbrace{\cancel{dc_t^{0'} D_{ss}}}_{c_t^s(s,a)=c_{ss}(s,a),s<t} + c_{ss}' dD_t^0 = c_{ss}' (\Lambda_{ss}')^{t-1} dD_1^0
+        dC_t^0 = \underbrace{\cancel{dc_t^{0'} D_{ss}}}_{c_t^s(s,a)=c_{ss}(s,a),s<t} + c_{ss}' dD_t^0 = c_{ss}' (\Lambda_{ss}')^{t-1} dD_1^0
         \]
         \item Here, $\Lambda_{ss}$ is the steady-state transition matrix for $(s,a)$,\alert{ obtained by $c_{ss}(s,a)$ } so
         \begin{equation}
